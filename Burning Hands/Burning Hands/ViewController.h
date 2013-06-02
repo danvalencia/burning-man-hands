@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Loader.h"
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate>{
+    Loader *loader;
+}
 
-@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *greetingLabel;
-- (IBAction)changeGreeting:(id)sender;
+- (IBAction)connectToDevice:(id)sender;
 
 @property (copy, nonatomic) NSString *userName;
 

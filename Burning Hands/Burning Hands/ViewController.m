@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Loader.h"
 
 @interface ViewController ()
 
@@ -19,6 +20,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    loader = [[Loader alloc] initWithFrame:self.view.bounds];
+    
+    [loader startAnimating];
+    [loader setHidden:TRUE];
+    loader.frame = CGRectMake(390, 165, 64, 64);
+    [self.view addSubview: loader];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -28,27 +35,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)changeGreeting:(id)sender
-{
-    self.userName = self.nameTextField.text;
+- (IBAction)connectToDevice:(id)sender
+{    
+    [loader setHidden:FALSE];
     
-    NSString *nameString = self.userName;
-    
-    if([nameString length] == 0) {
-        nameString = @"World";
-    }
-    
-    NSString *greeting = [[NSString alloc] initWithFormat:@"Hello, %@!", nameString];
+    NSString *greeting = @"Connecting";
     self.greetingLabel.text = greeting;
     
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    if (theTextField == self.nameTextField) {
-        [theTextField resignFirstResponder];
-    }
-    return YES;
-}
+//- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+////    if (theTextField == self.nameTextField) {
+////        [theTextField resignFirstResponder];
+////    }
+//    return YES;
+//}
 
 
 @end
