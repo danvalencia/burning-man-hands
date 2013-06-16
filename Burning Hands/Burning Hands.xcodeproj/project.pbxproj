@@ -56,6 +56,8 @@
 		BEA2962616DAB2D900066468 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEA2962416DAB2D900066468 /* InfoPlist.strings */; };
 		BEA2962916DAB2D900066468 /* Burning_HandsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA2962816DAB2D900066468 /* Burning_HandsTests.m */; };
 		BEEF15ED175BF4E200684921 /* Loader.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF15EC175BF4E200684921 /* Loader.m */; };
+		BEEF1608175C04AB00684921 /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF1606175C04AB00684921 /* BLE.m */; };
+		BEEF160A175C04C300684921 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEF1609175C04C300684921 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +127,10 @@
 		BEA2962816DAB2D900066468 /* Burning_HandsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Burning_HandsTests.m; sourceTree = "<group>"; };
 		BEEF15EB175BF4E200684921 /* Loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Loader.h; sourceTree = "<group>"; };
 		BEEF15EC175BF4E200684921 /* Loader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loader.m; sourceTree = "<group>"; };
+		BEEF1605175C04AB00684921 /* BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLE.h; path = ../BLEFramework/BLE/BLE.h; sourceTree = "<group>"; };
+		BEEF1606175C04AB00684921 /* BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLE.m; path = ../BLEFramework/BLE/BLE.m; sourceTree = "<group>"; };
+		BEEF1607175C04AB00684921 /* BLEDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLEDefines.h; path = ../BLEFramework/BLE/BLEDefines.h; sourceTree = "<group>"; };
+		BEEF1609175C04C300684921 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEEF160A175C04C300684921 /* CoreBluetooth.framework in Frameworks */,
 				BEA295F516DAB2D900066468 /* UIKit.framework in Frameworks */,
 				BEA295F716DAB2D900066468 /* Foundation.framework in Frameworks */,
 				BEA295F916DAB2D900066468 /* CoreGraphics.framework in Frameworks */,
@@ -210,6 +217,8 @@
 		BEA295F316DAB2D900066468 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BEEF1609175C04C300684921 /* CoreBluetooth.framework */,
+				BEEF1604175C049900684921 /* BLE.framework */,
 				BEA295F416DAB2D900066468 /* UIKit.framework */,
 				BEA295F616DAB2D900066468 /* Foundation.framework */,
 				BEA295F816DAB2D900066468 /* CoreGraphics.framework */,
@@ -267,6 +276,16 @@
 				BEA2962416DAB2D900066468 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEEF1604175C049900684921 /* BLE.framework */ = {
+			isa = PBXGroup;
+			children = (
+				BEEF1605175C04AB00684921 /* BLE.h */,
+				BEEF1606175C04AB00684921 /* BLE.m */,
+				BEEF1607175C04AB00684921 /* BLEDefines.h */,
+			);
+			name = BLE.framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +434,7 @@
 				BEA2960516DAB2D900066468 /* AppDelegate.m in Sources */,
 				BEA2961416DAB2D900066468 /* ViewController.m in Sources */,
 				BEEF15ED175BF4E200684921 /* Loader.m in Sources */,
+				BEEF1608175C04AB00684921 /* BLE.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,7 +48,7 @@ void setup() {
 
 void loop() {
   // Some example procedures showing how to display to the pixels
-  //drawX(3, 3, 100);
+  drawX(3, 3, 100);
   bounce(3, 3, 200);
   //snake(3,3,50);
 }

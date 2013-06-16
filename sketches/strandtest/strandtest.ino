@@ -40,7 +40,7 @@ char pixelIndex = 0;
 // and the +5V wire to a +5V supply
 
 // Set the first variable to the NUMBER of pixels. 25 = 25 pixels in a row
-Adafruit_WS2801 strip = Adafruit_WS2801(10, dataPin, clockPin);
+Adafruit_WS2801 strip = Adafruit_WS2801(20, dataPin, clockPin);
 
 // Optional: leave off pin numbers to use hardware SPI
 // (pinout is then specific to each board and can't be changed)
@@ -65,20 +65,20 @@ void setup() {
 
 void loop() {
   // Some example procedures showing how to display to the pixels
-  //potentiometerLoop(100);
-   
-  //colorWipe(Color(255, 0, 0), 50);
-  //colorWipe(Color(0, 255, 0), 50);
-  //colorWipe(Color(0, 0, 255), 50);
-    rainbow(20);
-  //rainbowCycle(20);
+  //potentiometerLoop(50);
+  colorWipe(Color(255, 0, 0), 50);
+  colorWipe(Color(0, 255, 0), 50);
+  colorWipe(Color(0, 0, 255), 50);
+    //rainbow(20);*/s
+  rainbowCycle(20);
 }
 
 void potentiometerLoop(uint8_t wait) {
     sensorValue = analogRead(sensorPin);    
     
     if(previousValue != sensorValue) {
-       clearPixels();
+       colorWipe(Color(255, 0, 0), 50);
+
        previousValue = sensorValue;
        pixelIndex = calculatePixelIndex(sensorValue);      
     }
