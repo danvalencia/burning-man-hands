@@ -8,12 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Burning Hands/ViewController.m"
-         timestampString = "393026989.936277"
+         timestampString = "393122063.222995"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "47"
-         endingLineNumber = "47"
-         landmarkName = "-connectToDevice:"
+         startingLineNumber = "235"
+         endingLineNumber = "235"
+         landmarkName = "-updateColor:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,13 +21,37 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Burning Hands/ViewController.m"
-         timestampString = "393029689.359678"
+         timestampString = "393122063.222995"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
-         landmarkName = "-connectToDevice:"
-         landmarkType = "5">
+         startingLineNumber = "123"
+         endingLineNumber = "123"
+         landmarkName = "@implementation ViewController"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Burning Hands/ViewController.m"
+         timestampString = "393121833.190678"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "22"
+         endingLineNumber = "22">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Burning Hands/ViewController.m"
+         timestampString = "393121833.856986"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
+         landmarkName = "@implementation ViewController"
+         landmarkType = "3">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

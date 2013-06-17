@@ -59,13 +59,17 @@ void loop()
   if (ble_available())
   {
     Serial.println("BLE is Available!");
-    byte r = ble_read();
-    if (r == ON)
-      colorWipe(Color(255, 0, 0), 50);
-    else if (r == OFF)
+    byte command = ble_read();
+    byte red = ble_read();
+    byte green = ble_read();
+    byte blue = ble_read();
+    
+    if (command == ON)
+      colorWipe(Color(red, green, blue), 50);
+    else if (command == OFF)
       colorWipe(Color(0, 255, 0), 50);
 
-    Serial.println(r, HEX);
+    Serial.println(command, HEX);
   }
   
   if(count == MAX_COUNT) 
