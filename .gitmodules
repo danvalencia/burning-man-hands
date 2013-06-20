@@ -1,0 +1,3 @@
+[submodule "BLEFramework"]
+	path = BLEFramework
+	url = https://github.com/RedBearLab/BLEFramework
