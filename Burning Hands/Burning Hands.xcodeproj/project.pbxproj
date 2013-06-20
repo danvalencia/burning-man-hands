@@ -38,6 +38,8 @@
 		BE1C34A617012C33005479B1 /* frame-7.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348817012C33005479B1 /* frame-7.gif */; };
 		BE1C34A717012C33005479B1 /* frame-8.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348917012C33005479B1 /* frame-8.gif */; };
 		BE1C34A817012C33005479B1 /* frame-9.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348A17012C33005479B1 /* frame-9.gif */; };
+		BE7690BD17733D7000B27D77 /* HandsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7690BC17733D7000B27D77 /* HandsIcon.png */; };
+		BE7690BF17733DA800B27D77 /* HandsIcon_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7690BE17733DA800B27D77 /* HandsIcon_iPhone.png */; };
 		BEA295F516DAB2D900066468 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F416DAB2D900066468 /* UIKit.framework */; };
 		BEA295F716DAB2D900066468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F616DAB2D900066468 /* Foundation.framework */; };
 		BEA295F916DAB2D900066468 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F816DAB2D900066468 /* CoreGraphics.framework */; };
@@ -102,6 +104,8 @@
 		BE1C348817012C33005479B1 /* frame-7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame-7.gif"; sourceTree = "<group>"; };
 		BE1C348917012C33005479B1 /* frame-8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame-8.gif"; sourceTree = "<group>"; };
 		BE1C348A17012C33005479B1 /* frame-9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame-9.gif"; sourceTree = "<group>"; };
+		BE7690BC17733D7000B27D77 /* HandsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandsIcon.png; sourceTree = "<group>"; };
+		BE7690BE17733DA800B27D77 /* HandsIcon_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandsIcon_iPhone.png; sourceTree = "<group>"; };
 		BEA295F016DAB2D900066468 /* Burning Hands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Burning Hands.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA295F416DAB2D900066468 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEA295F616DAB2D900066468 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -198,6 +202,8 @@
 		BEA295E516DAB2D900066468 = {
 			isa = PBXGroup;
 			children = (
+				BE7690BE17733DA800B27D77 /* HandsIcon_iPhone.png */,
+				BE7690BC17733D7000B27D77 /* HandsIcon.png */,
 				BEA295FA16DAB2D900066468 /* Burning Hands */,
 				BEA2962116DAB2D900066468 /* Burning HandsTests */,
 				BEA295F316DAB2D900066468 /* Frameworks */,
@@ -396,6 +402,8 @@
 				BE1C34A617012C33005479B1 /* frame-7.gif in Resources */,
 				BE1C34A717012C33005479B1 /* frame-8.gif in Resources */,
 				BE1C34A817012C33005479B1 /* frame-9.gif in Resources */,
+				BE7690BD17733D7000B27D77 /* HandsIcon.png in Resources */,
+				BE7690BF17733DA800B27D77 /* HandsIcon_iPhone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

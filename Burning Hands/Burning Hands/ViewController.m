@@ -116,6 +116,8 @@
     command[2] = colors[2];
     command[3] = colors[3];
     
+    NSLog(@"Sending command: %d; Red: %d; Green %d; Blue %d", command[0], command[1], command[2], command[3]);
+    
     NSData *data = [[NSData alloc] initWithBytes:command length:4];
     [_ble write:data];
 }

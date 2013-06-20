@@ -8,12 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Burning Hands/ViewController.m"
-         timestampString = "393122063.222995"
+         timestampString = "393425966.10863"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "235"
-         endingLineNumber = "235"
-         landmarkName = "-updateColor:"
+         startingLineNumber = "237"
+         endingLineNumber = "237"
+         landmarkName = "-sendColorUpdate:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -21,13 +21,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Burning Hands/ViewController.m"
-         timestampString = "393122063.222995"
+         timestampString = "393425966.10863"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "123"
-         endingLineNumber = "123"
-         landmarkName = "@implementation ViewController"
-         landmarkType = "3">
+         startingLineNumber = "125"
+         endingLineNumber = "125"
+         landmarkName = "-sendColorUpdate:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -52,6 +52,19 @@
          endingLineNumber = "23"
          landmarkName = "@implementation ViewController"
          landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Burning Hands/ViewController.m"
+         timestampString = "393426128.111929"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "249"
+         endingLineNumber = "249"
+         landmarkName = "-updateColor:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

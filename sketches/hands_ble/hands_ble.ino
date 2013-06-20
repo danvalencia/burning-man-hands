@@ -14,12 +14,10 @@
 #define ON     0x01
 #define OFF    0x00
 
-#define MAX_COUNT 10000
+#define CHANGE_COLOR 0x01
 
-int count = 0;
-
-int dataPin  = 2;    // Yellow wire on Adafruit Pixels
-int clockPin = 3;    // Green wire on Adafruit Pixels
+int dataPin  = 2;    // white/green wire
+int clockPin = 3;    // red wire
 
 Adafruit_WS2801 strip = Adafruit_WS2801(20, dataPin, clockPin);
 
@@ -49,13 +47,6 @@ void setup()
 
 void loop()
 {
-  
-//  colorWipe(Color(255, 0, 0), 50);
-//  colorWipe(Color(0, 255, 0), 50);
-//  colorWipe(Color(0, 0, 255), 50);
-
-  Serial.println("About to check if BLE is available!");
-
   if (ble_available())
   {
     Serial.println("BLE is Available!");
@@ -64,23 +55,21 @@ void loop()
     byte green = ble_read();
     byte blue = ble_read();
     
-    if (command == ON)
-      colorWipe(Color(red, green, blue), 50);
-    else if (command == OFF)
-      colorWipe(Color(0, 255, 0), 50);
-
     Serial.println(command, HEX);
+
+    switch(command)
+    {
+       case(CHANGE_COLOR):
+         colorWipe(Color(red, green, blue), 50);
+         Serial.println(red, HEX);
+         Serial.println(green, HEX);
+         Serial.println(blue, HEX);
+         break;
+       default:
+         break;
+    }
   }
   
-  if(count == MAX_COUNT) 
-  {
-    count = 0;
-    Serial.println("BLE Events have been processed!");
-  }
-  else
-  {
-    count++; 
-  }
   ble_do_events();
 }
 
