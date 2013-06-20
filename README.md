@@ -1,4 +1,4 @@
 burning-man-hands
 =================
 
-Burning Man Hands
+Burning Man Hands iOS Project
