@@ -108,13 +108,13 @@
 
 }
 
--(void) sendColorUpdate:(UInt8[])colors
+-(void) sendColorUpdate:(UInt8*)colors
 {
     UInt8 command[4] = {};
     command[0] = 0x01;
-    command[1] = colors[1];
-    command[2] = colors[2];
-    command[3] = colors[3];
+    command[1] = colors[0];
+    command[2] = colors[1];
+    command[3] = colors[2];
     
     NSLog(@"Sending command: %d; Red: %d; Green %d; Blue %d", command[0], command[1], command[2], command[3]);
     
