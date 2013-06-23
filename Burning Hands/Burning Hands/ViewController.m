@@ -13,7 +13,7 @@
 
 @interface ViewController ()
 
-- (void) addLoader;
+- (void) initLoader;
 - (void) initBluetooth;
 - (NSString*)padWithZeros:(NSString*)colorText;
 - (void) sendColorUpdate:(UInt8[])colors;
@@ -23,17 +23,18 @@
 @implementation ViewController
 
 //@synthesize userName = _userName;
-//@synthesize ble = _ble;
 //@synthesize connectBtn = _connectBtn;
 
-@synthesize colorTextField = _colorTextField;
+@synthesize ble;
+@synthesize colorTextField;
+@synthesize loader;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [self initLoader];
     [self initBluetooth];
-    [self addLoader];    
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -52,9 +53,18 @@
 -(void)initBluetooth
 {
     NSLog(@"Initializing Bluetooth!");
-    _ble = [[BLE alloc] init];
-    [_ble controlSetup:1];
-    _ble.delegate = self;
+    self.ble = [[BLE alloc] init];
+    [self.ble controlSetup:1];
+    self.ble.delegate = self;
+}
+
+- (void)initLoader
+{
+    self.loader = [[Loader alloc] initWithFrame:self.view.bounds];
+    [self.loader startAnimating];
+    [self.loader setHidden:TRUE];
+    self.loader.frame = CGRectMake(0, 0, 64, 64);
+    [self.view addSubview: self.loader];
 }
 
 -(void) bleDidConnect
@@ -63,7 +73,7 @@
     
     self.greetingLabel.text = @"   Connected";
     
-    [loader stopAnimating];    
+    [self.loader stopAnimating];
     
 }
 
@@ -71,9 +81,9 @@
 {
     NSLog(@"->Disconnected");
     
-    [_connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
+    [self.connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
 
-    [loader stopAnimating];
+    [self.loader stopAnimating];
 }
 
 -(void) bleDidUpdateRSSI:(NSNumber *) rssi
@@ -119,37 +129,28 @@
     NSLog(@"Sending command: %d; Red: %d; Green %d; Blue %d", command[0], command[1], command[2], command[3]);
     
     NSData *data = [[NSData alloc] initWithBytes:command length:4];
-    [_ble write:data];
+    [self.ble write:data];
 }
 
 
 -(void) connectionTimer:(NSTimer *)timer
 {
-    [_connectBtn setEnabled:true];
-    [_connectBtn setTitle:@"Disconnect" forState:UIControlStateNormal];
+    [self.connectBtn setEnabled:true];
+    [self.connectBtn setTitle:@"Disconnect" forState:UIControlStateNormal];
     
-    if (_ble.peripherals.count > 0)
+    if (self.ble.peripherals.count > 0)
     {
-        [_ble connectPeripheral:[_ble.peripherals objectAtIndex:0]];
+        [self.ble connectPeripheral:[self.ble.peripherals objectAtIndex:0]];
     }
     else
     {
         self.greetingLabel.text = @"Disconnected";
         
-        [_connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
-        [loader stopAnimating];
+        [self.connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
+        [self.loader stopAnimating];
     }
 }
 
-- (void)addLoader
-{
-    
-    loader = [[Loader alloc] initWithFrame:self.view.bounds];
-    [loader startAnimating];
-    [loader setHidden:TRUE];
-    loader.frame = CGRectMake(0, 0, 64, 64);
-    [self.view addSubview: loader];
-}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -187,27 +188,27 @@
 
 - (IBAction)connectToDevice:(id)sender
 {
-    if (_ble.activePeripheral)
-        if(_ble.activePeripheral.isConnected)
+    if (self.ble.activePeripheral)
+        if(self.ble.activePeripheral.isConnected)
         {
-            [[_ble CM] cancelPeripheralConnection:[_ble activePeripheral]];
+            [[self.ble CM] cancelPeripheralConnection:[self.ble activePeripheral]];
             
-            [_connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
+            [self.connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
             return;
         }
     
-    if (_ble.peripherals)
-        _ble.peripherals = nil;
+    if (self.ble.peripherals)
+        self.ble.peripherals = nil;
     
-    [_connectBtn setEnabled:false];
-    [_connectBtn setTitle:@"Connecting" forState:UIControlStateNormal];
-    [_ble findBLEPeripherals:2];
+    [self.connectBtn setEnabled:false];
+    [self.connectBtn setTitle:@"Connecting" forState:UIControlStateNormal];
+    [self.ble findBLEPeripherals:2];
     
     [NSTimer scheduledTimerWithTimeInterval:(float)2.0 target:self selector:@selector(connectionTimer:) userInfo:nil repeats:NO];
     
-    [loader startAnimating];
+    [self.loader startAnimating];
     
-    [loader setHidden:FALSE];
+    [self.loader setHidden:FALSE];
     
     //    NSString *greeting = @"Connecting";
     //

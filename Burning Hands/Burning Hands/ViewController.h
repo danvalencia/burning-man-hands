@@ -11,12 +11,12 @@
 #import "BLE.h"
 
 
-@interface ViewController : UIViewController <UITextFieldDelegate, BLEDelegate>{
-    Loader *loader;
-}
+@interface ViewController : UIViewController <UITextFieldDelegate, BLEDelegate>
+
 @property (weak, nonatomic) IBOutlet UILabel *greetingLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *connectBtn;
+@property (strong, nonatomic) IBOutlet Loader *loader;
 
 
 @property (copy, nonatomic) NSString *userName;

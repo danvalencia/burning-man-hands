@@ -73,18 +73,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="dgu-AE-aMI" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="0Cn-Ol-oRf"/>
                             <constraint firstItem="6fg-m9-Iy0" firstAttribute="top" secondItem="4Nl-Ra-PMU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="4gC-Hq-D73"/>
                             <constraint firstItem="d5v-4z-0Gu" firstAttribute="trailing" secondItem="4Nl-Ra-PMU" secondAttribute="trailing" type="default" id="4zJ-Sm-Crc"/>
                             <constraint firstItem="4Nl-Ra-PMU" firstAttribute="centerX" secondItem="dgu-AE-aMI" secondAttribute="centerX" type="default" id="6Ql-p2-7Ok"/>
                             <constraint firstItem="Reg-W7-Xc8" firstAttribute="baseline" secondItem="b9a-cb-hzp" secondAttribute="baseline" type="default" id="6bp-GV-zqW"/>
+                            <constraint firstItem="4Nl-Ra-PMU" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="HdL-Ni-jVF"/>
                             <constraint firstItem="dgu-AE-aMI" firstAttribute="top" secondItem="d5v-4z-0Gu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WaA-Qk-a50"/>
-                            <constraint firstAttribute="trailing" secondItem="Reg-W7-Xc8" secondAttribute="trailing" constant="95" id="aNq-iO-Ddk"/>
                             <constraint firstItem="d5v-4z-0Gu" firstAttribute="top" secondItem="4Nl-Ra-PMU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="b2D-bx-u9I"/>
                             <constraint firstItem="b9a-cb-hzp" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="41" id="eGW-o1-hXE"/>
+                            <constraint firstAttribute="trailing" secondItem="Reg-W7-Xc8" secondAttribute="trailing" constant="95" id="eXc-pf-3Zb"/>
                             <constraint firstItem="d5v-4z-0Gu" firstAttribute="baseline" secondItem="6fg-m9-Iy0" secondAttribute="baseline" type="default" id="gBx-9V-JeA"/>
+                            <constraint firstItem="b9a-cb-hzp" firstAttribute="top" secondItem="3" secondAttribute="top" constant="128" id="o23-TZ-p7u"/>
                             <constraint firstItem="6fg-m9-Iy0" firstAttribute="leading" secondItem="4Nl-Ra-PMU" secondAttribute="leading" type="default" id="oV9-SC-WNy"/>
-                            <constraint firstItem="b9a-cb-hzp" firstAttribute="top" secondItem="3" secondAttribute="top" constant="128" id="uAN-Cf-SKY"/>
                             <constraint firstItem="4Nl-Ra-PMU" firstAttribute="top" secondItem="b9a-cb-hzp" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uXL-xE-AcD"/>
                         </constraints>
                     </view>
@@ -100,6 +100,9 @@
         </scene>
     </scenes>
     <classes>
+        <class className="Loader" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Loader.h"/>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
@@ -112,6 +115,7 @@
                 <relationship kind="outlet" name="colorTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="connectBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="greetingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="loader" candidateClass="Loader"/>
             </relationships>
         </class>
     </classes>
