@@ -50,7 +50,6 @@
 		BEA2960916DAB2D900066468 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEA2960816DAB2D900066468 /* Default@2x.png */; };
 		BEA2960B16DAB2D900066468 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEA2960A16DAB2D900066468 /* Default-568h@2x.png */; };
 		BEA2960E16DAB2D900066468 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA2960C16DAB2D900066468 /* MainStoryboard_iPhone.storyboard */; };
-		BEA2961116DAB2D900066468 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA2960F16DAB2D900066468 /* MainStoryboard_iPad.storyboard */; };
 		BEA2961416DAB2D900066468 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA2961316DAB2D900066468 /* ViewController.m */; };
 		BEA2961C16DAB2D900066468 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA2961B16DAB2D900066468 /* SenTestingKit.framework */; };
 		BEA2961D16DAB2D900066468 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F416DAB2D900066468 /* UIKit.framework */; };
@@ -120,7 +119,6 @@
 		BEA2960816DAB2D900066468 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		BEA2960A16DAB2D900066468 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BEA2960D16DAB2D900066468 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		BEA2961016DAB2D900066468 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		BEA2961216DAB2D900066468 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BEA2961316DAB2D900066468 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BEA2961A16DAB2D900066468 /* Burning HandsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Burning HandsTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,7 +237,6 @@
 				BEA2960316DAB2D900066468 /* AppDelegate.h */,
 				BEA2960416DAB2D900066468 /* AppDelegate.m */,
 				BEA2960C16DAB2D900066468 /* MainStoryboard_iPhone.storyboard */,
-				BEA2960F16DAB2D900066468 /* MainStoryboard_iPad.storyboard */,
 				BEA2961216DAB2D900066468 /* ViewController.h */,
 				BEA2961316DAB2D900066468 /* ViewController.m */,
 				BEA295FB16DAB2D900066468 /* Supporting Files */,
@@ -370,7 +367,6 @@
 				BEA2960916DAB2D900066468 /* Default@2x.png in Resources */,
 				BEA2960B16DAB2D900066468 /* Default-568h@2x.png in Resources */,
 				BEA2960E16DAB2D900066468 /* MainStoryboard_iPhone.storyboard in Resources */,
-				BEA2961116DAB2D900066468 /* MainStoryboard_iPad.storyboard in Resources */,
 				BE1C346B170129EC005479B1 /* loader.gif in Resources */,
 				BE1C348B17012C33005479B1 /* frame-1.gif in Resources */,
 				BE1C348C17012C33005479B1 /* frame-10.gif in Resources */,
@@ -481,14 +477,6 @@
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		BEA2960F16DAB2D900066468 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BEA2961016DAB2D900066468 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 		BEA2962416DAB2D900066468 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -559,6 +547,7 @@
 				GCC_PREFIX_HEADER = "Burning Hands/Burning Hands-Prefix.pch";
 				INFOPLIST_FILE = "Burning Hands/Burning Hands-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -570,6 +559,7 @@
 				GCC_PREFIX_HEADER = "Burning Hands/Burning Hands-Prefix.pch";
 				INFOPLIST_FILE = "Burning Hands/Burning Hands-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

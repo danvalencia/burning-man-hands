@@ -147,7 +147,7 @@
     loader = [[Loader alloc] initWithFrame:self.view.bounds];
     [loader startAnimating];
     [loader setHidden:TRUE];
-    loader.frame = CGRectMake(390, 165, 64, 64);
+    loader.frame = CGRectMake(0, 0, 64, 64);
     [self.view addSubview: loader];
 }
 
