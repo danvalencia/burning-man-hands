@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="206" y="2345"/>
         </scene>
-        <!--Mode Selection View Controller - ModeSelectionViewController-->
+        <!--Mode Selection View Controller-->
         <scene sceneID="FLS-FL-59t">
             <objects>
-                <tableViewController title="ModeSelectionViewController" id="vgf-oh-FaK" userLabel="Mode Selection View Controller - ModeSelectionViewController" customClass="ModeSelectionViewController" sceneMemberID="viewController">
+                <tableViewController title="ModeSelectionViewController" id="vgf-oh-FaK" userLabel="Mode Selection View Controller" customClass="ModeSelectionViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1yH-pY-DNI">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,6 +153,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="lU6-ro-dTD" kind="push" identifier="ShowModeDetails" id="oYG-PN-FIm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -161,6 +164,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3FM-Ut-hxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="844" y="976"/>
+        </scene>
+        <!--Mode Detail View Controller-->
+        <scene sceneID="b3s-WC-JtE">
+            <objects>
+                <viewController id="lU6-ro-dTD" userLabel="Mode Detail View Controller" customClass="ModeDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kC6-3h-RKz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dkw-kl-nbG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k0u-NE-lgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="972"/>
         </scene>
         <!--Navigation Controller - LED Mode-->
         <scene sceneID="YRe-rX-K0d">
@@ -204,6 +222,12 @@
     <classes>
         <class className="Loader" superclassName="UIImageView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/Loader.h"/>
+        </class>
+        <class className="ModeDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ModeDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="modeNameLabel" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="ModeSelectionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ModeSelectionViewController.h"/>

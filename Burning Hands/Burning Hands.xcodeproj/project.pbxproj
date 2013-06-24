@@ -45,6 +45,7 @@
 		BE8D9E671777BA8D0047BFBD /* ModeProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E661777BA8D0047BFBD /* ModeProperty.m */; };
 		BE8D9E6A1777BDB50047BFBD /* ModeDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E691777BDB50047BFBD /* ModeDataController.m */; };
 		BE8D9E6D1777C65B0047BFBD /* ModeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E6C1777C65B0047BFBD /* ModeSelectionViewController.m */; };
+		BE8D9E701777CE990047BFBD /* ModeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */; };
 		BEA295F516DAB2D900066468 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F416DAB2D900066468 /* UIKit.framework */; };
 		BEA295F716DAB2D900066468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F616DAB2D900066468 /* Foundation.framework */; };
 		BEA295F916DAB2D900066468 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F816DAB2D900066468 /* CoreGraphics.framework */; };
@@ -119,6 +120,8 @@
 		BE8D9E691777BDB50047BFBD /* ModeDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeDataController.m; sourceTree = "<group>"; };
 		BE8D9E6B1777C65B0047BFBD /* ModeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeSelectionViewController.h; sourceTree = "<group>"; };
 		BE8D9E6C1777C65B0047BFBD /* ModeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeSelectionViewController.m; sourceTree = "<group>"; };
+		BE8D9E6E1777CE980047BFBD /* ModeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeDetailViewController.h; sourceTree = "<group>"; };
+		BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeDetailViewController.m; sourceTree = "<group>"; };
 		BEA295F016DAB2D900066468 /* Burning Hands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Burning Hands.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA295F416DAB2D900066468 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEA295F616DAB2D900066468 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -264,6 +267,8 @@
 				BE8D9E691777BDB50047BFBD /* ModeDataController.m */,
 				BE8D9E6B1777C65B0047BFBD /* ModeSelectionViewController.h */,
 				BE8D9E6C1777C65B0047BFBD /* ModeSelectionViewController.m */,
+				BE8D9E6E1777CE980047BFBD /* ModeDetailViewController.h */,
+				BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */,
 			);
 			path = "Burning Hands";
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 				BE8D9E671777BA8D0047BFBD /* ModeProperty.m in Sources */,
 				BE8D9E6A1777BDB50047BFBD /* ModeDataController.m in Sources */,
 				BE8D9E6D1777C65B0047BFBD /* ModeSelectionViewController.m in Sources */,
+				BE8D9E701777CE990047BFBD /* ModeDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
