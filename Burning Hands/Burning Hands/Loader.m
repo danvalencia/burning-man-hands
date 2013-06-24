@@ -30,7 +30,9 @@
         self.animationImages = [self buildImagesForAnimation];
         self.animationDuration = 1.0f;
         self.animationRepeatCount = 0;
-
+        [self startAnimating];
+        [self setHidden:NO];
+        
     }
     return self;
 }

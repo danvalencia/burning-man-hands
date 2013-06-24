@@ -46,6 +46,7 @@
 		BE8D9E6A1777BDB50047BFBD /* ModeDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E691777BDB50047BFBD /* ModeDataController.m */; };
 		BE8D9E6D1777C65B0047BFBD /* ModeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E6C1777C65B0047BFBD /* ModeSelectionViewController.m */; };
 		BE8D9E701777CE990047BFBD /* ModeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */; };
+		BE8D9E721777D94E0047BFBD /* BM13sticker.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8D9E711777D94E0047BFBD /* BM13sticker.png */; };
 		BEA295F516DAB2D900066468 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F416DAB2D900066468 /* UIKit.framework */; };
 		BEA295F716DAB2D900066468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F616DAB2D900066468 /* Foundation.framework */; };
 		BEA295F916DAB2D900066468 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F816DAB2D900066468 /* CoreGraphics.framework */; };
@@ -122,6 +123,7 @@
 		BE8D9E6C1777C65B0047BFBD /* ModeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeSelectionViewController.m; sourceTree = "<group>"; };
 		BE8D9E6E1777CE980047BFBD /* ModeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeDetailViewController.h; sourceTree = "<group>"; };
 		BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeDetailViewController.m; sourceTree = "<group>"; };
+		BE8D9E711777D94E0047BFBD /* BM13sticker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BM13sticker.png; sourceTree = "<group>"; };
 		BEA295F016DAB2D900066468 /* Burning Hands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Burning Hands.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA295F416DAB2D900066468 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEA295F616DAB2D900066468 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -276,6 +278,7 @@
 		BEA295FB16DAB2D900066468 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BE8D9E711777D94E0047BFBD /* BM13sticker.png */,
 				BE8D9E601777A3840047BFBD /* connect.png */,
 				BE1C346C17012C33005479B1 /* bloggif_decode_gif */,
 				BEA295FC16DAB2D900066468 /* Burning Hands-Info.plist */,
@@ -429,6 +432,7 @@
 				BE7690BD17733D7000B27D77 /* HandsIcon.png in Resources */,
 				BE7690BF17733DA800B27D77 /* HandsIcon_iPhone.png in Resources */,
 				BE8D9E611777A3840047BFBD /* connect.png in Resources */,
+				BE8D9E721777D94E0047BFBD /* BM13sticker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

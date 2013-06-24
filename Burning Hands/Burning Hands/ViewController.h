@@ -13,8 +13,6 @@
 
 @interface ViewController : UIViewController <UITextFieldDelegate, BLEDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *greetingLabel;
-
 @property (weak, nonatomic) IBOutlet UIButton *connectBtn;
 @property (strong, nonatomic) IBOutlet Loader *loader;
 

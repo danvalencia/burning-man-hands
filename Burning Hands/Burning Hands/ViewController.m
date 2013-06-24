@@ -60,19 +60,17 @@
 
 - (void)initLoader
 {
-    self.loader = [[Loader alloc] initWithFrame:self.view.bounds];
-    [self.loader startAnimating];
+    //self.loader = [[Loader alloc] initWithFrame:self.view.bounds];
+    //[self.loader startAnimating];
     [self.loader setHidden:TRUE];
-    self.loader.frame = CGRectMake(0, 0, 64, 64);
-    [self.view addSubview: self.loader];
+    //self.loader.frame = CGRectMake(0, 0, 64, 64);
+    //[self.view addSubview: self.loader];
 }
 
 -(void) bleDidConnect
 {
     NSLog(@"->Connected");
-    
-    self.greetingLabel.text = @"   Connected";
-    
+        
     [self.loader stopAnimating];
     
 }
@@ -144,8 +142,6 @@
     }
     else
     {
-        self.greetingLabel.text = @"Disconnected";
-        
         [self.connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
         [self.loader stopAnimating];
     }
