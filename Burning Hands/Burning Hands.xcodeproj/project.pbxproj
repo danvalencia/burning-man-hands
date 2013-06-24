@@ -40,6 +40,11 @@
 		BE1C34A817012C33005479B1 /* frame-9.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348A17012C33005479B1 /* frame-9.gif */; };
 		BE7690BD17733D7000B27D77 /* HandsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7690BC17733D7000B27D77 /* HandsIcon.png */; };
 		BE7690BF17733DA800B27D77 /* HandsIcon_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7690BE17733DA800B27D77 /* HandsIcon_iPhone.png */; };
+		BE8D9E611777A3840047BFBD /* connect.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8D9E601777A3840047BFBD /* connect.png */; };
+		BE8D9E641777B9920047BFBD /* Mode.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E631777B9920047BFBD /* Mode.m */; };
+		BE8D9E671777BA8D0047BFBD /* ModeProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E661777BA8D0047BFBD /* ModeProperty.m */; };
+		BE8D9E6A1777BDB50047BFBD /* ModeDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E691777BDB50047BFBD /* ModeDataController.m */; };
+		BE8D9E6D1777C65B0047BFBD /* ModeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E6C1777C65B0047BFBD /* ModeSelectionViewController.m */; };
 		BEA295F516DAB2D900066468 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F416DAB2D900066468 /* UIKit.framework */; };
 		BEA295F716DAB2D900066468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F616DAB2D900066468 /* Foundation.framework */; };
 		BEA295F916DAB2D900066468 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F816DAB2D900066468 /* CoreGraphics.framework */; };
@@ -105,6 +110,15 @@
 		BE1C348A17012C33005479B1 /* frame-9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame-9.gif"; sourceTree = "<group>"; };
 		BE7690BC17733D7000B27D77 /* HandsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandsIcon.png; sourceTree = "<group>"; };
 		BE7690BE17733DA800B27D77 /* HandsIcon_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandsIcon_iPhone.png; sourceTree = "<group>"; };
+		BE8D9E601777A3840047BFBD /* connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect.png; sourceTree = "<group>"; };
+		BE8D9E621777B9920047BFBD /* Mode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mode.h; sourceTree = "<group>"; };
+		BE8D9E631777B9920047BFBD /* Mode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mode.m; sourceTree = "<group>"; };
+		BE8D9E651777BA8D0047BFBD /* ModeProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeProperty.h; sourceTree = "<group>"; };
+		BE8D9E661777BA8D0047BFBD /* ModeProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeProperty.m; sourceTree = "<group>"; };
+		BE8D9E681777BDB50047BFBD /* ModeDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeDataController.h; sourceTree = "<group>"; };
+		BE8D9E691777BDB50047BFBD /* ModeDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeDataController.m; sourceTree = "<group>"; };
+		BE8D9E6B1777C65B0047BFBD /* ModeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeSelectionViewController.h; sourceTree = "<group>"; };
+		BE8D9E6C1777C65B0047BFBD /* ModeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeSelectionViewController.m; sourceTree = "<group>"; };
 		BEA295F016DAB2D900066468 /* Burning Hands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Burning Hands.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA295F416DAB2D900066468 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEA295F616DAB2D900066468 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -242,6 +256,14 @@
 				BEA295FB16DAB2D900066468 /* Supporting Files */,
 				BEEF15EB175BF4E200684921 /* Loader.h */,
 				BEEF15EC175BF4E200684921 /* Loader.m */,
+				BE8D9E621777B9920047BFBD /* Mode.h */,
+				BE8D9E631777B9920047BFBD /* Mode.m */,
+				BE8D9E651777BA8D0047BFBD /* ModeProperty.h */,
+				BE8D9E661777BA8D0047BFBD /* ModeProperty.m */,
+				BE8D9E681777BDB50047BFBD /* ModeDataController.h */,
+				BE8D9E691777BDB50047BFBD /* ModeDataController.m */,
+				BE8D9E6B1777C65B0047BFBD /* ModeSelectionViewController.h */,
+				BE8D9E6C1777C65B0047BFBD /* ModeSelectionViewController.m */,
 			);
 			path = "Burning Hands";
 			sourceTree = "<group>";
@@ -249,6 +271,7 @@
 		BEA295FB16DAB2D900066468 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BE8D9E601777A3840047BFBD /* connect.png */,
 				BE1C346C17012C33005479B1 /* bloggif_decode_gif */,
 				BEA295FC16DAB2D900066468 /* Burning Hands-Info.plist */,
 				BE1C346A170129EC005479B1 /* loader.gif */,
@@ -400,6 +423,7 @@
 				BE1C34A817012C33005479B1 /* frame-9.gif in Resources */,
 				BE7690BD17733D7000B27D77 /* HandsIcon.png in Resources */,
 				BE7690BF17733DA800B27D77 /* HandsIcon_iPhone.png in Resources */,
+				BE8D9E611777A3840047BFBD /* connect.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +463,10 @@
 				BEA2961416DAB2D900066468 /* ViewController.m in Sources */,
 				BEEF15ED175BF4E200684921 /* Loader.m in Sources */,
 				BEEF1608175C04AB00684921 /* BLE.m in Sources */,
+				BE8D9E641777B9920047BFBD /* Mode.m in Sources */,
+				BE8D9E671777BA8D0047BFBD /* ModeProperty.m in Sources */,
+				BE8D9E6A1777BDB50047BFBD /* ModeDataController.m in Sources */,
+				BE8D9E6D1777C65B0047BFBD /* ModeSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
