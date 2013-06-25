@@ -47,6 +47,8 @@
 		BE8D9E6D1777C65B0047BFBD /* ModeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E6C1777C65B0047BFBD /* ModeSelectionViewController.m */; };
 		BE8D9E701777CE990047BFBD /* ModeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */; };
 		BE8D9E721777D94E0047BFBD /* BM13sticker.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8D9E711777D94E0047BFBD /* BM13sticker.png */; };
+		BE8D9E751777E3750047BFBD /* HandsTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E741777E3750047BFBD /* HandsTabBarViewController.m */; };
+		BEA28B34177923B000E467EB /* BLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28B33177923B000E467EB /* BLEManager.m */; };
 		BEA295F516DAB2D900066468 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F416DAB2D900066468 /* UIKit.framework */; };
 		BEA295F716DAB2D900066468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F616DAB2D900066468 /* Foundation.framework */; };
 		BEA295F916DAB2D900066468 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F816DAB2D900066468 /* CoreGraphics.framework */; };
@@ -57,7 +59,7 @@
 		BEA2960916DAB2D900066468 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEA2960816DAB2D900066468 /* Default@2x.png */; };
 		BEA2960B16DAB2D900066468 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BEA2960A16DAB2D900066468 /* Default-568h@2x.png */; };
 		BEA2960E16DAB2D900066468 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA2960C16DAB2D900066468 /* MainStoryboard_iPhone.storyboard */; };
-		BEA2961416DAB2D900066468 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA2961316DAB2D900066468 /* ViewController.m */; };
+		BEA2961416DAB2D900066468 /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA2961316DAB2D900066468 /* ConnectionViewController.m */; };
 		BEA2961C16DAB2D900066468 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA2961B16DAB2D900066468 /* SenTestingKit.framework */; };
 		BEA2961D16DAB2D900066468 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F416DAB2D900066468 /* UIKit.framework */; };
 		BEA2961E16DAB2D900066468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F616DAB2D900066468 /* Foundation.framework */; };
@@ -124,6 +126,10 @@
 		BE8D9E6E1777CE980047BFBD /* ModeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeDetailViewController.h; sourceTree = "<group>"; };
 		BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeDetailViewController.m; sourceTree = "<group>"; };
 		BE8D9E711777D94E0047BFBD /* BM13sticker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BM13sticker.png; sourceTree = "<group>"; };
+		BE8D9E731777E3750047BFBD /* HandsTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandsTabBarViewController.h; sourceTree = "<group>"; };
+		BE8D9E741777E3750047BFBD /* HandsTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsTabBarViewController.m; sourceTree = "<group>"; };
+		BEA28B32177923B000E467EB /* BLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEManager.h; sourceTree = "<group>"; };
+		BEA28B33177923B000E467EB /* BLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEManager.m; sourceTree = "<group>"; };
 		BEA295F016DAB2D900066468 /* Burning Hands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Burning Hands.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA295F416DAB2D900066468 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEA295F616DAB2D900066468 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -138,8 +144,8 @@
 		BEA2960816DAB2D900066468 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		BEA2960A16DAB2D900066468 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BEA2960D16DAB2D900066468 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		BEA2961216DAB2D900066468 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BEA2961316DAB2D900066468 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BEA2961216DAB2D900066468 /* ConnectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectionViewController.h; sourceTree = "<group>"; };
+		BEA2961316DAB2D900066468 /* ConnectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectionViewController.m; sourceTree = "<group>"; };
 		BEA2961A16DAB2D900066468 /* Burning HandsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Burning HandsTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA2961B16DAB2D900066468 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BEA2962316DAB2D900066468 /* Burning HandsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Burning HandsTests-Info.plist"; sourceTree = "<group>"; };
@@ -256,8 +262,8 @@
 				BEA2960316DAB2D900066468 /* AppDelegate.h */,
 				BEA2960416DAB2D900066468 /* AppDelegate.m */,
 				BEA2960C16DAB2D900066468 /* MainStoryboard_iPhone.storyboard */,
-				BEA2961216DAB2D900066468 /* ViewController.h */,
-				BEA2961316DAB2D900066468 /* ViewController.m */,
+				BEA2961216DAB2D900066468 /* ConnectionViewController.h */,
+				BEA2961316DAB2D900066468 /* ConnectionViewController.m */,
 				BEA295FB16DAB2D900066468 /* Supporting Files */,
 				BEEF15EB175BF4E200684921 /* Loader.h */,
 				BEEF15EC175BF4E200684921 /* Loader.m */,
@@ -271,6 +277,10 @@
 				BE8D9E6C1777C65B0047BFBD /* ModeSelectionViewController.m */,
 				BE8D9E6E1777CE980047BFBD /* ModeDetailViewController.h */,
 				BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */,
+				BE8D9E731777E3750047BFBD /* HandsTabBarViewController.h */,
+				BE8D9E741777E3750047BFBD /* HandsTabBarViewController.m */,
+				BEA28B32177923B000E467EB /* BLEManager.h */,
+				BEA28B33177923B000E467EB /* BLEManager.m */,
 			);
 			path = "Burning Hands";
 			sourceTree = "<group>";
@@ -469,7 +479,7 @@
 			files = (
 				BEA2960116DAB2D900066468 /* main.m in Sources */,
 				BEA2960516DAB2D900066468 /* AppDelegate.m in Sources */,
-				BEA2961416DAB2D900066468 /* ViewController.m in Sources */,
+				BEA2961416DAB2D900066468 /* ConnectionViewController.m in Sources */,
 				BEEF15ED175BF4E200684921 /* Loader.m in Sources */,
 				BEEF1608175C04AB00684921 /* BLE.m in Sources */,
 				BE8D9E641777B9920047BFBD /* Mode.m in Sources */,
@@ -477,6 +487,8 @@
 				BE8D9E6A1777BDB50047BFBD /* ModeDataController.m in Sources */,
 				BE8D9E6D1777C65B0047BFBD /* ModeSelectionViewController.m in Sources */,
 				BE8D9E701777CE990047BFBD /* ModeDetailViewController.m in Sources */,
+				BE8D9E751777E3750047BFBD /* HandsTabBarViewController.m in Sources */,
+				BEA28B34177923B000E467EB /* BLEManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

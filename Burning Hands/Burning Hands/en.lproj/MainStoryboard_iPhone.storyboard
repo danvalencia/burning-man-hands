@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Connect-->
+        <!--Connection View Controller - Connect-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="ConnectionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -63,21 +63,29 @@
                                     <constraint firstAttribute="width" constant="32" id="fTu-hf-zO2"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="BM13sticker.png" translatesAutoresizingMaskIntoConstraints="NO" id="cB3-bG-9vO">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="G3l-XV-tSF"/>
+                                    <constraint firstAttribute="height" constant="128" id="JYU-4p-5t3"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="6fg-m9-Iy0" firstAttribute="top" secondItem="d5v-4z-0Gu" secondAttribute="top" type="default" id="05i-Ra-Zgu"/>
-                            <constraint firstItem="dgu-AE-aMI" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="95" id="2At-1f-BrO"/>
-                            <constraint firstItem="6fg-m9-Iy0" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="30" id="Ju7-t1-3wc"/>
+                            <constraint firstAttribute="trailing" secondItem="Llq-YQ-Wag" secondAttribute="trailing" constant="32" id="3Cf-ND-xYi"/>
+                            <constraint firstItem="6fg-m9-Iy0" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="8DC-9q-1iK"/>
+                            <constraint firstItem="dgu-AE-aMI" firstAttribute="leading" secondItem="6fg-m9-Iy0" secondAttribute="leading" type="default" id="FL4-vC-oUR"/>
+                            <constraint firstItem="d5v-4z-0Gu" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Gmp-sy-EaU"/>
+                            <constraint firstItem="dgu-AE-aMI" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="36" id="HX8-Dy-ZeZ"/>
+                            <constraint firstAttribute="trailing" secondItem="d5v-4z-0Gu" secondAttribute="trailing" constant="36" id="J6Y-h1-Oe5"/>
+                            <constraint firstItem="cB3-bG-9vO" firstAttribute="centerX" secondItem="4Nl-Ra-PMU" secondAttribute="centerX" type="default" id="Mda-ar-LsV"/>
                             <constraint firstItem="4Nl-Ra-PMU" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OHL-Vo-yGP"/>
-                            <constraint firstAttribute="trailing" secondItem="d5v-4z-0Gu" secondAttribute="trailing" constant="42" id="PEP-Xr-VGe"/>
+                            <constraint firstItem="cB3-bG-9vO" firstAttribute="top" secondItem="3" secondAttribute="top" constant="186" id="T51-il-VHL"/>
                             <constraint firstAttribute="bottom" secondItem="Llq-YQ-Wag" secondAttribute="bottom" constant="25" id="Tor-6q-dl8"/>
-                            <constraint firstItem="dgu-AE-aMI" firstAttribute="top" secondItem="d5v-4z-0Gu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WaA-Qk-a50"/>
                             <constraint firstAttribute="trailing" secondItem="4Nl-Ra-PMU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZLL-aO-1pd"/>
-                            <constraint firstAttribute="trailing" secondItem="Llq-YQ-Wag" secondAttribute="trailing" constant="32" id="fwJ-ZH-H04"/>
+                            <constraint firstItem="dgu-AE-aMI" firstAttribute="top" secondItem="3" secondAttribute="top" constant="64" id="eNH-cA-5Oz"/>
                             <constraint firstAttribute="bottom" secondItem="4Nl-Ra-PMU" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="fxA-qu-gcb"/>
                             <constraint firstItem="d5v-4z-0Gu" firstAttribute="baseline" secondItem="6fg-m9-Iy0" secondAttribute="baseline" type="default" id="gBx-9V-JeA"/>
-                            <constraint firstItem="6fg-m9-Iy0" firstAttribute="top" secondItem="3" secondAttribute="top" constant="129" id="r2p-Y2-aeQ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Connect" id="de1-FI-cOp"/>
@@ -182,7 +190,33 @@
                     <view key="view" contentMode="scaleToFill" id="kC6-3h-RKz">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqK-M6-Ad9">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Update Hands">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="D9U-oH-L6o">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="391" id="Ulb-KZ-MBz"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KqK-M6-Ad9" firstAttribute="leading" secondItem="kC6-3h-RKz" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3Rz-Ee-Ty1"/>
+                            <constraint firstItem="D9U-oH-L6o" firstAttribute="leading" secondItem="kC6-3h-RKz" secondAttribute="leading" type="default" id="B28-hQ-Vdx"/>
+                            <constraint firstItem="D9U-oH-L6o" firstAttribute="trailing" secondItem="kC6-3h-RKz" secondAttribute="trailing" type="default" id="VEV-VG-LkP"/>
+                            <constraint firstAttribute="trailing" secondItem="KqK-M6-Ad9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZFS-0r-Go9"/>
+                            <constraint firstItem="KqK-M6-Ad9" firstAttribute="top" secondItem="D9U-oH-L6o" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mnl-mv-5Oa"/>
+                            <constraint firstItem="D9U-oH-L6o" firstAttribute="top" secondItem="kC6-3h-RKz" secondAttribute="top" type="default" id="xHb-0Y-yjb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dkw-kl-nbG"/>
                 </viewController>
@@ -207,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="206" y="976"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Hands Tab Bar View Controller-->
         <scene sceneID="O3s-a6-ufz">
             <objects>
-                <tabBarController id="Da7-SP-b0w" sceneMemberID="viewController">
+                <tabBarController id="Da7-SP-b0w" customClass="HandsTabBarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="WWd-JQ-jta">
@@ -233,6 +267,20 @@
         <image name="BM13sticker.png" width="144" height="144"/>
     </resources>
     <classes>
+        <class className="ConnectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="connectToDevice:"/>
+                <relationship kind="action" name="toggleLED:"/>
+                <relationship kind="action" name="updateColor:"/>
+                <relationship kind="outlet" name="colorTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="connectBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loader" candidateClass="Loader"/>
+            </relationships>
+        </class>
+        <class className="HandsTabBarViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HandsTabBarViewController.h"/>
+        </class>
         <class className="Loader" superclassName="UIImageView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/Loader.h"/>
         </class>
@@ -247,17 +295,6 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="connectToDevice:"/>
-                <relationship kind="action" name="toggleLED:"/>
-                <relationship kind="action" name="updateColor:"/>
-                <relationship kind="outlet" name="colorTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="connectBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="loader" candidateClass="Loader"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

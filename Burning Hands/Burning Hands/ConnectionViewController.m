@@ -6,12 +6,13 @@
 //  Copyright (c) 2013 Daniel Valencia Co. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ConnectionViewController.h"
 #import "Loader.h"
+#import "BLEManager.h"
 
 #define HEX_CHARS @"0123456789ABCDEFabcdef"
 
-@interface ViewController ()
+@interface ConnectionViewController ()
 
 - (void) initLoader;
 - (void) initBluetooth;
@@ -20,12 +21,8 @@
 
 @end
 
-@implementation ViewController
+@implementation ConnectionViewController
 
-//@synthesize userName = _userName;
-//@synthesize connectBtn = _connectBtn;
-
-@synthesize ble;
 @synthesize colorTextField;
 @synthesize loader;
 
@@ -52,19 +49,12 @@
 
 -(void)initBluetooth
 {
-    NSLog(@"Initializing Bluetooth!");
-    self.ble = [[BLE alloc] init];
-    [self.ble controlSetup:1];
-    self.ble.delegate = self;
+    [[BLEManager sharedInstance] initializeWithDelegate:self];
 }
 
 - (void)initLoader
 {
-    //self.loader = [[Loader alloc] initWithFrame:self.view.bounds];
-    //[self.loader startAnimating];
     [self.loader setHidden:TRUE];
-    //self.loader.frame = CGRectMake(0, 0, 64, 64);
-    //[self.view addSubview: self.loader];
 }
 
 -(void) bleDidConnect
@@ -127,7 +117,7 @@
     NSLog(@"Sending command: %d; Red: %d; Green %d; Blue %d", command[0], command[1], command[2], command[3]);
     
     NSData *data = [[NSData alloc] initWithBytes:command length:4];
-    [self.ble write:data];
+    [[BLEManager sharedInstance] sendCommand:data];
 }
 
 
@@ -136,11 +126,7 @@
     [self.connectBtn setEnabled:true];
     [self.connectBtn setTitle:@"Disconnect" forState:UIControlStateNormal];
     
-    if (self.ble.peripherals.count > 0)
-    {
-        [self.ble connectPeripheral:[self.ble.peripherals objectAtIndex:0]];
-    }
-    else
+    if (![[BLEManager sharedInstance] connectToDevice])
     {
         [self.connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
         [self.loader stopAnimating];
@@ -184,32 +170,22 @@
 
 - (IBAction)connectToDevice:(id)sender
 {
-    if (self.ble.activePeripheral)
-        if(self.ble.activePeripheral.isConnected)
-        {
-            [[self.ble CM] cancelPeripheralConnection:[self.ble activePeripheral]];
-            
-            [self.connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
-            return;
-        }
+    BLEManager* bleManager = [BLEManager sharedInstance];
+    if ([bleManager isConnected]) {
+        [bleManager cancelActiveConnections];
+        [self.connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
+        return;
+    }
     
-    if (self.ble.peripherals)
-        self.ble.peripherals = nil;
+    [bleManager findBluetoothPeripherals];
     
     [self.connectBtn setEnabled:false];
     [self.connectBtn setTitle:@"Connecting" forState:UIControlStateNormal];
-    [self.ble findBLEPeripherals:2];
     
     [NSTimer scheduledTimerWithTimeInterval:(float)2.0 target:self selector:@selector(connectionTimer:) userInfo:nil repeats:NO];
     
     [self.loader startAnimating];
-    
     [self.loader setHidden:FALSE];
-    
-    //    NSString *greeting = @"Connecting";
-    //
-    //    self.greetingLabel.text = greeting;
-    
 }
 
 - (IBAction)toggleLED:(id)sender
