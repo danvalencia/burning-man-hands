@@ -10,41 +10,27 @@
 #import "Loader.h"
 #import "BLEManager.h"
 
-#define HEX_CHARS @"0123456789ABCDEFabcdef"
-
 @interface ConnectionViewController ()
 
 - (void) initLoader;
 - (void) initBluetooth;
-- (NSString*)padWithZeros:(NSString*)colorText;
-- (void) sendColorUpdate:(UInt8[])colors;
 
 @end
 
 @implementation ConnectionViewController
 
-@synthesize colorTextField;
 @synthesize loader;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self initLoader];
     [self initBluetooth];
-    
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)initBluetooth
@@ -106,19 +92,6 @@
 
 }
 
--(void) sendColorUpdate:(UInt8*)colors
-{
-    UInt8 command[4] = {};
-    command[0] = 0x01;
-    command[1] = colors[0];
-    command[2] = colors[1];
-    command[3] = colors[2];
-    
-    NSLog(@"Sending command: %d; Red: %d; Green %d; Blue %d", command[0], command[1], command[2], command[3]);
-    
-    NSData *data = [[NSData alloc] initWithBytes:command length:4];
-    [[BLEManager sharedInstance] sendCommand:data];
-}
 
 
 -(void) connectionTimer:(NSTimer *)timer
@@ -131,41 +104,6 @@
         [self.connectBtn setTitle:@"Connect" forState:UIControlStateNormal];
         [self.loader stopAnimating];
     }
-}
-
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if(textField == self.colorTextField)
-    {
-        [self.colorTextField resignFirstResponder];
-        NSLog(@"Color text field is being called!");
-    }
-    else
-    {
-        NSLog(@"Color text field is NOT being called!");
-    }
- 
-    return YES;
-}
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    NSCharacterSet *unacceptedInput = [[NSCharacterSet characterSetWithCharactersInString:HEX_CHARS] invertedSet];
-    if(textField == self.colorTextField)
-    {
-        NSLog(@"Color text field is being called!");
-        if (textField.text.length + string.length > 6 )
-        {
-            return NO;
-        }
-        else
-        {
-            return [[string componentsSeparatedByCharactersInSet:unacceptedInput] count] <= 1;
-        }
-    }
-        
-    return YES;
 }
 
 - (IBAction)connectToDevice:(id)sender
@@ -187,58 +125,6 @@
     [self.loader startAnimating];
     [self.loader setHidden:FALSE];
 }
-
-- (IBAction)toggleLED:(id)sender
-{
-    if ([sender isOn])
-    {
-        //[self sendDigitalOut:0x01];
-        NSLog(@"Switch is ON");
-        
-    }
-    else
-    {
-        //[self sendDigitalOut:0x00];
-        NSLog(@"Switch is OFF");
-        
-    }
-}
-
-- (IBAction)updateColor:(id)sender {
-    [self.view endEditing:YES];
-    NSString* colorText = [[self colorTextField] text];
-    NSString* hexColor = [self padWithZeros:colorText];
-    self.colorTextField.text = hexColor;
-    UInt8 colorArray[3] = {};
-    
-    unsigned firstDigitInt;
-    for (int i = 0; i < 6; i += 2) {
-        NSString *digit = [hexColor substringWithRange:NSMakeRange(i, 2)];
-        [[NSScanner scannerWithString:digit] scanHexInt:&firstDigitInt];
-        colorArray[i/2] = (char)firstDigitInt;
-        NSLog(@"Digit: %u", firstDigitInt);
-    }
-    
-    [self sendColorUpdate:colorArray];
-
-}
-
-- (NSString*)padWithZeros:(NSString*)string
-{
-    NSMutableString *paddedString = [NSMutableString stringWithCapacity:6];
-    [paddedString appendString:string];
-    
-    if(string.length < 6)
-    {
-        for(UInt8 i = 6 - string.length; i > 0; i--)
-        {
-            [paddedString appendString:@"0"];
-        }
-    }
-    return paddedString;
-}
-
-
 
 //- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
 ////    if (theTextField == self.nameTextField) {

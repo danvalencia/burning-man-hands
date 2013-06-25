@@ -11,17 +11,11 @@
 #import "BLE.h"
 
 
-@interface ConnectionViewController : UIViewController <UITextFieldDelegate, BLEDelegate>
+@interface ConnectionViewController : UIViewController <BLEDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *connectBtn;
 @property (strong, nonatomic) IBOutlet Loader *loader;
 
-
-@property (copy, nonatomic) NSString *userName;
-@property (strong, nonatomic) IBOutlet UITextField *colorTextField;
-
 - (IBAction)connectToDevice:(id)sender;
-- (IBAction)toggleLED:(id)sender;
-- (IBAction)updateColor:(id)sender;
 
 @end

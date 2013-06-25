@@ -12,25 +12,6 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d5v-4z-0Gu">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Jap-hh-GDo"/>
-                                    <constraint firstAttribute="width" constant="105" id="xYx-He-SLC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="2" id="dBt-fI-4rP"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Color:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fg-m9-Iy0">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="biC-He-7hz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nl-Ra-PMU">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Connect">
@@ -44,23 +25,10 @@
                                     <action selector="connectToDevice:" destination="2" eventType="touchUpInside" id="JuN-6K-TDO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgu-AE-aMI">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Update Color">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="updateColor:" destination="2" eventType="touchUpInside" id="KHp-x0-mEc"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Llq-YQ-Wag" customClass="Loader">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="N5l-SH-HFj"/>
-                                    <constraint firstAttribute="width" constant="32" id="fTu-hf-zO2"/>
+                                    <constraint firstAttribute="width" constant="64" id="0DT-yU-zSR"/>
+                                    <constraint firstAttribute="height" constant="64" id="eed-Zo-cM2"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="BM13sticker.png" translatesAutoresizingMaskIntoConstraints="NO" id="cB3-bG-9vO">
@@ -72,25 +40,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Llq-YQ-Wag" secondAttribute="trailing" constant="32" id="3Cf-ND-xYi"/>
-                            <constraint firstItem="6fg-m9-Iy0" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="8DC-9q-1iK"/>
-                            <constraint firstItem="dgu-AE-aMI" firstAttribute="leading" secondItem="6fg-m9-Iy0" secondAttribute="leading" type="default" id="FL4-vC-oUR"/>
-                            <constraint firstItem="d5v-4z-0Gu" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Gmp-sy-EaU"/>
-                            <constraint firstItem="dgu-AE-aMI" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="36" id="HX8-Dy-ZeZ"/>
-                            <constraint firstAttribute="trailing" secondItem="d5v-4z-0Gu" secondAttribute="trailing" constant="36" id="J6Y-h1-Oe5"/>
-                            <constraint firstItem="cB3-bG-9vO" firstAttribute="centerX" secondItem="4Nl-Ra-PMU" secondAttribute="centerX" type="default" id="Mda-ar-LsV"/>
                             <constraint firstItem="4Nl-Ra-PMU" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OHL-Vo-yGP"/>
-                            <constraint firstItem="cB3-bG-9vO" firstAttribute="top" secondItem="3" secondAttribute="top" constant="186" id="T51-il-VHL"/>
-                            <constraint firstAttribute="bottom" secondItem="Llq-YQ-Wag" secondAttribute="bottom" constant="25" id="Tor-6q-dl8"/>
+                            <constraint firstItem="Llq-YQ-Wag" firstAttribute="centerX" secondItem="4Nl-Ra-PMU" secondAttribute="centerX" type="default" id="XKc-Gg-tQi"/>
                             <constraint firstAttribute="trailing" secondItem="4Nl-Ra-PMU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZLL-aO-1pd"/>
-                            <constraint firstItem="dgu-AE-aMI" firstAttribute="top" secondItem="3" secondAttribute="top" constant="64" id="eNH-cA-5Oz"/>
-                            <constraint firstAttribute="bottom" secondItem="4Nl-Ra-PMU" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="fxA-qu-gcb"/>
-                            <constraint firstItem="d5v-4z-0Gu" firstAttribute="baseline" secondItem="6fg-m9-Iy0" secondAttribute="baseline" type="default" id="gBx-9V-JeA"/>
+                            <constraint firstItem="Llq-YQ-Wag" firstAttribute="centerX" secondItem="cB3-bG-9vO" secondAttribute="centerX" type="default" id="ZPu-tg-mvv"/>
+                            <constraint firstItem="cB3-bG-9vO" firstAttribute="top" secondItem="3" secondAttribute="top" constant="122" id="dgC-7x-vDy"/>
+                            <constraint firstAttribute="bottom" secondItem="4Nl-Ra-PMU" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="lPd-De-Q4t"/>
+                            <constraint firstAttribute="bottom" secondItem="Llq-YQ-Wag" secondAttribute="bottom" constant="76" id="pgb-DX-TeP"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Connect" id="de1-FI-cOp"/>
                     <connections>
-                        <outlet property="colorTextField" destination="d5v-4z-0Gu" id="A8X-GR-whX"/>
                         <outlet property="connectBtn" destination="4Nl-Ra-PMU" id="FqO-Q2-GPG"/>
                         <outlet property="loader" destination="Llq-YQ-Wag" id="5hj-n1-hbo"/>
                     </connections>
@@ -123,25 +83,58 @@
             </objects>
             <point key="canvasLocation" x="206" y="1659"/>
         </scene>
-        <!--View Controller - About-->
+        <!--About View Controller - About-->
         <scene sceneID="hbf-vi-D8i">
             <objects>
-                <viewController id="JUn-Vs-FMD" sceneMemberID="viewController">
+                <viewController id="JUn-Vs-FMD" customClass="AboutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GYr-7n-Pm6">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" image="BM13sticker.png" translatesAutoresizingMaskIntoConstraints="NO" id="anK-Xn-EOR"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oc-wC-d5k">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateColor:" destination="JUn-Vs-FMD" eventType="touchUpInside" id="B47-Kr-ESI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Color:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ezw-Jj-R1H">
+                                <fontDescription key="fontDescription" name="Helvetica-BoldOblique" family="Helvetica" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6D-CW-may">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="8u3-um-60T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JUn-Vs-FMD" id="kOw-4d-y3D"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="anK-Xn-EOR" firstAttribute="trailing" secondItem="GYr-7n-Pm6" secondAttribute="trailing" type="default" id="55N-h9-K8W"/>
-                            <constraint firstItem="anK-Xn-EOR" firstAttribute="leading" secondItem="GYr-7n-Pm6" secondAttribute="leading" type="default" id="7VX-gV-Mgt"/>
-                            <constraint firstItem="anK-Xn-EOR" firstAttribute="bottom" secondItem="GYr-7n-Pm6" secondAttribute="bottom" type="default" id="Jpz-QI-htt"/>
-                            <constraint firstItem="anK-Xn-EOR" firstAttribute="top" secondItem="GYr-7n-Pm6" secondAttribute="top" type="default" id="Op0-fL-qkl"/>
+                            <constraint firstAttribute="trailing" secondItem="0oc-wC-d5k" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="76f-Fv-WhO"/>
+                            <constraint firstItem="Ezw-Jj-R1H" firstAttribute="leading" secondItem="GYr-7n-Pm6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="L4h-fw-xDE"/>
+                            <constraint firstItem="u6D-CW-may" firstAttribute="top" secondItem="GYr-7n-Pm6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="OR7-lN-KlR"/>
+                            <constraint firstItem="Ezw-Jj-R1H" firstAttribute="top" secondItem="GYr-7n-Pm6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="blY-YI-c60"/>
+                            <constraint firstAttribute="bottom" secondItem="0oc-wC-d5k" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tch-pL-JD6"/>
+                            <constraint firstAttribute="trailing" secondItem="u6D-CW-may" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="w33-HA-YIy"/>
+                            <constraint firstItem="0oc-wC-d5k" firstAttribute="leading" secondItem="GYr-7n-Pm6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yUf-bB-5JI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" id="a4Y-Sy-ATz"/>
+                    <connections>
+                        <outlet property="colorTextField" destination="u6D-CW-may" id="EXf-Pj-GEe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEA-TW-Gjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,13 +260,17 @@
         <image name="BM13sticker.png" width="144" height="144"/>
     </resources>
     <classes>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="updateColor:"/>
+                <relationship kind="outlet" name="colorTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
         <class className="ConnectionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectionViewController.h"/>
             <relationships>
                 <relationship kind="action" name="connectToDevice:"/>
-                <relationship kind="action" name="toggleLED:"/>
-                <relationship kind="action" name="updateColor:"/>
-                <relationship kind="outlet" name="colorTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="connectBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loader" candidateClass="Loader"/>
             </relationships>
