@@ -7,7 +7,7 @@
 //
 
 #import "ModeDataController.h"
-#import "ModeProperty.h"
+#import "ModePropertyDefinition.h"
 
 @interface ModeDataController()
 
@@ -29,8 +29,8 @@
 {
     NSMutableArray *modesList = [[NSMutableArray alloc] init];
     self.masterModesList = modesList;
-    ModeProperty *modeProperty = [[ModeProperty alloc] initWithName:@"Color" code:0x01 andSize:3];
-    NSArray *propertyList = [[NSArray alloc] initWithObjects:modeProperty, nil];
+    ModePropertyDefinition *modePropertyDefinition = [[ModePropertyDefinition alloc] initWithName:@"Color" code:0x01 size:3 type:@"textfield"];
+    NSArray *propertyList = [[NSArray alloc] initWithObjects:modePropertyDefinition, nil];
     Mode *mode = [[Mode alloc] initWithName:@"Color Set" andProperties:propertyList];
     [self addMode:mode];
 }

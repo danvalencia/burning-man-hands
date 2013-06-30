@@ -38,18 +38,19 @@
 		BE1C34A617012C33005479B1 /* frame-7.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348817012C33005479B1 /* frame-7.gif */; };
 		BE1C34A717012C33005479B1 /* frame-8.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348917012C33005479B1 /* frame-8.gif */; };
 		BE1C34A817012C33005479B1 /* frame-9.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348A17012C33005479B1 /* frame-9.gif */; };
+		BE4D4FF1177F9E1600CA5554 /* RainbowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */; };
 		BE7690BD17733D7000B27D77 /* HandsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7690BC17733D7000B27D77 /* HandsIcon.png */; };
 		BE7690BF17733DA800B27D77 /* HandsIcon_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7690BE17733DA800B27D77 /* HandsIcon_iPhone.png */; };
 		BE8D9E611777A3840047BFBD /* connect.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8D9E601777A3840047BFBD /* connect.png */; };
 		BE8D9E641777B9920047BFBD /* Mode.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E631777B9920047BFBD /* Mode.m */; };
-		BE8D9E671777BA8D0047BFBD /* ModeProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E661777BA8D0047BFBD /* ModeProperty.m */; };
+		BE8D9E671777BA8D0047BFBD /* ModePropertyDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E661777BA8D0047BFBD /* ModePropertyDefinition.m */; };
 		BE8D9E6A1777BDB50047BFBD /* ModeDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E691777BDB50047BFBD /* ModeDataController.m */; };
 		BE8D9E6D1777C65B0047BFBD /* ModeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E6C1777C65B0047BFBD /* ModeSelectionViewController.m */; };
 		BE8D9E701777CE990047BFBD /* ModeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */; };
 		BE8D9E721777D94E0047BFBD /* BM13sticker.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8D9E711777D94E0047BFBD /* BM13sticker.png */; };
 		BE8D9E751777E3750047BFBD /* HandsTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E741777E3750047BFBD /* HandsTabBarViewController.m */; };
 		BEA28B34177923B000E467EB /* BLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28B33177923B000E467EB /* BLEManager.m */; };
-		BEA28B37177945EB00E467EB /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28B36177945EB00E467EB /* AboutViewController.m */; };
+		BEA28B37177945EB00E467EB /* ColorUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28B36177945EB00E467EB /* ColorUpdateViewController.m */; };
 		BEA295F516DAB2D900066468 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F416DAB2D900066468 /* UIKit.framework */; };
 		BEA295F716DAB2D900066468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F616DAB2D900066468 /* Foundation.framework */; };
 		BEA295F916DAB2D900066468 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F816DAB2D900066468 /* CoreGraphics.framework */; };
@@ -113,13 +114,15 @@
 		BE1C348817012C33005479B1 /* frame-7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame-7.gif"; sourceTree = "<group>"; };
 		BE1C348917012C33005479B1 /* frame-8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame-8.gif"; sourceTree = "<group>"; };
 		BE1C348A17012C33005479B1 /* frame-9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame-9.gif"; sourceTree = "<group>"; };
+		BE4D4FEF177F9E1600CA5554 /* RainbowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RainbowViewController.h; sourceTree = "<group>"; };
+		BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RainbowViewController.m; sourceTree = "<group>"; };
 		BE7690BC17733D7000B27D77 /* HandsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandsIcon.png; sourceTree = "<group>"; };
 		BE7690BE17733DA800B27D77 /* HandsIcon_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandsIcon_iPhone.png; sourceTree = "<group>"; };
 		BE8D9E601777A3840047BFBD /* connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect.png; sourceTree = "<group>"; };
 		BE8D9E621777B9920047BFBD /* Mode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mode.h; sourceTree = "<group>"; };
 		BE8D9E631777B9920047BFBD /* Mode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mode.m; sourceTree = "<group>"; };
-		BE8D9E651777BA8D0047BFBD /* ModeProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeProperty.h; sourceTree = "<group>"; };
-		BE8D9E661777BA8D0047BFBD /* ModeProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeProperty.m; sourceTree = "<group>"; };
+		BE8D9E651777BA8D0047BFBD /* ModePropertyDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModePropertyDefinition.h; sourceTree = "<group>"; };
+		BE8D9E661777BA8D0047BFBD /* ModePropertyDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModePropertyDefinition.m; sourceTree = "<group>"; };
 		BE8D9E681777BDB50047BFBD /* ModeDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeDataController.h; sourceTree = "<group>"; };
 		BE8D9E691777BDB50047BFBD /* ModeDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModeDataController.m; sourceTree = "<group>"; };
 		BE8D9E6B1777C65B0047BFBD /* ModeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModeSelectionViewController.h; sourceTree = "<group>"; };
@@ -131,8 +134,8 @@
 		BE8D9E741777E3750047BFBD /* HandsTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsTabBarViewController.m; sourceTree = "<group>"; };
 		BEA28B32177923B000E467EB /* BLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEManager.h; sourceTree = "<group>"; };
 		BEA28B33177923B000E467EB /* BLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEManager.m; sourceTree = "<group>"; };
-		BEA28B35177945EB00E467EB /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		BEA28B36177945EB00E467EB /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		BEA28B35177945EB00E467EB /* ColorUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUpdateViewController.h; sourceTree = "<group>"; };
+		BEA28B36177945EB00E467EB /* ColorUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUpdateViewController.m; sourceTree = "<group>"; };
 		BEA295F016DAB2D900066468 /* Burning Hands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Burning Hands.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA295F416DAB2D900066468 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEA295F616DAB2D900066468 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -272,8 +275,8 @@
 				BEEF15EC175BF4E200684921 /* Loader.m */,
 				BE8D9E621777B9920047BFBD /* Mode.h */,
 				BE8D9E631777B9920047BFBD /* Mode.m */,
-				BE8D9E651777BA8D0047BFBD /* ModeProperty.h */,
-				BE8D9E661777BA8D0047BFBD /* ModeProperty.m */,
+				BE8D9E651777BA8D0047BFBD /* ModePropertyDefinition.h */,
+				BE8D9E661777BA8D0047BFBD /* ModePropertyDefinition.m */,
 				BE8D9E681777BDB50047BFBD /* ModeDataController.h */,
 				BE8D9E691777BDB50047BFBD /* ModeDataController.m */,
 				BE8D9E6B1777C65B0047BFBD /* ModeSelectionViewController.h */,
@@ -284,8 +287,10 @@
 				BE8D9E741777E3750047BFBD /* HandsTabBarViewController.m */,
 				BEA28B32177923B000E467EB /* BLEManager.h */,
 				BEA28B33177923B000E467EB /* BLEManager.m */,
-				BEA28B35177945EB00E467EB /* AboutViewController.h */,
-				BEA28B36177945EB00E467EB /* AboutViewController.m */,
+				BEA28B35177945EB00E467EB /* ColorUpdateViewController.h */,
+				BEA28B36177945EB00E467EB /* ColorUpdateViewController.m */,
+				BE4D4FEF177F9E1600CA5554 /* RainbowViewController.h */,
+				BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */,
 			);
 			path = "Burning Hands";
 			sourceTree = "<group>";
@@ -488,13 +493,14 @@
 				BEEF15ED175BF4E200684921 /* Loader.m in Sources */,
 				BEEF1608175C04AB00684921 /* BLE.m in Sources */,
 				BE8D9E641777B9920047BFBD /* Mode.m in Sources */,
-				BE8D9E671777BA8D0047BFBD /* ModeProperty.m in Sources */,
+				BE8D9E671777BA8D0047BFBD /* ModePropertyDefinition.m in Sources */,
 				BE8D9E6A1777BDB50047BFBD /* ModeDataController.m in Sources */,
 				BE8D9E6D1777C65B0047BFBD /* ModeSelectionViewController.m in Sources */,
 				BE8D9E701777CE990047BFBD /* ModeDetailViewController.m in Sources */,
 				BE8D9E751777E3750047BFBD /* HandsTabBarViewController.m in Sources */,
 				BEA28B34177923B000E467EB /* BLEManager.m in Sources */,
-				BEA28B37177945EB00E467EB /* AboutViewController.m in Sources */,
+				BEA28B37177945EB00E467EB /* ColorUpdateViewController.m in Sources */,
+				BE4D4FF1177F9E1600CA5554 /* RainbowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,22 +6,26 @@
 //  Copyright (c) 2013 Daniel Valencia Co. All rights reserved.
 //
 
-#import "ModeProperty.h"
+#import "ModePropertyDefinition.h"
 
-@implementation ModeProperty
+@implementation ModePropertyDefinition
 
 @synthesize name = _name;
 @synthesize code = _code;
 @synthesize size = _size;
+@synthesize type = _type;
 
--(id)initWithName:(NSString *)name code:(UInt8)code andSize:(UInt8)size
+-(id)initWithName:(NSString *)name code:(UInt8)code size:(UInt8)size type:(NSString *)type
 {
+    
+    
     self = [super init];
     if(self)
     {
         _name = name;
         _code = code;
         _size = size;
+        _type = type;
     }
     return self;
 }

@@ -126,12 +126,4 @@
     [self.loader setHidden:FALSE];
 }
 
-//- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-////    if (theTextField == self.nameTextField) {
-////        [theTextField resignFirstResponder];
-////    }
-//    return YES;
-//}
-
-
 @end

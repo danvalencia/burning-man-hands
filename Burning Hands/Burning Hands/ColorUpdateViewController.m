@@ -6,19 +6,19 @@
 //  Copyright (c) 2013 Daniel Valencia Co. All rights reserved.
 //
 
-#import "AboutViewController.h"
+#import "ColorUpdateViewController.h"
 #import "BLEManager.h"
 
 #define HEX_CHARS @"0123456789ABCDEFabcdef"
 
-@interface AboutViewController ()
+@interface ColorUpdateViewController ()
 
 - (NSString*)padWithZeros:(NSString*)colorText;
 - (void) sendColorUpdate:(UInt8[])colors;
 
 @end
 
-@implementation AboutViewController
+@implementation ColorUpdateViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
