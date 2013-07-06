@@ -7,6 +7,7 @@
 //
 
 #import "HandsGrid.h"
+#import "HandsCell.h"
 
 #define WIDTH 280
 #define HEIGHT 360
@@ -20,9 +21,9 @@
 @interface HandsGrid()
 
 - (void)createCellOnX:(int)x Y:(int)y;
+- (void)initializePaths;
 
-@property (nonatomic, strong) NSMutableArray* pathArray;
-@property (nonatomic, strong) NSMutableArray* pathsToFill;
+@property (nonatomic, strong) NSMutableDictionary* cellArray;
 
 @end
 
@@ -34,10 +35,11 @@
     self = [super initWithFrame:drawRect];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        self.pathArray = [[NSMutableArray alloc] init];
-        self.pathsToFill = [[NSMutableArray alloc] init];
-        
+        self.cellArray = [[NSMutableDictionary alloc] init];
+        [self initializePaths];
+        [self setNeedsDisplay];
     }
+    
     return self;
 }
 
@@ -54,11 +56,34 @@
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
+{    
+    for(id key in self.cellArray)
+    {
+        HandsCell* cell = [self.cellArray objectForKey:key];
+        [cell.color setFill];
+        [cell.path fill];
+        [cell.path stroke];
+    }
+    // Drawing code
+}
+
+-(void)updateLocation:(CGPoint)location
 {
-    [self.pathArray removeAllObjects];
-    [[UIColor whiteColor] setFill];
-    [[UIColor blackColor] setStroke];
-    
+    for(id key in self.cellArray)
+    {
+        HandsCell* cell = [self.cellArray objectForKey:key];
+        
+        if([cell containsPoint:location])
+        {
+            cell.color = [UIColor redColor];
+            [self setNeedsDisplay];
+            return;
+        }
+    }
+}
+
+-(void) initializePaths
+{
     for(int x=0; x < NUM_COLS; x++)
     {
         for(int y=0; y < NUM_ROWS; y++)
@@ -66,41 +91,14 @@
             [self createCellOnX:x Y:y];
         }
     }
-    
-    if(self.pathsToFill.count > 0)
-    {
-        for (UIBezierPath *path in self.pathsToFill)
-        {
-            [[UIColor redColor] setFill];
-            [path fill];
-            [path stroke];
-        }
-        [self.pathsToFill removeAllObjects];
-    }
-    
-    // Drawing code
+
 }
-
--(void)updateLocation:(CGPoint)location
-{
-    for(UIBezierPath *path in self.pathArray)
-    {
-        if([path containsPoint:location])
-        {
-            [self.pathsToFill addObject:path];
-            [self setNeedsDisplay];
-            return;
-        }
-    }
-}
-
-
-
 
 - (void)createCellOnX:(int)x Y:(int)y
 {
     UIBezierPath *aPath = [UIBezierPath bezierPath];
-    
+    HandsCell *cell = [[HandsCell alloc] initWithPath:aPath x:x y:y];
+        
     float initialPosX = 1.0 + (x * COL_WIDTH);
     float initialPosY = 1.0 + (y * ROW_WIDTH);
     // Set the starting point of the shape.
@@ -114,11 +112,8 @@
     [aPath closePath];
     
     aPath.lineWidth = LINE_WIDTH;
-    
-    [aPath fill];
-    [aPath stroke];
-    
-    [self.pathArray addObject:aPath];
+        
+    [self.cellArray setObject:cell forKey:[cell coordinateKey]];
 }
 
 
