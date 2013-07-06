@@ -49,6 +49,8 @@
 		BE8D9E701777CE990047BFBD /* ModeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */; };
 		BE8D9E721777D94E0047BFBD /* BM13sticker.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8D9E711777D94E0047BFBD /* BM13sticker.png */; };
 		BE8D9E751777E3750047BFBD /* HandsTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E741777E3750047BFBD /* HandsTabBarViewController.m */; };
+		BE91767C1786457400C30ACB /* HandsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE91767A1786457400C30ACB /* HandsViewController.m */; };
+		BE91768017864B9D00C30ACB /* HandsGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = BE91767F17864B9D00C30ACB /* HandsGrid.m */; };
 		BEA28B34177923B000E467EB /* BLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28B33177923B000E467EB /* BLEManager.m */; };
 		BEA28B37177945EB00E467EB /* ColorUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28B36177945EB00E467EB /* ColorUpdateViewController.m */; };
 		BEA295F516DAB2D900066468 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F416DAB2D900066468 /* UIKit.framework */; };
@@ -132,6 +134,10 @@
 		BE8D9E711777D94E0047BFBD /* BM13sticker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BM13sticker.png; sourceTree = "<group>"; };
 		BE8D9E731777E3750047BFBD /* HandsTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandsTabBarViewController.h; sourceTree = "<group>"; };
 		BE8D9E741777E3750047BFBD /* HandsTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsTabBarViewController.m; sourceTree = "<group>"; };
+		BE9176791786457400C30ACB /* HandsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandsViewController.h; sourceTree = "<group>"; };
+		BE91767A1786457400C30ACB /* HandsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsViewController.m; sourceTree = "<group>"; };
+		BE91767E17864B9D00C30ACB /* HandsGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandsGrid.h; sourceTree = "<group>"; };
+		BE91767F17864B9D00C30ACB /* HandsGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsGrid.m; sourceTree = "<group>"; };
 		BEA28B32177923B000E467EB /* BLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEManager.h; sourceTree = "<group>"; };
 		BEA28B33177923B000E467EB /* BLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEManager.m; sourceTree = "<group>"; };
 		BEA28B35177945EB00E467EB /* ColorUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUpdateViewController.h; sourceTree = "<group>"; };
@@ -291,6 +297,10 @@
 				BEA28B36177945EB00E467EB /* ColorUpdateViewController.m */,
 				BE4D4FEF177F9E1600CA5554 /* RainbowViewController.h */,
 				BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */,
+				BE9176791786457400C30ACB /* HandsViewController.h */,
+				BE91767A1786457400C30ACB /* HandsViewController.m */,
+				BE91767E17864B9D00C30ACB /* HandsGrid.h */,
+				BE91767F17864B9D00C30ACB /* HandsGrid.m */,
 			);
 			path = "Burning Hands";
 			sourceTree = "<group>";
@@ -501,6 +511,8 @@
 				BEA28B34177923B000E467EB /* BLEManager.m in Sources */,
 				BEA28B37177945EB00E467EB /* ColorUpdateViewController.m in Sources */,
 				BE4D4FF1177F9E1600CA5554 /* RainbowViewController.m in Sources */,
+				BE91767C1786457400C30ACB /* HandsViewController.m in Sources */,
+				BE91768017864B9D00C30ACB /* HandsGrid.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
