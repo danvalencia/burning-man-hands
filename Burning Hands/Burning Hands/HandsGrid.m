@@ -21,9 +21,9 @@
 @interface HandsGrid()
 
 - (void)createCellOnX:(int)x Y:(int)y;
-- (void)initializePaths;
+- (void)initializeCells;
 
-@property (nonatomic, strong) NSMutableDictionary* cellArray;
+@property (nonatomic, strong) NSMutableDictionary* cells;
 
 @end
 
@@ -35,9 +35,8 @@
     self = [super initWithFrame:drawRect];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        self.cellArray = [[NSMutableDictionary alloc] init];
-        [self initializePaths];
-        [self setNeedsDisplay];
+        self.cells = [[NSMutableDictionary alloc] init];
+        [self initializeCells];
     }
     
     return self;
@@ -53,25 +52,22 @@
 }
 
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {    
-    for(id key in self.cellArray)
+    for(id key in self.cells)
     {
-        HandsCell* cell = [self.cellArray objectForKey:key];
+        HandsCell* cell = [self.cells objectForKey:key];
         [cell.color setFill];
         [cell.path fill];
         [cell.path stroke];
     }
-    // Drawing code
 }
 
 -(void)updateLocation:(CGPoint)location
 {
-    for(id key in self.cellArray)
+    for(id key in self.cells)
     {
-        HandsCell* cell = [self.cellArray objectForKey:key];
+        HandsCell* cell = [self.cells objectForKey:key];
         
         if([cell containsPoint:location])
         {
@@ -82,7 +78,7 @@
     }
 }
 
--(void) initializePaths
+-(void) initializeCells
 {
     for(int x=0; x < NUM_COLS; x++)
     {
@@ -113,7 +109,7 @@
     
     aPath.lineWidth = LINE_WIDTH;
         
-    [self.cellArray setObject:cell forKey:[cell coordinateKey]];
+    [self.cells setObject:cell forKey:[cell coordinateKey]];
 }
 
 
