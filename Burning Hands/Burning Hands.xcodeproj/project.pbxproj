@@ -237,6 +237,19 @@
 			path = bloggif_decode_gif;
 			sourceTree = "<group>";
 		};
+		BE6C3D9D17886E0B007E9B8F /* HandsGrid */ = {
+			isa = PBXGroup;
+			children = (
+				BE9176791786457400C30ACB /* HandsViewController.h */,
+				BE91767A1786457400C30ACB /* HandsViewController.m */,
+				BE91767E17864B9D00C30ACB /* HandsGrid.h */,
+				BE91767F17864B9D00C30ACB /* HandsGrid.m */,
+				BE6C3D9A1787A234007E9B8F /* HandsCell.h */,
+				BE6C3D9B1787A234007E9B8F /* HandsCell.m */,
+			);
+			name = HandsGrid;
+			sourceTree = "<group>";
+		};
 		BEA295E516DAB2D900066468 = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +287,7 @@
 		BEA295FA16DAB2D900066468 /* Burning Hands */ = {
 			isa = PBXGroup;
 			children = (
+				BE6C3D9D17886E0B007E9B8F /* HandsGrid */,
 				BEA2960316DAB2D900066468 /* AppDelegate.h */,
 				BEA2960416DAB2D900066468 /* AppDelegate.m */,
 				BEA2960C16DAB2D900066468 /* MainStoryboard_iPhone.storyboard */,
@@ -300,12 +314,6 @@
 				BEA28B36177945EB00E467EB /* ColorUpdateViewController.m */,
 				BE4D4FEF177F9E1600CA5554 /* RainbowViewController.h */,
 				BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */,
-				BE9176791786457400C30ACB /* HandsViewController.h */,
-				BE91767A1786457400C30ACB /* HandsViewController.m */,
-				BE91767E17864B9D00C30ACB /* HandsGrid.h */,
-				BE91767F17864B9D00C30ACB /* HandsGrid.m */,
-				BE6C3D9A1787A234007E9B8F /* HandsCell.h */,
-				BE6C3D9B1787A234007E9B8F /* HandsCell.m */,
 			);
 			path = "Burning Hands";
 			sourceTree = "<group>";

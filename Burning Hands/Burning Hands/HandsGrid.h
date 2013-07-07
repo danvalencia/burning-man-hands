@@ -7,7 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HandsCell.h"
+
+@protocol HandsGridDelegate;
 
 @interface HandsGrid : UIView
+
 -(void)updateLocation:(CGPoint)location;
+
+@property (nonatomic, strong) id <HandsGridDelegate> delegate;
+
 @end
+
+@protocol HandsGridDelegate <NSObject>
+
+@required
+- (void)cellTouched:(HandsCell*)cell;
+
+@end
+

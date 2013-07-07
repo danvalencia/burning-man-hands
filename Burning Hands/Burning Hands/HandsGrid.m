@@ -17,17 +17,24 @@
 #define ROW_WIDTH (HEIGHT / NUM_ROWS)
 #define NUM_CELLS (NUM_COLS * NUM_ROWS)
 #define LINE_WIDTH 1
+#define radians(degrees) (degrees * M_PI/180)
+
 
 @interface HandsGrid()
 
 - (void)createCellOnX:(int)x Y:(int)y;
 - (void)initializeCells;
+- (CGPoint)switchCoordinateSystem:(CGPoint)point;
+- (void)initTransform;
 
 @property (nonatomic, strong) NSMutableDictionary* cells;
+@property (nonatomic) CGAffineTransform affineTransform;
 
 @end
 
 @implementation HandsGrid
+
+@synthesize delegate;
 
 - (id)init {
     CGRect drawRect = CGRectMake(20, 40, WIDTH, HEIGHT);
@@ -36,7 +43,9 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         self.cells = [[NSMutableDictionary alloc] init];
+        [self initTransform];
         [self initializeCells];
+        
     }
     
     return self;
@@ -53,7 +62,13 @@
 
 
 - (void)drawRect:(CGRect)rect
-{    
+{
+    CGContextRef graphicsContext = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(graphicsContext);
+    
+    CGContextTranslateCTM(graphicsContext, 0.0, HEIGHT);
+    CGContextScaleCTM(graphicsContext, 1.0, -1.0);
+    
     for(id key in self.cells)
     {
         HandsCell* cell = [self.cells objectForKey:key];
@@ -61,16 +76,20 @@
         [cell.path fill];
         [cell.path stroke];
     }
+    CGContextRestoreGState(graphicsContext);
 }
 
 -(void)updateLocation:(CGPoint)location
 {
+    CGPoint transformedLocation = [self switchCoordinateSystem:location];
+    
     for(id key in self.cells)
     {
         HandsCell* cell = [self.cells objectForKey:key];
         
-        if([cell containsPoint:location])
+        if([cell containsPoint:transformedLocation])
         {
+            [self.delegate cellTouched:cell];
             cell.color = [UIColor redColor];
             [self setNeedsDisplay];
             return;
@@ -104,7 +123,6 @@
     [aPath addLineToPoint:CGPointMake(initialPosX, initialPosY + ROW_WIDTH)];
     [aPath addLineToPoint:CGPointMake(initialPosX + COL_WIDTH, initialPosY + ROW_WIDTH)];
     [aPath addLineToPoint:CGPointMake(initialPosX + COL_WIDTH, initialPosY)];
-    //[aPath addLineToPoint:CGPointMake(0, 0)];
     [aPath closePath];
     
     aPath.lineWidth = LINE_WIDTH;
@@ -112,5 +130,17 @@
     [self.cells setObject:cell forKey:[cell coordinateKey]];
 }
 
+- (void)initTransform
+{
+    self.affineTransform = CGAffineTransformTranslate(self.transform, 0.0, HEIGHT);
+    self.affineTransform = CGAffineTransformScale(self.affineTransform, 1.0, -1.0);
+}
+
+
+- (CGPoint)switchCoordinateSystem:(CGPoint)point
+{
+    CGPoint newPoint = CGPointApplyAffineTransform(point, self.affineTransform);
+    return newPoint;
+}
 
 @end

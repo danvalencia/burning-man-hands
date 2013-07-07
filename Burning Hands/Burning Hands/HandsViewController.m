@@ -34,6 +34,7 @@
     
     self.handsGrid =  [[HandsGrid alloc] init];
     [self.handsGrid addGestureRecognizer:tapRecognizer];
+    self.handsGrid.delegate = self;
     [self.view addSubview:self.handsGrid];
     // Do any additional setup after loading the view from its nib.
 }
@@ -48,11 +49,17 @@
     }
 }
 
+- (void)cellTouched:(HandsCell*)cell
+{
+    self.coordinateUpdateLabel.text = [NSString stringWithFormat:@"x: %d, y: %d", cell.x, cell.y];
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end

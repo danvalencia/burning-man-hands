@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "HandsGrid.h"
 
-@interface HandsViewController : UIViewController
+@interface HandsViewController : UIViewController <HandsGridDelegate>
+
 @property (strong, nonatomic) IBOutlet UILabel *coordinateUpdateLabel;
 
 @end
