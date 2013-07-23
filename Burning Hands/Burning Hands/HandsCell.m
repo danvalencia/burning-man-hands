@@ -33,6 +33,12 @@
     return self;
 }
 
+-(id) initWithCoordinate:(int)_x y:(int)_y
+{
+    return [self initWithPath:NULL x:_x y:_y];
+}
+
+
 -(BOOL) containsPoint:(CGPoint)point
 {
     return [self.path containsPoint:point];

@@ -16,6 +16,8 @@
 @property (nonatomic, strong) UIColor* color;
 
 -(id) initWithPath:(UIBezierPath*)path x:(int)x y:(int)y;
+-(id) initWithCoordinate:(int)_x y:(int)_y;
+
 -(BOOL) containsPoint:(CGPoint)point;
 -(NSString*) coordinateKey;
 

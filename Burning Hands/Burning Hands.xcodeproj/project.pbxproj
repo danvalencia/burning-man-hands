@@ -70,6 +70,8 @@
 		BEA2961E16DAB2D900066468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F616DAB2D900066468 /* Foundation.framework */; };
 		BEA2962616DAB2D900066468 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEA2962416DAB2D900066468 /* InfoPlist.strings */; };
 		BEA2962916DAB2D900066468 /* Burning_HandsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA2962816DAB2D900066468 /* Burning_HandsTests.m */; };
+		BEE47F8E179E073000D9C13F /* ColorSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE47F8D179E073000D9C13F /* ColorSelector.m */; };
+		BEE47F92179E11FC00D9C13F /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE47F91179E11FC00D9C13F /* ColorUtils.m */; };
 		BEEF15ED175BF4E200684921 /* Loader.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF15EC175BF4E200684921 /* Loader.m */; };
 		BEEF1608175C04AB00684921 /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF1606175C04AB00684921 /* BLE.m */; };
 		BEEF160A175C04C300684921 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEEF1609175C04C300684921 /* CoreBluetooth.framework */; };
@@ -167,6 +169,11 @@
 		BEA2962516DAB2D900066468 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BEA2962716DAB2D900066468 /* Burning_HandsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Burning_HandsTests.h; sourceTree = "<group>"; };
 		BEA2962816DAB2D900066468 /* Burning_HandsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Burning_HandsTests.m; sourceTree = "<group>"; };
+		BEE47F8C179E073000D9C13F /* ColorSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSelector.h; sourceTree = "<group>"; };
+		BEE47F8D179E073000D9C13F /* ColorSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSelector.m; sourceTree = "<group>"; };
+		BEE47F8F179E08D800D9C13F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		BEE47F90179E11FC00D9C13F /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
+		BEE47F91179E11FC00D9C13F /* ColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUtils.m; sourceTree = "<group>"; };
 		BEEF15EB175BF4E200684921 /* Loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Loader.h; sourceTree = "<group>"; };
 		BEEF15EC175BF4E200684921 /* Loader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Loader.m; sourceTree = "<group>"; };
 		BEEF1605175C04AB00684921 /* BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLE.h; path = ../BLEFramework/BLE/BLE.h; sourceTree = "<group>"; };
@@ -246,6 +253,8 @@
 				BE91767F17864B9D00C30ACB /* HandsGrid.m */,
 				BE6C3D9A1787A234007E9B8F /* HandsCell.h */,
 				BE6C3D9B1787A234007E9B8F /* HandsCell.m */,
+				BEE47F8C179E073000D9C13F /* ColorSelector.h */,
+				BEE47F8D179E073000D9C13F /* ColorSelector.m */,
 			);
 			name = HandsGrid;
 			sourceTree = "<group>";
@@ -287,6 +296,7 @@
 		BEA295FA16DAB2D900066468 /* Burning Hands */ = {
 			isa = PBXGroup;
 			children = (
+				BEE47F8F179E08D800D9C13F /* Constants.h */,
 				BE6C3D9D17886E0B007E9B8F /* HandsGrid */,
 				BEA2960316DAB2D900066468 /* AppDelegate.h */,
 				BEA2960416DAB2D900066468 /* AppDelegate.m */,
@@ -314,6 +324,8 @@
 				BEA28B36177945EB00E467EB /* ColorUpdateViewController.m */,
 				BE4D4FEF177F9E1600CA5554 /* RainbowViewController.h */,
 				BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */,
+				BEE47F90179E11FC00D9C13F /* ColorUtils.h */,
+				BEE47F91179E11FC00D9C13F /* ColorUtils.m */,
 			);
 			path = "Burning Hands";
 			sourceTree = "<group>";
@@ -527,6 +539,8 @@
 				BE91767C1786457400C30ACB /* HandsViewController.m in Sources */,
 				BE91768017864B9D00C30ACB /* HandsGrid.m in Sources */,
 				BE6C3D9C1787A234007E9B8F /* HandsCell.m in Sources */,
+				BEE47F8E179E073000D9C13F /* ColorSelector.m in Sources */,
+				BEE47F92179E11FC00D9C13F /* ColorUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

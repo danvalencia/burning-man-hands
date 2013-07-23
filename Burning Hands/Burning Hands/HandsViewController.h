@@ -12,5 +12,6 @@
 @interface HandsViewController : UIViewController <HandsGridDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *coordinateUpdateLabel;
+@property (strong, nonatomic) NSString *coordinateKey;
 
 @end

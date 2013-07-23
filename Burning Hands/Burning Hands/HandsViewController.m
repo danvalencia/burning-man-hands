@@ -7,8 +7,12 @@
 //
 
 #import "HandsViewController.h"
+#import "ColorSelector.h"
 
-@interface HandsViewController ()
+@interface HandsViewController () {
+    UIView *colorPatch;
+}
+
 @property (nonatomic, strong) HandsGrid *handsGrid;
 @end
 
@@ -26,27 +30,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    
-    tapRecognizer.numberOfTapsRequired = 1;
-    
-    
     self.handsGrid =  [[HandsGrid alloc] init];
-    [self.handsGrid addGestureRecognizer:tapRecognizer];
     self.handsGrid.delegate = self;
     [self.view addSubview:self.handsGrid];
-    // Do any additional setup after loading the view from its nib.
-}
+    
+    ColorSelector* colorSelector = [[ColorSelector alloc] init];
+    [self.view addSubview:colorSelector];
+    
+    colorPatch = [[UIView alloc] initWithFrame:CGRectMake(160, 380.0, 150, 30.0)];
+	[self.view addSubview:colorPatch];
 
-- (void)handleTap:(UITapGestureRecognizer *)recognizer
-{
-    if(recognizer.state == UIGestureRecognizerStateEnded)
-    {
-        CGPoint location = [recognizer locationInView:self.handsGrid];
-        self.coordinateUpdateLabel.text = [NSString stringWithFormat:@"x: %f, y: %f", location.x, location.y];
-        [self.handsGrid updateLocation:location];
-    }
 }
 
 - (void)cellTouched:(HandsCell*)cell
