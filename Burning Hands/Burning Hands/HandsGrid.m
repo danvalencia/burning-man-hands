@@ -37,6 +37,7 @@
 @implementation HandsGrid
 
 @synthesize delegate;
+@synthesize currentColor;
 
 - (id)init {
     CGRect drawRect = CGRectMake(20, 40, WIDTH, HEIGHT);
@@ -83,7 +84,7 @@
         if([cell containsPoint:transformedLocation])
         {
             [self.delegate cellTouched:cell];
-            cell.color = [UIColor redColor];
+            cell.color = self.currentColor;
             [self setNeedsDisplay];
             return;
         }
@@ -104,6 +105,69 @@
         }
     }
 
+}
+
+- (void)createCellOn:(int)x y:(int)y
+{
+    UIBezierPath *aPath = [UIBezierPath bezierPath];
+    HandsCell *cell = [[HandsCell alloc] initWithPath:aPath x:x y:y];
+        
+    float initialPosX = 1.0 + (x * COL_WIDTH);
+    float initialPosY = 1.0 + (y * ROW_WIDTH);
+    // Set the starting point of the shape.
+    [aPath moveToPoint:CGPointMake(initialPosX, initialPosY)];
+    
+    // Draw the lines.
+    [aPath addLineToPoint:CGPointMake(initialPosX, initialPosY + ROW_WIDTH)];
+    [aPath addLineToPoint:CGPointMake(initialPosX + COL_WIDTH, initialPosY + ROW_WIDTH)];
+    [aPath addLineToPoint:CGPointMake(initialPosX + COL_WIDTH, initialPosY)];
+    [aPath closePath];
+    
+    aPath.lineWidth = LINE_WIDTH;
+        
+    [self.cells setObject:cell forKey:[cell coordinateKey]];
+}
+
+- (void)initTransform
+{
+    self.affineTransform = CGAffineTransformTranslate(self.transform, 0.0, HEIGHT);
+    self.affineTransform = CGAffineTransformScale(self.affineTransform, 1.0, -1.0);
+}
+
+
+- (CGPoint)switchCoordinateSystem:(CGPoint)point
+{
+    CGPoint newPoint = CGPointApplyAffineTransform(point, self.affineTransform);
+    return newPoint;
+}
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    CGPoint nowPoint = [touches.anyObject locationInView:self];
+    [self updateLocation:nowPoint];
+}
+
+- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    CGPoint nowPoint = [touches.anyObject locationInView:self];
+    [self updateLocation:nowPoint];
+}
+
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    //clear cell array
+    CGPoint nowPoint = [touches.anyObject locationInView:self];
+    CGPoint translatedPoint = [self switchCoordinateSystem:nowPoint];
+    NSLog(@"Touches Ended on %f,%f!", translatedPoint.x, translatedPoint.y);
+
+}
+
+- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    // clear cell array
+    CGPoint nowPoint = [touches.anyObject locationInView:self];
+    CGPoint translatedPoint = [self switchCoordinateSystem:nowPoint];
+    NSLog(@"Touches Cancelled on %f,%f!", translatedPoint.x, translatedPoint.y);
 }
 
 - (void) initDisabledCells
@@ -240,73 +304,6 @@
     [disabledCells addObject:@"10,20"];
     [disabledCells addObject:@"10,21"];
     [disabledCells addObject:@"10,22"];
-
-
-
-
-}
-
-- (void)createCellOn:(int)x y:(int)y
-{
-    UIBezierPath *aPath = [UIBezierPath bezierPath];
-    HandsCell *cell = [[HandsCell alloc] initWithPath:aPath x:x y:y];
-        
-    float initialPosX = 1.0 + (x * COL_WIDTH);
-    float initialPosY = 1.0 + (y * ROW_WIDTH);
-    // Set the starting point of the shape.
-    [aPath moveToPoint:CGPointMake(initialPosX, initialPosY)];
-    
-    // Draw the lines.
-    [aPath addLineToPoint:CGPointMake(initialPosX, initialPosY + ROW_WIDTH)];
-    [aPath addLineToPoint:CGPointMake(initialPosX + COL_WIDTH, initialPosY + ROW_WIDTH)];
-    [aPath addLineToPoint:CGPointMake(initialPosX + COL_WIDTH, initialPosY)];
-    [aPath closePath];
-    
-    aPath.lineWidth = LINE_WIDTH;
-        
-    [self.cells setObject:cell forKey:[cell coordinateKey]];
-}
-
-- (void)initTransform
-{
-    self.affineTransform = CGAffineTransformTranslate(self.transform, 0.0, HEIGHT);
-    self.affineTransform = CGAffineTransformScale(self.affineTransform, 1.0, -1.0);
-}
-
-
-- (CGPoint)switchCoordinateSystem:(CGPoint)point
-{
-    CGPoint newPoint = CGPointApplyAffineTransform(point, self.affineTransform);
-    return newPoint;
-}
-
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    CGPoint nowPoint = [touches.anyObject locationInView:self];
-    [self updateLocation:nowPoint];
-}
-
-- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    CGPoint nowPoint = [touches.anyObject locationInView:self];
-    [self updateLocation:nowPoint];
-}
-
-- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    //clear cell array
-    CGPoint nowPoint = [touches.anyObject locationInView:self];
-    CGPoint translatedPoint = [self switchCoordinateSystem:nowPoint];
-    NSLog(@"Touches Ended on %f,%f!", translatedPoint.x, translatedPoint.y);
-
-}
-
-- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    // clear cell array
-    CGPoint nowPoint = [touches.anyObject locationInView:self];
-    CGPoint translatedPoint = [self switchCoordinateSystem:nowPoint];
-    NSLog(@"Touches Cancelled on %f,%f!", translatedPoint.x, translatedPoint.y);
 }
 
 @end

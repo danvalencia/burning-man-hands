@@ -10,4 +10,6 @@
 
 @interface ColorSelector : UIView
 
+-(UIColor*)selectedColor;
+
 @end

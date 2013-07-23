@@ -16,6 +16,7 @@
 -(void)updateLocation:(CGPoint)location;
 
 @property (nonatomic, strong) id <HandsGridDelegate> delegate;
+@property (nonatomic, strong) UIColor* currentColor;
 
 @end
 

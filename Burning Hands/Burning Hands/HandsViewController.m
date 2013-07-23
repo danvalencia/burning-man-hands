@@ -10,10 +10,10 @@
 #import "ColorSelector.h"
 
 @interface HandsViewController () {
-    UIView *colorPatch;
+    ColorSelector *colorSelector;
+    HandsGrid *handsGrid;
 }
 
-@property (nonatomic, strong) HandsGrid *handsGrid;
 @end
 
 @implementation HandsViewController
@@ -30,21 +30,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.handsGrid =  [[HandsGrid alloc] init];
-    self.handsGrid.delegate = self;
-    [self.view addSubview:self.handsGrid];
+    handsGrid =  [[HandsGrid alloc] init];
+    handsGrid.delegate = self;
+    [self.view addSubview:handsGrid];
     
-    ColorSelector* colorSelector = [[ColorSelector alloc] init];
+    colorSelector = [[ColorSelector alloc] init];
     [self.view addSubview:colorSelector];
-    
-    colorPatch = [[UIView alloc] initWithFrame:CGRectMake(160, 380.0, 150, 30.0)];
-	[self.view addSubview:colorPatch];
-
 }
 
 - (void)cellTouched:(HandsCell*)cell
 {
-    self.coordinateUpdateLabel.text = [NSString stringWithFormat:@"x: %d, y: %d", cell.x, cell.y];
+    handsGrid.currentColor = colorSelector.selectedColor;
 }
 
 - (void)didReceiveMemoryWarning
