@@ -23,6 +23,11 @@
     return self;
 }
 
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationPortrait | UIInterfaceOrientationPortraitUpsideDown;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
