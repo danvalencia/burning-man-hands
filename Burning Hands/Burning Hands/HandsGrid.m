@@ -201,6 +201,7 @@
     [disabledCells addObject:@"1,7"];
     [disabledCells addObject:@"1,8"];
     [disabledCells addObject:@"1,9"];
+    [disabledCells addObject:@"1,10"];
     [disabledCells addObject:@"1,15"];
     [disabledCells addObject:@"1,16"];
     [disabledCells addObject:@"1,17"];
@@ -209,8 +210,8 @@
     [disabledCells addObject:@"1,20"];
     [disabledCells addObject:@"1,21"];
     [disabledCells addObject:@"1,22"];
+    [disabledCells addObject:@"2,21"];
     [disabledCells addObject:@"2,22"];
-    [disabledCells addObject:@"3,15"];
     [disabledCells addObject:@"3,16"];
     [disabledCells addObject:@"3,17"];
     [disabledCells addObject:@"3,18"];
@@ -218,7 +219,6 @@
     [disabledCells addObject:@"3,20"];
     [disabledCells addObject:@"3,21"];
     [disabledCells addObject:@"3,22"];
-    [disabledCells addObject:@"5,15"];
     [disabledCells addObject:@"5,16"];
     [disabledCells addObject:@"5,17"];
     [disabledCells addObject:@"5,18"];
@@ -226,11 +226,8 @@
     [disabledCells addObject:@"5,20"];
     [disabledCells addObject:@"5,21"];
     [disabledCells addObject:@"5,22"];
+    [disabledCells addObject:@"6,21"];
     [disabledCells addObject:@"6,22"];
-    [disabledCells addObject:@"7,0"];
-    [disabledCells addObject:@"7,1"];
-    [disabledCells addObject:@"7,2"];
-    [disabledCells addObject:@"7,3"];
     [disabledCells addObject:@"7,4"];
     [disabledCells addObject:@"7,5"];
     [disabledCells addObject:@"7,6"];
@@ -255,6 +252,7 @@
     [disabledCells addObject:@"8,7"];
     [disabledCells addObject:@"8,8"];
     [disabledCells addObject:@"8,9"];
+    [disabledCells addObject:@"8,10"];
     [disabledCells addObject:@"8,14"];
     [disabledCells addObject:@"8,15"];
     [disabledCells addObject:@"8,16"];
@@ -275,7 +273,7 @@
     [disabledCells addObject:@"9,8"];
     [disabledCells addObject:@"9,9"];
     [disabledCells addObject:@"9,10"];
-    [disabledCells addObject:@"9,14"];
+    [disabledCells addObject:@"9,11"];
     [disabledCells addObject:@"9,15"];
     [disabledCells addObject:@"9,16"];
     [disabledCells addObject:@"9,17"];
@@ -297,7 +295,7 @@
     [disabledCells addObject:@"10,10"];
     [disabledCells addObject:@"10,11"];
     [disabledCells addObject:@"10,12"];
-    [disabledCells addObject:@"10,16"];
+    [disabledCells addObject:@"10,13"];
     [disabledCells addObject:@"10,17"];
     [disabledCells addObject:@"10,18"];
     [disabledCells addObject:@"10,19"];
