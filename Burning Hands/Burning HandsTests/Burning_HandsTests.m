@@ -7,6 +7,7 @@
 //
 
 #import "Burning_HandsTests.h"
+#import "ColorUtils.h"
 
 @implementation Burning_HandsTests
 
@@ -26,7 +27,9 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in Burning HandsTests");
+    UIColor* myColor = [UIColor cyanColor];
+    UInt8 *bytes = [ColorUtils getRGBAsBytes:myColor];
+    NSLog(@"%d,%d,%d", bytes[0], bytes[1], bytes[2]);
 }
 
 @end

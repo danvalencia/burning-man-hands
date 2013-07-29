@@ -39,9 +39,11 @@
 		BE1C34A717012C33005479B1 /* frame-8.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348917012C33005479B1 /* frame-8.gif */; };
 		BE1C34A817012C33005479B1 /* frame-9.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348A17012C33005479B1 /* frame-9.gif */; };
 		BE4D4FF1177F9E1600CA5554 /* RainbowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */; };
+		BE590FDD17A20E8800E16DE4 /* ColorUpdateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BE590FDC17A20E8800E16DE4 /* ColorUpdateCommand.m */; };
 		BE6C3D9C1787A234007E9B8F /* HandsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6C3D9B1787A234007E9B8F /* HandsCell.m */; };
 		BE7690BD17733D7000B27D77 /* HandsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7690BC17733D7000B27D77 /* HandsIcon.png */; };
 		BE7690BF17733DA800B27D77 /* HandsIcon_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7690BE17733DA800B27D77 /* HandsIcon_iPhone.png */; };
+		BE884CCF17A5CAE7003D10F2 /* GridMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BE884CCE17A5CAE7003D10F2 /* GridMapper.m */; };
 		BE8D9E611777A3840047BFBD /* connect.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8D9E601777A3840047BFBD /* connect.png */; };
 		BE8D9E641777B9920047BFBD /* Mode.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E631777B9920047BFBD /* Mode.m */; };
 		BE8D9E671777BA8D0047BFBD /* ModePropertyDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E661777BA8D0047BFBD /* ModePropertyDefinition.m */; };
@@ -121,10 +123,15 @@
 		BE1C348A17012C33005479B1 /* frame-9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame-9.gif"; sourceTree = "<group>"; };
 		BE4D4FEF177F9E1600CA5554 /* RainbowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RainbowViewController.h; sourceTree = "<group>"; };
 		BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RainbowViewController.m; sourceTree = "<group>"; };
+		BE590FDA17A20E0C00E16DE4 /* BLECommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLECommand.h; sourceTree = "<group>"; };
+		BE590FDB17A20E8800E16DE4 /* ColorUpdateCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUpdateCommand.h; sourceTree = "<group>"; };
+		BE590FDC17A20E8800E16DE4 /* ColorUpdateCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUpdateCommand.m; sourceTree = "<group>"; };
 		BE6C3D9A1787A234007E9B8F /* HandsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandsCell.h; sourceTree = "<group>"; };
 		BE6C3D9B1787A234007E9B8F /* HandsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsCell.m; sourceTree = "<group>"; };
 		BE7690BC17733D7000B27D77 /* HandsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandsIcon.png; sourceTree = "<group>"; };
 		BE7690BE17733DA800B27D77 /* HandsIcon_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandsIcon_iPhone.png; sourceTree = "<group>"; };
+		BE884CCD17A5CAE7003D10F2 /* GridMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridMapper.h; sourceTree = "<group>"; };
+		BE884CCE17A5CAE7003D10F2 /* GridMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridMapper.m; sourceTree = "<group>"; };
 		BE8D9E601777A3840047BFBD /* connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect.png; sourceTree = "<group>"; };
 		BE8D9E621777B9920047BFBD /* Mode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mode.h; sourceTree = "<group>"; };
 		BE8D9E631777B9920047BFBD /* Mode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mode.m; sourceTree = "<group>"; };
@@ -247,6 +254,8 @@
 		BE6C3D9D17886E0B007E9B8F /* HandsGrid */ = {
 			isa = PBXGroup;
 			children = (
+				BE884CCD17A5CAE7003D10F2 /* GridMapper.h */,
+				BE884CCE17A5CAE7003D10F2 /* GridMapper.m */,
 				BE9176791786457400C30ACB /* HandsViewController.h */,
 				BE91767A1786457400C30ACB /* HandsViewController.m */,
 				BE91767E17864B9D00C30ACB /* HandsGrid.h */,
@@ -326,6 +335,9 @@
 				BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */,
 				BEE47F90179E11FC00D9C13F /* ColorUtils.h */,
 				BEE47F91179E11FC00D9C13F /* ColorUtils.m */,
+				BE590FDA17A20E0C00E16DE4 /* BLECommand.h */,
+				BE590FDB17A20E8800E16DE4 /* ColorUpdateCommand.h */,
+				BE590FDC17A20E8800E16DE4 /* ColorUpdateCommand.m */,
 			);
 			path = "Burning Hands";
 			sourceTree = "<group>";
@@ -541,6 +553,8 @@
 				BE6C3D9C1787A234007E9B8F /* HandsCell.m in Sources */,
 				BEE47F8E179E073000D9C13F /* ColorSelector.m in Sources */,
 				BEE47F92179E11FC00D9C13F /* ColorUtils.m in Sources */,
+				BE590FDD17A20E8800E16DE4 /* ColorUpdateCommand.m in Sources */,
+				BE884CCF17A5CAE7003D10F2 /* GridMapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

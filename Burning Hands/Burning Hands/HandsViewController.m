@@ -8,6 +8,8 @@
 
 #import "HandsViewController.h"
 #import "ColorSelector.h"
+#import "BLEManager.h"
+#import "ColorUpdateCommand.h"
 
 @interface HandsViewController () {
     ColorSelector *colorSelector;
@@ -41,6 +43,11 @@
 - (void)cellTouched:(HandsCell*)cell
 {
     handsGrid.currentColor = colorSelector.selectedColor;
+    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        ColorUpdateCommand* command = [[ColorUpdateCommand alloc] initWithCell:cell];
+        [[BLEManager sharedInstance] executeCommand:command];
+    });
+
 }
 
 - (void)didReceiveMemoryWarning

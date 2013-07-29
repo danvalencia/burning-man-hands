@@ -39,12 +39,9 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)updateColor:(id)sender {
-    [self.view endEditing:YES];
-    NSString* colorText = [[self colorTextField] text];
-    NSString* hexColor = [self padWithZeros:colorText];
-    self.colorTextField.text = hexColor;
-    UInt8 colorArray[3] = {};
+- (UInt8*)convertHexStringToByteArray:(NSString *)hexColor {
+    UInt8* colorArray = malloc(sizeof(UInt8) * 3);
+    //UInt8 colorArray[3] = {};
     
     unsigned firstDigitInt;
     for (int i = 0; i < 6; i += 2) {
@@ -53,6 +50,16 @@
         colorArray[i/2] = (char)firstDigitInt;
         NSLog(@"Digit: %u", firstDigitInt);
     }
+    return colorArray;
+}
+
+- (IBAction)updateColor:(id)sender {
+    [self.view endEditing:YES];
+    NSString* colorText = [[self colorTextField] text];
+    NSString* hexColor = [self padWithZeros:colorText];
+    self.colorTextField.text = hexColor;
+    UInt8* colorArray;
+    colorArray = [self convertHexStringToByteArray:hexColor];
     
     [self sendColorUpdate:colorArray];
     

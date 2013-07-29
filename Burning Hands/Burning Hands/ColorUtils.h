@@ -11,5 +11,6 @@
 @interface ColorUtils : NSObject
 
 + (UIColor *)colorFromHexString:(NSString *)hexString;
++ (UInt8 *) getRGBAsBytes:(UIColor *)color;
 
 @end

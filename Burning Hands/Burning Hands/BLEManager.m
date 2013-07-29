@@ -41,6 +41,11 @@ static BLEManager* _instance = NULL;
     self.ble.delegate = delegate;
 }
 
+-(void)executeCommand:(id <BLECommand> ) command
+{
+    [self sendCommand:[command getData]];
+}
+
 -(void)sendCommand:(NSData *)data
 {
     [self.ble write:data];

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BLE.h"
+#import "BLECommand.h"
 
 @interface BLEManager : NSObject 
 
@@ -16,6 +17,7 @@
 +(BLEManager *) sharedInstance;
 -(void)initializeWithDelegate:(id<BLEDelegate>)delegate;
 -(void)sendCommand:(NSData *)data;
+-(void)executeCommand:(id <BLECommand> ) command;
 -(BOOL)connectToDevice;
 -(void)findBluetoothPeripherals;
 -(BOOL)isConnected;
