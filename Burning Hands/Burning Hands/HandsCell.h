@@ -20,5 +20,7 @@
 
 -(BOOL) containsPoint:(CGPoint)point;
 -(NSString*) coordinateKey;
+-(int) xMapping;
+-(int) yMapping;
 
 @end

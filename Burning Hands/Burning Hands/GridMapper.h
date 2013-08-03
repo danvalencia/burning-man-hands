@@ -11,6 +11,8 @@
 
 @interface GridMapper : NSObject
 
--(HandsCell *) getMappingFor:(HandsCell *)cell;
++(id)sharedMapper;
+
+-(NSArray *) mappingFor:(HandsCell *)cell;
 
 @end

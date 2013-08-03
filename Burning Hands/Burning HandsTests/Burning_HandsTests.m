@@ -8,6 +8,8 @@
 
 #import "Burning_HandsTests.h"
 #import "ColorUtils.h"
+#import "HandsCell.h"
+#import "GridMapper.h"
 
 @implementation Burning_HandsTests
 
@@ -25,11 +27,24 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testColorUtils
 {
     UIColor* myColor = [UIColor cyanColor];
     UInt8 *bytes = [ColorUtils getRGBAsBytes:myColor];
     NSLog(@"%d,%d,%d", bytes[0], bytes[1], bytes[2]);
+}
+
+-(void)testShouldReturnCorrectMapping
+{
+    HandsCell *cell = [[HandsCell alloc] initWithCoordinate:1 y:11];
+    GridMapper *mapper = [[GridMapper alloc] init];
+    NSArray *mappedCoordinates = [mapper mappingFor:cell];
+    
+    NSNumber *xVal = mappedCoordinates[0];
+    NSNumber *yVal = mappedCoordinates[1];
+    
+    STAssertEquals(xVal, @0, @"x coordinate should equal 0");
+    STAssertEquals(yVal, @0, @"y coordinate should equal 0");
 }
 
 @end

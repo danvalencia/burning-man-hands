@@ -268,6 +268,27 @@
 			name = HandsGrid;
 			sourceTree = "<group>";
 		};
+		BE75F77817A6D777007830EA /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				BE590FDA17A20E0C00E16DE4 /* BLECommand.h */,
+				BE590FDB17A20E8800E16DE4 /* ColorUpdateCommand.h */,
+				BE590FDC17A20E8800E16DE4 /* ColorUpdateCommand.m */,
+				BEA28B32177923B000E467EB /* BLEManager.h */,
+				BEA28B33177923B000E467EB /* BLEManager.m */,
+			);
+			name = BLE;
+			sourceTree = "<group>";
+		};
+		BE75F77917A6D7F3007830EA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BEE47F90179E11FC00D9C13F /* ColorUtils.h */,
+				BEE47F91179E11FC00D9C13F /* ColorUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		BEA295E516DAB2D900066468 = {
 			isa = PBXGroup;
 			children = (
@@ -306,15 +327,15 @@
 			isa = PBXGroup;
 			children = (
 				BEE47F8F179E08D800D9C13F /* Constants.h */,
+				BE75F77817A6D777007830EA /* BLE */,
 				BE6C3D9D17886E0B007E9B8F /* HandsGrid */,
+				BE75F77917A6D7F3007830EA /* Utils */,
+				BEA295FB16DAB2D900066468 /* Supporting Files */,
 				BEA2960316DAB2D900066468 /* AppDelegate.h */,
 				BEA2960416DAB2D900066468 /* AppDelegate.m */,
 				BEA2960C16DAB2D900066468 /* MainStoryboard_iPhone.storyboard */,
 				BEA2961216DAB2D900066468 /* ConnectionViewController.h */,
 				BEA2961316DAB2D900066468 /* ConnectionViewController.m */,
-				BEA295FB16DAB2D900066468 /* Supporting Files */,
-				BEEF15EB175BF4E200684921 /* Loader.h */,
-				BEEF15EC175BF4E200684921 /* Loader.m */,
 				BE8D9E621777B9920047BFBD /* Mode.h */,
 				BE8D9E631777B9920047BFBD /* Mode.m */,
 				BE8D9E651777BA8D0047BFBD /* ModePropertyDefinition.h */,
@@ -327,17 +348,10 @@
 				BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */,
 				BE8D9E731777E3750047BFBD /* HandsTabBarViewController.h */,
 				BE8D9E741777E3750047BFBD /* HandsTabBarViewController.m */,
-				BEA28B32177923B000E467EB /* BLEManager.h */,
-				BEA28B33177923B000E467EB /* BLEManager.m */,
 				BEA28B35177945EB00E467EB /* ColorUpdateViewController.h */,
 				BEA28B36177945EB00E467EB /* ColorUpdateViewController.m */,
 				BE4D4FEF177F9E1600CA5554 /* RainbowViewController.h */,
 				BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */,
-				BEE47F90179E11FC00D9C13F /* ColorUtils.h */,
-				BEE47F91179E11FC00D9C13F /* ColorUtils.m */,
-				BE590FDA17A20E0C00E16DE4 /* BLECommand.h */,
-				BE590FDB17A20E8800E16DE4 /* ColorUpdateCommand.h */,
-				BE590FDC17A20E8800E16DE4 /* ColorUpdateCommand.m */,
 			);
 			path = "Burning Hands";
 			sourceTree = "<group>";
@@ -345,6 +359,8 @@
 		BEA295FB16DAB2D900066468 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BEEF15EB175BF4E200684921 /* Loader.h */,
+				BEEF15EC175BF4E200684921 /* Loader.m */,
 				BE8D9E711777D94E0047BFBD /* BM13sticker.png */,
 				BE8D9E601777A3840047BFBD /* connect.png */,
 				BE1C346C17012C33005479B1 /* bloggif_decode_gif */,

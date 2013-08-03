@@ -7,10 +7,16 @@
 //
 
 #import "HandsCell.h"
+#import "GridMapper.h"
 
 @interface HandsCell()
+{
+    GridMapper *gridMapper;
+    NSArray *cellMapping;
+}
 
 -(BOOL)isEqualToCell:(HandsCell *)otherCell;
+-(void)initCellMapping;
 
 @end
 
@@ -29,6 +35,7 @@
         self.x = xCoord;
         self.y = yCoord;
         self.color = [UIColor whiteColor];
+        [self initCellMapping];
     }
     return self;
 }
@@ -47,6 +54,21 @@
 -(NSString*) coordinateKey
 {
     return [NSString stringWithFormat:@"%d,%d", self.x, self.y];
+}
+
+-(int) xMapping
+{
+    return cellMapping[0];
+}
+
+-(int) yMapping
+{
+    return cellMapping[y];
+}
+
+-(void)initCellMapping
+{
+    cellMapping = [[GridMapper sharedMapper] mappingFor:self];
 }
 
 - (BOOL) isEqual:(id)other {
