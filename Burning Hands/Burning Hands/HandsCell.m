@@ -63,7 +63,7 @@
 
 -(int) yMapping
 {
-    return cellMapping[y];
+    return cellMapping[1];
 }
 
 -(void)initCellMapping
