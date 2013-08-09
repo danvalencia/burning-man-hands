@@ -38,6 +38,8 @@
 		BE1C34A617012C33005479B1 /* frame-7.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348817012C33005479B1 /* frame-7.gif */; };
 		BE1C34A717012C33005479B1 /* frame-8.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348917012C33005479B1 /* frame-8.gif */; };
 		BE1C34A817012C33005479B1 /* frame-9.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348A17012C33005479B1 /* frame-9.gif */; };
+		BE21C93E17B4906900FC6876 /* HandsBLE.m in Sources */ = {isa = PBXBuildFile; fileRef = BE21C93D17B4906900FC6876 /* HandsBLE.m */; };
+		BE21C94117B4942100FC6876 /* HandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE21C94017B4942100FC6876 /* HandModel.m */; };
 		BE4D4FF1177F9E1600CA5554 /* RainbowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */; };
 		BE590FDD17A20E8800E16DE4 /* ColorUpdateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BE590FDC17A20E8800E16DE4 /* ColorUpdateCommand.m */; };
 		BE6C3D9C1787A234007E9B8F /* HandsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6C3D9B1787A234007E9B8F /* HandsCell.m */; };
@@ -121,6 +123,10 @@
 		BE1C348817012C33005479B1 /* frame-7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame-7.gif"; sourceTree = "<group>"; };
 		BE1C348917012C33005479B1 /* frame-8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame-8.gif"; sourceTree = "<group>"; };
 		BE1C348A17012C33005479B1 /* frame-9.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "frame-9.gif"; sourceTree = "<group>"; };
+		BE21C93C17B4906900FC6876 /* HandsBLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandsBLE.h; sourceTree = "<group>"; };
+		BE21C93D17B4906900FC6876 /* HandsBLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsBLE.m; sourceTree = "<group>"; };
+		BE21C93F17B4942100FC6876 /* HandModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandModel.h; sourceTree = "<group>"; };
+		BE21C94017B4942100FC6876 /* HandModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandModel.m; sourceTree = "<group>"; };
 		BE4D4FEF177F9E1600CA5554 /* RainbowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RainbowViewController.h; sourceTree = "<group>"; };
 		BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RainbowViewController.m; sourceTree = "<group>"; };
 		BE590FDA17A20E0C00E16DE4 /* BLECommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLECommand.h; sourceTree = "<group>"; };
@@ -276,6 +282,10 @@
 				BE590FDC17A20E8800E16DE4 /* ColorUpdateCommand.m */,
 				BEA28B32177923B000E467EB /* BLEManager.h */,
 				BEA28B33177923B000E467EB /* BLEManager.m */,
+				BE21C93C17B4906900FC6876 /* HandsBLE.h */,
+				BE21C93D17B4906900FC6876 /* HandsBLE.m */,
+				BE21C93F17B4942100FC6876 /* HandModel.h */,
+				BE21C94017B4942100FC6876 /* HandModel.m */,
 			);
 			name = BLE;
 			sourceTree = "<group>";
@@ -571,6 +581,8 @@
 				BEE47F92179E11FC00D9C13F /* ColorUtils.m in Sources */,
 				BE590FDD17A20E8800E16DE4 /* ColorUpdateCommand.m in Sources */,
 				BE884CCF17A5CAE7003D10F2 /* GridMapper.m in Sources */,
+				BE21C93E17B4906900FC6876 /* HandsBLE.m in Sources */,
+				BE21C94117B4942100FC6876 /* HandModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

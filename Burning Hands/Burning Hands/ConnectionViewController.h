@@ -13,9 +13,13 @@
 
 @interface ConnectionViewController : UIViewController <BLEDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *connectBtn;
-@property (strong, nonatomic) IBOutlet Loader *loader;
+@property (weak, nonatomic) IBOutlet UIButton *rightBtn;
+@property (strong, nonatomic) IBOutlet UIButton *leftBtn;
 
-- (IBAction)connectToDevice:(id)sender;
+@property (strong, nonatomic) IBOutlet Loader *rightLoader;
+@property (strong, nonatomic) IBOutlet Loader *leftLoader;
+
+- (IBAction)connectRightHand:(id)sender;
+- (IBAction)connectLeftHand:(id)sender;
 
 @end
