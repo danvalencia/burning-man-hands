@@ -31,15 +31,12 @@
     NSLog(@"It fucking works, yeaaaaahhhh!!!!!!!!");
 }
 
-//- (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
+//-(void) write:(NSData *)d toPeripheral:(CBPeripheral *)peripheral
 //{
-//    if (peripheral.UUID != NULL)
-//        printf("Connected to %s successful\n",[self UUIDToString:peripheral.UUID]);
-//    else
-//        printf("Connected to NULL successful\n");
-//    self.activePeripheral = peripheral;
-//    [self.activePeripheral discoverServices:nil];
-//    [self getAllServicesFromPeripheral:peripheral];
+//    CBUUID *uuid_service = [CBUUID UUIDWithString:@BLE_DEVICE_SERVICE_UUID];
+//    CBUUID *uuid_char = [CBUUID UUIDWithString:@BLE_DEVICE_TX_UUID];
+//    
+//    [self writeValue:uuid_service characteristicUUID:uuid_char p:peripheral data:d];
 //}
 
 

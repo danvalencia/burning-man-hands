@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "HandsBLE.h"
 #import "BLECommand.h"
-#import "HandModel.h"
+#import "Hand.h"
 
 @interface BLEManager : NSObject 
 
@@ -19,14 +19,15 @@
 -(void)initializeWithDelegate:(id<BLEDelegate>)delegate;
 -(void)sendCommand:(NSData *)data;
 -(void)executeCommand:(id <BLECommand> ) command;
+-(void)executeCommand:(id <BLECommand> ) command onHand:(Hand *)hand;
 -(BOOL)connectToDevice;
--(BOOL)connectToHand:(HandModel *)hand;
+-(BOOL)connectToHand:(Hand *)hand;
 -(void)connectToPeripheral:(CBPeripheral *) peripheral;
 -(void)findBluetoothPeripherals;
 -(BOOL)isConnected;
 -(BOOL)isConnected:(CBPeripheral *) peripheral;
 -(void)cancelActiveConnections;
 -(void)disconnectFromPeripheral:(CBPeripheral *) peripheral;
--(void)disconnectHand:(HandModel *) hand;
+-(void)disconnectHand:(Hand *) hand;
 
 @end

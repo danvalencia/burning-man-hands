@@ -46,6 +46,12 @@ static BLEManager* _instance = NULL;
     [self sendCommand:[command getData]];
 }
 
+-(void)executeCommand:(id <BLECommand> ) command onHand:(Hand *)hand
+{
+    
+}
+
+
 -(void)sendCommand:(NSData *)data
 {
     [self.ble write:data];
@@ -61,18 +67,13 @@ static BLEManager* _instance = NULL;
     return NO;
 }
 
--(BOOL)connectToHand:(HandModel *)hand
-{
-    NSString *handUUIDStr = (__bridge NSString *) CFUUIDCreateString(NULL, hand.uuid);
-    NSLog(@"Hand UUID: %@", handUUIDStr);
-    
+-(BOOL)connectToHand:(Hand *)hand
+{    
     if(self.ble.peripherals.count > 0)
     {
         for(int i = 0; self.ble.peripherals.count > i; i++)
         {
-            CBPeripheral *p = [self.ble.peripherals objectAtIndex:i++];
-            NSString *uuidStr = (__bridge NSString *) CFUUIDCreateString(NULL, p.UUID);
-            NSLog(@"Peripheral UUID: %@", uuidStr);
+            CBPeripheral *p = [self.ble.peripherals objectAtIndex:i];
             if(CFEqual(p.UUID, hand.uuid))
             {
                 hand.peripheral = p;
@@ -98,7 +99,7 @@ static BLEManager* _instance = NULL;
     [self.ble.CM cancelPeripheralConnection:peripheral];
 }
 
--(void)disconnectHand:(HandModel *) hand
+-(void)disconnectHand:(Hand *) hand
 {
     if([hand isConnected] && hand.peripheral)
     {

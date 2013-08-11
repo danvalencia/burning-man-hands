@@ -13,6 +13,7 @@
 
 @interface HandsGrid : UIView
 
+//-(id)initMirrored;
 -(void)updateLocation:(CGPoint)location;
 
 @property (nonatomic, strong) id <HandsGridDelegate> delegate;

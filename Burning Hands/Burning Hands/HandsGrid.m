@@ -39,6 +39,11 @@
 @synthesize delegate;
 @synthesize currentColor;
 
+//-(id)initMirrored
+//{
+//    
+//}
+
 - (id)init {
     CGRect drawRect = CGRectMake(20, 40, WIDTH, HEIGHT);
 

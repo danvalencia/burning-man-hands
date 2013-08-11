@@ -10,7 +10,6 @@
 #import "Loader.h"
 #import "BLE.h"
 
-
 @interface ConnectionViewController : UIViewController <BLEDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *rightBtn;

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 
-@interface HandModel : NSObject
+@interface Hand : NSObject
 
 @property (nonatomic, strong) CBPeripheral *peripheral;
 @property (nonatomic, assign) CFUUIDRef uuid;

@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Daniel Valencia Co. All rights reserved.
 //
 
-#import "HandModel.h"
+#import "Hand.h"
 #import "BLEManager.h"
 
-@implementation HandModel
+@implementation Hand
 
 -(id)initWithUUID:(NSString *)uuid
 {

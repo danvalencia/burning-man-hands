@@ -9,17 +9,21 @@
 #import "ConnectionViewController.h"
 #import "Loader.h"
 #import "BLEManager.h"
-#import "HandModel.h"
+#import "HandsModel.h"
+#import "Hand.h"
+
+#define LEFT_HAND_CONNECTION_SUCCESS_MSG @"Disconnect Left Hand"
+#define RIGHT_HAND_CONNECTION_SUCCESS_MSG @"Disconnect Right Hand"
 
 @interface ConnectionViewController ()
 {
-    HandModel *leftHand;
-    HandModel *rightHand;
+    HandsModel *handsModel;
+    Hand *leftHand;
+    Hand *rightHand;
 }
 
 -(void)initLoader;
 -(void)initBluetooth;
--(void)initHands;
 
 @end
 
@@ -32,10 +36,12 @@
     [super viewDidLoad];
     [self initLoader];
     [self initBluetooth];
-    [self initHands];
+    handsModel = [HandsModel sharedInstance];
+    leftHand = handsModel.leftHand;
+    rightHand = handsModel.rightHand;
 }
 
-- (void)didReceiveMemoryWarning
+-(void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
@@ -51,25 +57,19 @@
     [self.leftLoader setHidden:TRUE];
 }
 
--(void) initHands
-{
-    rightHand = [[HandModel alloc] initWithUUID:@"F0573D38-3AE0-CB56-CA5F-2130EA4A6140"];
-    leftHand = [[HandModel alloc] initWithUUID:@"CDA99567-1DAD-4422-65A0-3118878A8863"];
-}
-
 -(void) bleDidConnect
 {
     
     if([leftHand isConnected])
     {
-        [self.leftBtn setTitle:@"Connect Left Hand" forState:UIControlStateNormal];
+        [self.leftBtn setTitle:LEFT_HAND_CONNECTION_SUCCESS_MSG forState:UIControlStateNormal];
         [self.leftLoader stopAnimating];
         NSLog(@"->Left Hand Connected");
     }
     
     if ([rightHand isConnected])
     {
-        [self.rightBtn setTitle:@"Connect Right Hand" forState:UIControlStateNormal];
+        [self.rightBtn setTitle:RIGHT_HAND_CONNECTION_SUCCESS_MSG forState:UIControlStateNormal];
         [self.rightLoader stopAnimating];
         NSLog(@"->Right Hand Connected");
     }
@@ -80,14 +80,14 @@
 {
     if(![leftHand isConnected])
     {
-        [self.leftBtn setTitle:@"Connect" forState:UIControlStateNormal];
+        [self.leftBtn setTitle:@"Connect Left Hand" forState:UIControlStateNormal];
         [self.leftLoader stopAnimating];
         NSLog(@"->Left Hand Disconnected");
    }
     
     if (![rightHand isConnected])
     {
-        [self.rightBtn setTitle:@"Connect" forState:UIControlStateNormal];
+        [self.rightBtn setTitle:@"Connect Right Hand" forState:UIControlStateNormal];
         [self.rightLoader stopAnimating];
         NSLog(@"->Right Hand Disconnected");
     }
@@ -129,52 +129,25 @@
 -(void) rightHandConnectionCallback:(NSTimer *)timer
 {
     [self.rightBtn setEnabled:true];
-    [self.rightBtn setTitle:@"Disconnect Right Hannd" forState:UIControlStateNormal];
+    [self.rightBtn setTitle:RIGHT_HAND_CONNECTION_SUCCESS_MSG forState:UIControlStateNormal];
     
-    if (![[BLEManager sharedInstance] connectToHand:rightHand])
-    {
-        [self.rightBtn setTitle:@"Connect Right Hand" forState:UIControlStateNormal];
-        [self.rightLoader stopAnimating];
-    }
+    [[BLEManager sharedInstance] connectToHand:rightHand];
 }
 
 -(void) leftHandConnectionCallback:(NSTimer *)timer
 {
     [self.leftBtn setEnabled:true];
-    [self.leftBtn setTitle:@"Disconnect Left Hannd" forState:UIControlStateNormal];
+    [self.leftBtn setTitle:LEFT_HAND_CONNECTION_SUCCESS_MSG forState:UIControlStateNormal];
     
-    if (![[BLEManager sharedInstance] connectToHand:leftHand])
-    {
-        [self.leftBtn setTitle:@"Connect Left Hand" forState:UIControlStateNormal];
-        [self.leftLoader stopAnimating];
-    }
+    [[BLEManager sharedInstance] connectToHand:leftHand];
 }
-
-//- (IBAction)connectRightHand:(id)sender
-//{
-//    BLEManager* bleManager = [BLEManager sharedInstance];
-//    if ([bleManager isConnected]) {
-//        [bleManager cancelActiveConnections];
-//        [self.rightBtn setTitle:@"Connect" forState:UIControlStateNormal];
-//        return;
-//    }
-//    
-//    [bleManager findBluetoothPeripherals];
-//    
-//    [self.rightBtn setEnabled:false];
-//    [self.rightBtn setTitle:@"Connecting" forState:UIControlStateNormal];
-//    
-//    [NSTimer scheduledTimerWithTimeInterval:(float)2.0 target:self selector:@selector(connectionTimer:) userInfo:nil repeats:NO];
-//    
-//    [self.rightLoader startAnimating];
-//    [self.rightLoader setHidden:FALSE];
-//}
 
 - (IBAction)connectRightHand:(id)sender
 {
     if([rightHand isConnected])
     {
         [[BLEManager sharedInstance] disconnectHand:rightHand];
+        return;
     }
     
     [self.rightBtn setEnabled:false];
@@ -196,6 +169,7 @@
     if([leftHand isConnected])
     {
         [[BLEManager sharedInstance] disconnectHand:leftHand];
+        return;
     }
     
     [self.leftBtn setEnabled:false];
@@ -209,6 +183,12 @@
     
     [self.leftLoader startAnimating];
     [self.leftLoader setHidden:FALSE];
+}
+
+-(void)setRightHand:(Hand *)theRightHand andLeftHand:(Hand *)theLeftHand
+{
+    rightHand = theRightHand;
+    leftHand = theLeftHand;
 }
 
 @end
