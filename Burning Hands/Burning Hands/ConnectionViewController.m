@@ -14,7 +14,8 @@
 
 #define LEFT_HAND_CONNECTION_SUCCESS_MSG @"Disconnect Left Hand"
 #define RIGHT_HAND_CONNECTION_SUCCESS_MSG @"Disconnect Right Hand"
-
+#define RIGHT_HAND_CONNECTION_UNSUCCESS_MSG @"Connect Right Hand"
+#define LEFT_HAND_CONNECTION_UNSUCCESS_MSG @"Connect Left Hand"
 @interface ConnectionViewController ()
 {
     HandsModel *handsModel;
@@ -53,8 +54,8 @@
 
 - (void)initLoader
 {
-    [self.rightLoader setHidden:TRUE];
-    [self.leftLoader setHidden:TRUE];
+    [self disableLoader:self.rightLoader];
+    [self disableLoader:self.leftLoader];
 }
 
 -(void) bleDidConnect
@@ -63,14 +64,15 @@
     if([leftHand isConnected])
     {
         [self.leftBtn setTitle:LEFT_HAND_CONNECTION_SUCCESS_MSG forState:UIControlStateNormal];
-        [self.leftLoader stopAnimating];
+        [self disableLoader:self.leftLoader];
         NSLog(@"->Left Hand Connected");
     }
     
     if ([rightHand isConnected])
     {
         [self.rightBtn setTitle:RIGHT_HAND_CONNECTION_SUCCESS_MSG forState:UIControlStateNormal];
-        [self.rightLoader stopAnimating];
+        [self disableLoader:self.rightLoader];
+
         NSLog(@"->Right Hand Connected");
     }
     
@@ -80,15 +82,15 @@
 {
     if(![leftHand isConnected])
     {
-        [self.leftBtn setTitle:@"Connect Left Hand" forState:UIControlStateNormal];
-        [self.leftLoader stopAnimating];
+        [self.leftBtn setTitle:RIGHT_HAND_CONNECTION_UNSUCCESS_MSG forState:UIControlStateNormal];
+        [self disableLoader:self.leftLoader];
         NSLog(@"->Left Hand Disconnected");
    }
     
     if (![rightHand isConnected])
     {
-        [self.rightBtn setTitle:@"Connect Right Hand" forState:UIControlStateNormal];
-        [self.rightLoader stopAnimating];
+        [self.rightBtn setTitle:RIGHT_HAND_CONNECTION_UNSUCCESS_MSG forState:UIControlStateNormal];
+        [self disableLoader:self.rightLoader];
         NSLog(@"->Right Hand Disconnected");
     }
         
@@ -131,7 +133,10 @@
     [self.rightBtn setEnabled:true];
     [self.rightBtn setTitle:RIGHT_HAND_CONNECTION_SUCCESS_MSG forState:UIControlStateNormal];
     
-    [[BLEManager sharedInstance] connectToHand:rightHand];
+    if (![[BLEManager sharedInstance] connectToHand:rightHand]) {
+        [self.rightBtn setTitle:RIGHT_HAND_CONNECTION_UNSUCCESS_MSG forState:UIControlStateNormal];
+    };
+    [self disableLoader:self.rightLoader];
 }
 
 -(void) leftHandConnectionCallback:(NSTimer *)timer
@@ -139,7 +144,10 @@
     [self.leftBtn setEnabled:true];
     [self.leftBtn setTitle:LEFT_HAND_CONNECTION_SUCCESS_MSG forState:UIControlStateNormal];
     
-    [[BLEManager sharedInstance] connectToHand:leftHand];
+    if (![[BLEManager sharedInstance] connectToHand:leftHand]) {
+        [self.leftBtn setTitle:LEFT_HAND_CONNECTION_UNSUCCESS_MSG forState:UIControlStateNormal];
+    };
+    [self disableLoader:self.leftLoader];
 }
 
 - (IBAction)connectRightHand:(id)sender
@@ -159,8 +167,7 @@
     
     [NSTimer scheduledTimerWithTimeInterval:(float)3.0 target:self selector:@selector(rightHandConnectionCallback:) userInfo:nil repeats:NO];
     
-    [self.rightLoader startAnimating];
-    [self.rightLoader setHidden:FALSE];
+    [self enableLoader:self.rightLoader];
 }
 
 
@@ -181,14 +188,20 @@
     
     [NSTimer scheduledTimerWithTimeInterval:(float)3.0 target:self selector:@selector(leftHandConnectionCallback:) userInfo:nil repeats:NO];
     
-    [self.leftLoader startAnimating];
-    [self.leftLoader setHidden:FALSE];
+    [self enableLoader:self.leftLoader];
 }
 
--(void)setRightHand:(Hand *)theRightHand andLeftHand:(Hand *)theLeftHand
+-(void) disableLoader:(Loader *)loader
 {
-    rightHand = theRightHand;
-    leftHand = theLeftHand;
+    [loader setHidden:YES];
+    [loader stopAnimating];
 }
+
+-(void) enableLoader:(Loader *)loader
+{
+    [loader setHidden:NO];
+    [loader startAnimating];
+}
+
 
 @end

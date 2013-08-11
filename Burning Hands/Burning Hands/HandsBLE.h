@@ -12,8 +12,11 @@
 
 @property (nonatomic, strong) NSArray* peripheralArray;
 
-- (void) connectPeripheral:(CBPeripheral *)peripheral;
-- (void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral;
+-(void) connectPeripheral:(CBPeripheral *)peripheral;
+-(void) centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral;
+-(void) enableWriteForPeripheral:(CBPeripheral *)peripheral;
+-(void) readLibVerFromPeripheral:(CBPeripheral *)peripheral;
+-(void) readVendorNameFromPeripheral:(CBPeripheral *)peripheral;
 
 
 @end
