@@ -21,6 +21,10 @@
 @interface HandsGrid()
 {
     NSMutableArray *disabledCells;
+    CGFloat tx;
+    CGFloat ty;
+    CGFloat sx;
+    CGFloat sy;
 }
 
 - (void)createCellOn:(int)x y:(int)y;
@@ -44,6 +48,28 @@
 //    
 //}
 
+-(id)initWithHand:(Hand *)theHand transX:(int)_tx transY:(int)_ty scaleX:(int)_sx scaleY:(int)_sy;
+{
+    CGRect drawRect = CGRectMake(20, 40, WIDTH, HEIGHT);
+    
+    self = [super initWithFrame:drawRect];
+    if (self) {
+        self.backgroundColor = [UIColor whiteColor];
+        self.cells = [[NSMutableDictionary alloc] init];
+        self.hand = theHand;
+        tx = _tx;
+        ty = _ty;
+        sx = _sx;
+        sy = _sy;
+        [self initTransform];
+        [self initDisabledCells];
+        [self initCells];
+    }
+    
+    return self;
+
+}
+
 - (id)init {
     CGRect drawRect = CGRectMake(20, 40, WIDTH, HEIGHT);
 
@@ -51,6 +77,10 @@
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         self.cells = [[NSMutableDictionary alloc] init];
+        tx = 0.0;
+        ty = HEIGHT;
+        sx = 1.0;
+        sy = -1.0;
         [self initTransform];
         [self initDisabledCells];
         [self initCells];
@@ -65,8 +95,8 @@
     CGContextRef graphicsContext = UIGraphicsGetCurrentContext();
     CGContextSaveGState(graphicsContext);
     
-    CGContextTranslateCTM(graphicsContext, 0.0, HEIGHT);
-    CGContextScaleCTM(graphicsContext, 1.0, -1.0);
+    CGContextTranslateCTM(graphicsContext, tx, ty);
+    CGContextScaleCTM(graphicsContext, sx, sy);
     
     for(id key in self.cells)
     {
@@ -116,7 +146,8 @@
 {
     UIBezierPath *aPath = [UIBezierPath bezierPath];
     HandsCell *cell = [[HandsCell alloc] initWithPath:aPath x:x y:y];
-        
+    cell.parentHandsGrid = self;
+    
     float initialPosX = 1.0 + (x * COL_WIDTH);
     float initialPosY = 1.0 + (y * ROW_WIDTH);
     // Set the starting point of the shape.
@@ -133,13 +164,13 @@
     [self.cells setObject:cell forKey:[cell coordinateKey]];
 }
 
+
 - (void)initTransform
 {
-    self.affineTransform = CGAffineTransformTranslate(self.transform, 0.0, HEIGHT);
-    self.affineTransform = CGAffineTransformScale(self.affineTransform, 1.0, -1.0);
+    self.affineTransform = CGAffineTransformTranslate(self.transform, tx, ty);
+    self.affineTransform = CGAffineTransformScale(self.affineTransform, sx, sy);
 }
-
-
+                                                      
 - (CGPoint)switchCoordinateSystem:(CGPoint)point
 {
     CGPoint newPoint = CGPointApplyAffineTransform(point, self.affineTransform);

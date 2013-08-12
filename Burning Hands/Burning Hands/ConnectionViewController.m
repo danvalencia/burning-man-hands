@@ -82,7 +82,7 @@
 {
     if(![leftHand isConnected])
     {
-        [self.leftBtn setTitle:RIGHT_HAND_CONNECTION_UNSUCCESS_MSG forState:UIControlStateNormal];
+        [self.leftBtn setTitle:LEFT_HAND_CONNECTION_UNSUCCESS_MSG forState:UIControlStateNormal];
         [self disableLoader:self.leftLoader];
         NSLog(@"->Left Hand Disconnected");
    }

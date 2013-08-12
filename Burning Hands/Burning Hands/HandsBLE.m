@@ -22,14 +22,18 @@
 {
     
     printf("Connecting to peripheral with UUID : %s\r\n",[self UUIDToString:peripheral.UUID]);
-    self.activePeripheral = peripheral;
-    self.activePeripheral.delegate = self;
-    [self.CM connectPeripheral:self.activePeripheral options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:CBConnectPeripheralOptionNotifyOnDisconnectionKey]];
+    //self.activePeripheral = peripheral;
+    //self.activePeripheral.delegate = self;
+    peripheral.delegate = self;
+    [self.CM connectPeripheral:peripheral options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:CBConnectPeripheralOptionNotifyOnDisconnectionKey]];
 }
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
 {
     [super centralManager:central didConnectPeripheral:peripheral];
+    [peripheral discoverServices:nil];
+    [self getAllServicesFromPeripheral:peripheral];
+
     NSLog(@"It fucking works, yeaaaaahhhh!!!!!!!!");
 }
 
@@ -75,8 +79,6 @@
     [self readValue:uuid_service characteristicUUID:uuid_char p:peripheral];
 }
 
-static bool done = false;
-
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
 {
     if (!error)
@@ -91,19 +93,14 @@ static bool done = false;
             
             if ([service.UUID isEqual:s.UUID])
             {
-                if (!done)
-                {
-                    [self enableReadNotification:peripheral];
-                    [self readLibVerFromPeripheral:peripheral];
-                    [self readVendorNameFromPeripheral:peripheral];
+                [self enableReadNotification:peripheral];
+                [self readLibVerFromPeripheral:peripheral];
+                [self readVendorNameFromPeripheral:peripheral];
                     
-                    [[self delegate] bleDidConnect];
+                [[self delegate] bleDidConnect];
                     
-                    isConnected = true;
-                    [peripheral readRSSI];
-                    
-                    done = true;
-                }
+                isConnected = true;
+                [peripheral readRSSI];
                 
                 break;
             }

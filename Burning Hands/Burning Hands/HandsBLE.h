@@ -17,6 +17,7 @@
 -(void) enableWriteForPeripheral:(CBPeripheral *)peripheral;
 -(void) readLibVerFromPeripheral:(CBPeripheral *)peripheral;
 -(void) readVendorNameFromPeripheral:(CBPeripheral *)peripheral;
+-(void) write:(NSData *)d toPeripheral:(CBPeripheral *)peripheral;
 
 
 @end

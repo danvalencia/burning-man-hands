@@ -22,10 +22,10 @@
 
 @implementation HandsCell
 
-@synthesize x;
-@synthesize y;
-@synthesize path;
-@synthesize color;
+//@synthesize x;
+//@synthesize y;
+//@synthesize path;
+//@synthesize color;
 
 -(id) initWithPath:(UIBezierPath*)thePath x:(int)xCoord y:(int)yCoord
 {
@@ -42,7 +42,7 @@
 
 -(id) initWithCoordinate:(int)_x y:(int)_y
 {
-    return [self initWithPath:NULL x:_x y:_y];
+    return [self initWithPath:NULL x:self.x y:self.y];
 }
 
 

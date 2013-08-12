@@ -10,8 +10,6 @@
 
 @implementation BLEManager
 
-@synthesize ble;
-
 static BLEManager* _instance = NULL;
 
 -(id)init
@@ -48,9 +46,8 @@ static BLEManager* _instance = NULL;
 
 -(void)executeCommand:(id <BLECommand> ) command onHand:(Hand *)hand
 {
-    
+    [self.ble write:[command getData] toPeripheral:hand.peripheral];
 }
-
 
 -(void)sendCommand:(NSData *)data
 {
@@ -87,10 +84,10 @@ static BLEManager* _instance = NULL;
 
 -(void)connectToPeripheral:(CBPeripheral *) peripheral
 {
-    if([self isConnected:peripheral])
-    {
-        [self disconnectFromPeripheral:peripheral];
-    }
+//    if([self isConnected:peripheral])
+//    {
+//        [self disconnectFromPeripheral:peripheral];
+//    }
     [self.ble connectPeripheral:peripheral];
 }
 
@@ -115,18 +112,6 @@ static BLEManager* _instance = NULL;
 -(BOOL)isConnected:(CBPeripheral *) peripheral
 {
     return peripheral && peripheral.isConnected;
-}
-
--(BOOL)isConnected
-{
-    if (self.ble.activePeripheral)
-    {
-        if(self.ble.activePeripheral.isConnected)
-        {
-            return YES;
-        }
-    }
-    return NO;
 }
 
 -(void)cancelActiveConnections

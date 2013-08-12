@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HandsGrid.h"
+
+@class HandsGrid;
 
 @interface HandsCell : NSObject
 
@@ -14,6 +17,7 @@
 @property (nonatomic) int x;
 @property (nonatomic) int y;
 @property (nonatomic, strong) UIColor* color;
+@property (nonatomic) HandsGrid* parentHandsGrid;
 
 -(id) initWithPath:(UIBezierPath*)path x:(int)x y:(int)y;
 -(id) initWithCoordinate:(int)_x y:(int)_y;

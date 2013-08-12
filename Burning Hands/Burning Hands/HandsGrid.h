@@ -7,17 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Hand.h"
 #import "HandsCell.h"
 
 @protocol HandsGridDelegate;
+
+@class HandsCell;
 
 @interface HandsGrid : UIView
 
 //-(id)initMirrored;
 -(void)updateLocation:(CGPoint)location;
+-(id)initWithHand:(Hand *)hand transX:(int)tx transY:(int)ty scaleX:(int)sx scaleY:(int)sy;
 
 @property (nonatomic, strong) id <HandsGridDelegate> delegate;
 @property (nonatomic, strong) UIColor* currentColor;
+@property (nonatomic, strong) Hand* hand;
 
 @end
 
