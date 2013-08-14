@@ -31,8 +31,9 @@
 -(NSData *) getData
 {
     UInt8* colorBytes = [ColorUtils getRGBAsBytes:self.cell.color];
-    UInt8 xPos = (UInt8)self.cell.x;
-    UInt8 yPos = (UInt8)self.cell.y;
+    UInt8 xPos = (UInt8)self.cell.xMapping;
+    UInt8 yPos = (UInt8)self.cell.yMapping;
+    NSLog(@"Coordinate sent: (%d, %d)", xPos, yPos);
     
     UInt8 *commandArray = malloc(sizeof(UInt8) * 6);
     commandArray[0] = COMMAND;

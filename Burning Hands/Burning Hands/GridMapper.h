@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "HandsCell.h"   
+#import "Coordinate.h"
 
 @interface GridMapper : NSObject
 
 +(id)sharedMapper;
 
--(NSArray *) mappingFor:(HandsCell *)cell;
+-(Coordinate *) mappingFor:(HandsCell *)cell;
 
 @end

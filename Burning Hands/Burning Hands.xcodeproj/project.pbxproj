@@ -46,6 +46,7 @@
 		BE6C3D9C1787A234007E9B8F /* HandsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6C3D9B1787A234007E9B8F /* HandsCell.m */; };
 		BE7690BD17733D7000B27D77 /* HandsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7690BC17733D7000B27D77 /* HandsIcon.png */; };
 		BE7690BF17733DA800B27D77 /* HandsIcon_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7690BE17733DA800B27D77 /* HandsIcon_iPhone.png */; };
+		BE7FFA4917BB30AA00F4131F /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7FFA4817BB30AA00F4131F /* Coordinate.m */; };
 		BE884CCF17A5CAE7003D10F2 /* GridMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BE884CCE17A5CAE7003D10F2 /* GridMapper.m */; };
 		BE8D9E611777A3840047BFBD /* connect.png in Resources */ = {isa = PBXBuildFile; fileRef = BE8D9E601777A3840047BFBD /* connect.png */; };
 		BE8D9E641777B9920047BFBD /* Mode.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8D9E631777B9920047BFBD /* Mode.m */; };
@@ -139,6 +140,8 @@
 		BE6C3D9B1787A234007E9B8F /* HandsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsCell.m; sourceTree = "<group>"; };
 		BE7690BC17733D7000B27D77 /* HandsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandsIcon.png; sourceTree = "<group>"; };
 		BE7690BE17733DA800B27D77 /* HandsIcon_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandsIcon_iPhone.png; sourceTree = "<group>"; };
+		BE7FFA4717BB30AA00F4131F /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
+		BE7FFA4817BB30AA00F4131F /* Coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coordinate.m; sourceTree = "<group>"; };
 		BE884CCD17A5CAE7003D10F2 /* GridMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridMapper.h; sourceTree = "<group>"; };
 		BE884CCE17A5CAE7003D10F2 /* GridMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridMapper.m; sourceTree = "<group>"; };
 		BE8D9E601777A3840047BFBD /* connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect.png; sourceTree = "<group>"; };
@@ -367,6 +370,8 @@
 				BEA28B36177945EB00E467EB /* ColorUpdateViewController.m */,
 				BE4D4FEF177F9E1600CA5554 /* RainbowViewController.h */,
 				BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */,
+				BE7FFA4717BB30AA00F4131F /* Coordinate.h */,
+				BE7FFA4817BB30AA00F4131F /* Coordinate.m */,
 			);
 			path = "Burning Hands";
 			sourceTree = "<group>";
@@ -589,6 +594,7 @@
 				BE21C93E17B4906900FC6876 /* HandsBLE.m in Sources */,
 				BE21C94117B4942100FC6876 /* Hand.m in Sources */,
 				BE521B1C17B7327100D395C2 /* HandsModel.m in Sources */,
+				BE7FFA4917BB30AA00F4131F /* Coordinate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

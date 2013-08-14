@@ -8,11 +8,12 @@
 
 #import "HandsCell.h"
 #import "GridMapper.h"
+#import "Coordinate.h"
 
 @interface HandsCell()
 {
     GridMapper *gridMapper;
-    NSArray *cellMapping;
+    Coordinate *mappedCoordinate;
 }
 
 -(BOOL)isEqualToCell:(HandsCell *)otherCell;
@@ -21,11 +22,6 @@
 @end
 
 @implementation HandsCell
-
-//@synthesize x;
-//@synthesize y;
-//@synthesize path;
-//@synthesize color;
 
 -(id) initWithPath:(UIBezierPath*)thePath x:(int)xCoord y:(int)yCoord
 {
@@ -58,17 +54,18 @@
 
 -(int) xMapping
 {
-    return cellMapping[0];
+    return mappedCoordinate.x;
 }
 
 -(int) yMapping
 {
-    return cellMapping[1];
+    return mappedCoordinate.y;
 }
 
 -(void)initCellMapping
 {
-    cellMapping = [[GridMapper sharedMapper] mappingFor:self];
+    mappedCoordinate = [[GridMapper sharedMapper] mappingFor:self];
+    NSLog(@"Mapped Coordinate: (%d,%d)", mappedCoordinate.x, mappedCoordinate.y);
 }
 
 - (BOOL) isEqual:(id)other {

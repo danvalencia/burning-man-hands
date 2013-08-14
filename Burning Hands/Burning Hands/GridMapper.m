@@ -7,10 +7,11 @@
 //
 
 #import "GridMapper.h"
+#import "Coordinate.h"
 
 @interface GridMapper()
 {
-    NSDictionary *mappingDictionary;
+    NSMutableDictionary *mappingDictionary;
 }
 
 -(void) initMapping;
@@ -45,39 +46,44 @@ static  GridMapper *_sharedMapper = nil;
 
 -(void)initMapping
 {
-    mappingDictionary = @{
-                @"1,11" : @[@0, @0],
-                @"1,12" : @[@0, @1],
-                @"1,13" : @[@0, @2],
-                @"1,14" : @[@0, @3],
-                @"0,13" : @[@0, @4],
-                @"0,14" : @[@0, @5],
-                @"0,15" : @[@0, @6],
-                @"0,16" : @[@0, @7],
-                @"0,17" : @[@0, @8],
-                @"7,10" : @[@6, @4],
-                @"7,11" : @[@6, @5],
-                @"7,12" : @[@6, @6],
-                @"7,13" : @[@6, @7],
-                @"7,14" : @[@6, @8],
-                @"8,11" : @[@7, @0],
-                @"8,12" : @[@7, @1],
-                @"8,13" : @[@7, @2],
-                @"9,12" : @[@7, @3],
-                @"9,13" : @[@7, @4],
-                @"9,14" : @[@7, @5],
-                @"10,14": @[@7, @6],
-                @"10,15": @[@7, @7],
-                @"10,16": @[@7, @8],
-    };
+    mappingDictionary = [[NSMutableDictionary alloc] init];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:0 y:0] forKey:@"1,11"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:0 y:1] forKey:@"1,12"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:0 y:2] forKey:@"1,13"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:0 y:3] forKey:@"1,14"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:0 y:4] forKey:@"0,13"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:0 y:5] forKey:@"0,14"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:0 y:6] forKey:@"0,15"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:0 y:7] forKey:@"0,16"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:0 y:8] forKey:@"0,17"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:6 y:4] forKey:@"7,10"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:6 y:5] forKey:@"7,11"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:6 y:6] forKey:@"7,12"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:6 y:7] forKey:@"7,13"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:6 y:8] forKey:@"7,14"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:7 y:0] forKey:@"8,11"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:7 y:1] forKey:@"8,12"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:7 y:2] forKey:@"8,13"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:7 y:3] forKey:@"9,12"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:7 y:4] forKey:@"9,13"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:7 y:5] forKey:@"9,14"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:7 y:6] forKey:@"10,14"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:7 y:7] forKey:@"10,15"];
+    [mappingDictionary setObject:[[Coordinate alloc] initWithX:7 y:8] forKey:@"10,16"];
 }
 
--(NSArray *) mappingFor:(HandsCell *)cell
+-(Coordinate *) mappingFor:(HandsCell *)cell
 {
-    NSArray *mappedCoordinate = mappingDictionary[[cell coordinateKey]];
-    if(mappedCoordinate == nil)
+    if(cell.x == 0 && cell.y ==0)
     {
-        mappedCoordinate = @[ @(cell.x - 1), @(cell.y) ];
+        int x = cell.x;
+        NSLog(@"zero comma zero");
+    }
+    
+    Coordinate *mappedCoordinate = [mappingDictionary objectForKey:[cell coordinateKey]];
+    if(!mappedCoordinate)
+    {
+        mappedCoordinate = [[Coordinate alloc] initWithX:(cell.x - 1) y:cell.y];
     }
     return mappedCoordinate;
 }
