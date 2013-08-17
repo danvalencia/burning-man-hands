@@ -59,7 +59,7 @@
 		BE91767C1786457400C30ACB /* HandsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE91767A1786457400C30ACB /* HandsViewController.m */; };
 		BE91768017864B9D00C30ACB /* HandsGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = BE91767F17864B9D00C30ACB /* HandsGrid.m */; };
 		BEA28B34177923B000E467EB /* BLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28B33177923B000E467EB /* BLEManager.m */; };
-		BEA28B37177945EB00E467EB /* ColorUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28B36177945EB00E467EB /* ColorUpdateViewController.m */; };
+		BEA28B37177945EB00E467EB /* VerticalLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28B36177945EB00E467EB /* VerticalLoopViewController.m */; };
 		BEA295F516DAB2D900066468 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F416DAB2D900066468 /* UIKit.framework */; };
 		BEA295F716DAB2D900066468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F616DAB2D900066468 /* Foundation.framework */; };
 		BEA295F916DAB2D900066468 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F816DAB2D900066468 /* CoreGraphics.framework */; };
@@ -76,6 +76,7 @@
 		BEA2961E16DAB2D900066468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F616DAB2D900066468 /* Foundation.framework */; };
 		BEA2962616DAB2D900066468 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEA2962416DAB2D900066468 /* InfoPlist.strings */; };
 		BEA2962916DAB2D900066468 /* Burning_HandsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA2962816DAB2D900066468 /* Burning_HandsTests.m */; };
+		BEDE69B917BF450400AC7054 /* VerticalLoopCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDE69B817BF450400AC7054 /* VerticalLoopCommand.m */; };
 		BEE47F8E179E073000D9C13F /* ColorSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE47F8D179E073000D9C13F /* ColorSelector.m */; };
 		BEE47F92179E11FC00D9C13F /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE47F91179E11FC00D9C13F /* ColorUtils.m */; };
 		BEEF15ED175BF4E200684921 /* Loader.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF15EC175BF4E200684921 /* Loader.m */; };
@@ -164,8 +165,8 @@
 		BE91767F17864B9D00C30ACB /* HandsGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsGrid.m; sourceTree = "<group>"; };
 		BEA28B32177923B000E467EB /* BLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEManager.h; sourceTree = "<group>"; };
 		BEA28B33177923B000E467EB /* BLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEManager.m; sourceTree = "<group>"; };
-		BEA28B35177945EB00E467EB /* ColorUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUpdateViewController.h; sourceTree = "<group>"; };
-		BEA28B36177945EB00E467EB /* ColorUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorUpdateViewController.m; sourceTree = "<group>"; };
+		BEA28B35177945EB00E467EB /* VerticalLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalLoopViewController.h; sourceTree = "<group>"; };
+		BEA28B36177945EB00E467EB /* VerticalLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalLoopViewController.m; sourceTree = "<group>"; };
 		BEA295F016DAB2D900066468 /* Burning Hands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Burning Hands.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA295F416DAB2D900066468 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEA295F616DAB2D900066468 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -188,6 +189,8 @@
 		BEA2962516DAB2D900066468 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BEA2962716DAB2D900066468 /* Burning_HandsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Burning_HandsTests.h; sourceTree = "<group>"; };
 		BEA2962816DAB2D900066468 /* Burning_HandsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Burning_HandsTests.m; sourceTree = "<group>"; };
+		BEDE69B717BF450400AC7054 /* VerticalLoopCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalLoopCommand.h; sourceTree = "<group>"; };
+		BEDE69B817BF450400AC7054 /* VerticalLoopCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalLoopCommand.m; sourceTree = "<group>"; };
 		BEE47F8C179E073000D9C13F /* ColorSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSelector.h; sourceTree = "<group>"; };
 		BEE47F8D179E073000D9C13F /* ColorSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSelector.m; sourceTree = "<group>"; };
 		BEE47F8F179E08D800D9C13F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				BE21C94017B4942100FC6876 /* Hand.m */,
 				BE521B1A17B7327100D395C2 /* HandsModel.h */,
 				BE521B1B17B7327100D395C2 /* HandsModel.m */,
+				BEDE69B717BF450400AC7054 /* VerticalLoopCommand.h */,
+				BEDE69B817BF450400AC7054 /* VerticalLoopCommand.m */,
 			);
 			name = BLE;
 			sourceTree = "<group>";
@@ -366,8 +371,8 @@
 				BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */,
 				BE8D9E731777E3750047BFBD /* HandsTabBarViewController.h */,
 				BE8D9E741777E3750047BFBD /* HandsTabBarViewController.m */,
-				BEA28B35177945EB00E467EB /* ColorUpdateViewController.h */,
-				BEA28B36177945EB00E467EB /* ColorUpdateViewController.m */,
+				BEA28B35177945EB00E467EB /* VerticalLoopViewController.h */,
+				BEA28B36177945EB00E467EB /* VerticalLoopViewController.m */,
 				BE4D4FEF177F9E1600CA5554 /* RainbowViewController.h */,
 				BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */,
 				BE7FFA4717BB30AA00F4131F /* Coordinate.h */,
@@ -582,7 +587,7 @@
 				BE8D9E701777CE990047BFBD /* ModeDetailViewController.m in Sources */,
 				BE8D9E751777E3750047BFBD /* HandsTabBarViewController.m in Sources */,
 				BEA28B34177923B000E467EB /* BLEManager.m in Sources */,
-				BEA28B37177945EB00E467EB /* ColorUpdateViewController.m in Sources */,
+				BEA28B37177945EB00E467EB /* VerticalLoopViewController.m in Sources */,
 				BE4D4FF1177F9E1600CA5554 /* RainbowViewController.m in Sources */,
 				BE6C3D9C1787A234007E9B8F /* HandsCell.m in Sources */,
 				BE91767C1786457400C30ACB /* HandsViewController.m in Sources */,
@@ -595,6 +600,7 @@
 				BE21C94117B4942100FC6876 /* Hand.m in Sources */,
 				BE521B1C17B7327100D395C2 /* HandsModel.m in Sources */,
 				BE7FFA4917BB30AA00F4131F /* Coordinate.m in Sources */,
+				BEDE69B917BF450400AC7054 /* VerticalLoopCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

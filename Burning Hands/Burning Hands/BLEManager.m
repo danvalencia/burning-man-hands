@@ -71,11 +71,14 @@ static BLEManager* _instance = NULL;
         for(int i = 0; self.ble.peripherals.count > i; i++)
         {
             CBPeripheral *p = [self.ble.peripherals objectAtIndex:i];
-            if(CFEqual(p.UUID, hand.uuid))
+            if(p.UUID)
             {
-                hand.peripheral = p;
-                [self connectToPeripheral:hand.peripheral];
-                return YES;
+                if(CFEqual(p.UUID, hand.uuid))
+                {
+                    hand.peripheral = p;
+                    [self connectToPeripheral:hand.peripheral];
+                    return YES;
+                }                
             }
         }
     }

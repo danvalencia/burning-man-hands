@@ -73,17 +73,17 @@ static  GridMapper *_sharedMapper = nil;
 }
 
 -(Coordinate *) mappingFor:(HandsCell *)cell
-{
-    if(cell.x == 0 && cell.y ==0)
-    {
-        int x = cell.x;
-        NSLog(@"zero comma zero");
-    }
-    
+{    
     Coordinate *mappedCoordinate = [mappingDictionary objectForKey:[cell coordinateKey]];
     if(!mappedCoordinate)
     {
-        mappedCoordinate = [[Coordinate alloc] initWithX:(cell.x - 1) y:cell.y];
+        if (cell.x == 2) {
+            mappedCoordinate = [[Coordinate alloc] initWithX:(cell.x - 1) y:(cell.y - 1)];
+        }
+        else
+        {
+            mappedCoordinate = [[Coordinate alloc] initWithX:(cell.x - 1) y:cell.y];            
+        }
     }
     return mappedCoordinate;
 }

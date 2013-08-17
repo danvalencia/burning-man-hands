@@ -30,5 +30,35 @@
     return bytes;
 }
 
++ (NSString*)padWithZeros:(NSString*)string
+{
+    NSMutableString *paddedString = [NSMutableString stringWithCapacity:6];
+    [paddedString appendString:string];
+    
+    if(string.length < 6)
+    {
+        for(UInt8 i = 6 - string.length; i > 0; i--)
+        {
+            [paddedString appendString:@"0"];
+        }
+    }
+    return paddedString;
+}
+
++ (UInt8*)convertHexStringToByteArray:(NSString *)hexColor {
+    UInt8* array = malloc(sizeof(UInt8) * 3);
+    //UInt8 colorArray[3] = {};
+    
+    unsigned firstDigitInt;
+    for (int i = 0; i < 6; i += 2) {
+        NSString *digit = [hexColor substringWithRange:NSMakeRange(i, 2)];
+        [[NSScanner scannerWithString:digit] scanHexInt:&firstDigitInt];
+        array[i/2] = (char)firstDigitInt;
+        NSLog(@"Digit: %u", firstDigitInt);
+    }
+    return array;
+}
+
+
 
 @end

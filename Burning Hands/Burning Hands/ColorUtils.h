@@ -12,5 +12,7 @@
 
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 + (UInt8 *) getRGBAsBytes:(UIColor *)color;
++ (NSString *)padWithZeros:(NSString*)string;
++ (UInt8 *)convertHexStringToByteArray:(NSString *)hexColor;
 
 @end

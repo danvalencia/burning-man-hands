@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="206" y="1659"/>
         </scene>
-        <!--Color Update View Controller - About-->
+        <!--Vertical Loop View Controller - About-->
         <scene sceneID="hbf-vi-D8i">
             <objects>
-                <viewController id="JUn-Vs-FMD" customClass="ColorUpdateViewController" sceneMemberID="viewController">
+                <viewController id="JUn-Vs-FMD" customClass="VerticalLoopViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GYr-7n-Pm6">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -153,13 +153,37 @@
                                     <outlet property="delegate" destination="JUn-Vs-FMD" id="kOw-4d-y3D"/>
                                 </connections>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BrY-dB-MQX">
+                                <segments>
+                                    <segment title="Left Hand"/>
+                                    <segment title="Right Hand"/>
+                                </segments>
+                                <connections>
+                                    <action selector="handSelected:" destination="JUn-Vs-FMD" eventType="valueChanged" id="EOa-NT-Pfj"/>
+                                </connections>
+                            </segmentedControl>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGd-f1-v87">
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.69999999999999973" height="0.69999999999999973"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="3sO-Rl-7IV"/>
+                                    <constraint firstAttribute="height" constant="216" id="m75-cg-tM7"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="JUn-Vs-FMD" id="Vc7-5P-fVT"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="0oc-wC-d5k" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="76f-Fv-WhO"/>
+                            <constraint firstItem="0oc-wC-d5k" firstAttribute="top" secondItem="BrY-dB-MQX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5UC-Pl-zIx"/>
+                            <constraint firstAttribute="trailing" secondItem="BrY-dB-MQX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Eao-u8-m7g"/>
+                            <constraint firstAttribute="trailing" secondItem="0oc-wC-d5k" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Eyk-97-evT"/>
                             <constraint firstItem="Ezw-Jj-R1H" firstAttribute="leading" secondItem="GYr-7n-Pm6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="L4h-fw-xDE"/>
                             <constraint firstItem="u6D-CW-may" firstAttribute="top" secondItem="GYr-7n-Pm6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="OR7-lN-KlR"/>
                             <constraint firstItem="Ezw-Jj-R1H" firstAttribute="top" secondItem="GYr-7n-Pm6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="blY-YI-c60"/>
+                            <constraint firstItem="iGd-f1-v87" firstAttribute="centerX" secondItem="BrY-dB-MQX" secondAttribute="centerX" type="default" id="gjy-Ld-qkY"/>
+                            <constraint firstItem="iGd-f1-v87" firstAttribute="top" secondItem="u6D-CW-may" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kJL-sY-uLH"/>
+                            <constraint firstItem="BrY-dB-MQX" firstAttribute="leading" secondItem="GYr-7n-Pm6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oRQ-LZ-3oB"/>
                             <constraint firstAttribute="bottom" secondItem="0oc-wC-d5k" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tch-pL-JD6"/>
                             <constraint firstAttribute="trailing" secondItem="u6D-CW-may" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="w33-HA-YIy"/>
                             <constraint firstItem="0oc-wC-d5k" firstAttribute="leading" secondItem="GYr-7n-Pm6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yUf-bB-5JI"/>
@@ -169,6 +193,8 @@
                     <navigationItem key="navigationItem" id="7sZ-pB-fyn"/>
                     <connections>
                         <outlet property="colorTextField" destination="u6D-CW-may" id="EXf-Pj-GEe"/>
+                        <outlet property="handButton" destination="BrY-dB-MQX" id="Mx3-KC-u4E"/>
+                        <outlet property="loopTypeSelection" destination="iGd-f1-v87" id="Tvi-pf-eA2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEA-TW-Gjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -193,7 +219,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Update Color" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s73-dc-Fr6">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Loop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s73-dc-Fr6">
                                                     <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -415,13 +441,6 @@
         </scene>
     </scenes>
     <classes>
-        <class className="ColorUpdateViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorUpdateViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="updateColor:"/>
-                <relationship kind="outlet" name="colorTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
         <class className="ConnectionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectionViewController.h"/>
             <relationships>
@@ -429,8 +448,8 @@
                 <relationship kind="action" name="connectRightHand:"/>
                 <relationship kind="outlet" name="leftBtn" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="leftLoader" candidateClass="Loader"/>
-                <relationship kind="outlet" name="loader" candidateClass="Loader"/>
                 <relationship kind="outlet" name="rightBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rightLoader" candidateClass="Loader"/>
             </relationships>
         </class>
         <class className="HandsTabBarViewController" superclassName="UITabBarController">
@@ -456,6 +475,16 @@
             <relationships>
                 <relationship kind="action" name="setRainbowMode:"/>
                 <relationship kind="outlet" name="delayTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="VerticalLoopViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VerticalLoopViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handSelected:"/>
+                <relationship kind="action" name="updateColor:"/>
+                <relationship kind="outlet" name="colorTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="handButton" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="loopTypeSelection" candidateClass="UIPickerView"/>
             </relationships>
         </class>
     </classes>

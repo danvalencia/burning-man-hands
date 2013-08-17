@@ -37,12 +37,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    leftHandGrid = [[HandsGrid alloc] initWithHand:[[HandsModel sharedInstance] leftHand] transX:WIDTH transY:HEIGHT scaleX:-1.0 scaleY:-1.0];
+    leftHandGrid = [[HandsGrid alloc] initWithHand:[[HandsModel sharedInstance] leftHand] transX:0.0 transY:HEIGHT scaleX:1.0 scaleY:-1.0];
     [leftHandGrid setAlpha:0.0];
     leftHandGrid.delegate = self;
     [self.view addSubview:leftHandGrid];
 
-    rightHandGrid =  [[HandsGrid alloc] initWithHand:[[HandsModel sharedInstance] rightHand] transX:0.0 transY:HEIGHT scaleX:1.0 scaleY:-1.0];
+    rightHandGrid =  [[HandsGrid alloc] initWithHand:[[HandsModel sharedInstance] rightHand] transX:WIDTH transY:HEIGHT scaleX:-1.0 scaleY:-1.0];
     rightHandGrid.delegate = self;
     [self.view addSubview:rightHandGrid];
     

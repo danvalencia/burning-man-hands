@@ -246,6 +246,7 @@
     [disabledCells addObject:@"1,20"];
     [disabledCells addObject:@"1,21"];
     [disabledCells addObject:@"1,22"];
+    [disabledCells addObject:@"2,0"];
     [disabledCells addObject:@"2,21"];
     [disabledCells addObject:@"2,22"];
     [disabledCells addObject:@"3,16"];
