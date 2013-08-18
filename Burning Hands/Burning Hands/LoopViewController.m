@@ -46,8 +46,7 @@
 
 - (IBAction)updateColor:(id)sender {
     [self.view endEditing:YES];
-    NSString* colorText = [[self colorTextField] text];
-    NSString* hexColor = [ColorUtils padWithZeros:colorText];
+    NSString* hexColor = @"FFFFFF";
     self.colorTextField.text = hexColor;
     [self sendColorUpdate:hexColor];
 }
