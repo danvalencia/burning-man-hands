@@ -80,6 +80,8 @@
 		BEDE69BC17C03D6D00AC7054 /* LaserCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDE69BB17C03D6D00AC7054 /* LaserCommand.m */; };
 		BEDE69BF17C048DF00AC7054 /* ColorFadeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDE69BE17C048DE00AC7054 /* ColorFadeViewController.m */; };
 		BEDE69C317C049D100AC7054 /* ColorFadeCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDE69C217C049D100AC7054 /* ColorFadeCommand.m */; };
+		BEDE69C617C0509A00AC7054 /* RandomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDE69C517C0509A00AC7054 /* RandomViewController.m */; };
+		BEDE69C917C0520200AC7054 /* RandomCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDE69C817C0520200AC7054 /* RandomCommand.m */; };
 		BEE47F8E179E073000D9C13F /* ColorSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE47F8D179E073000D9C13F /* ColorSelector.m */; };
 		BEE47F92179E11FC00D9C13F /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE47F91179E11FC00D9C13F /* ColorUtils.m */; };
 		BEEF15ED175BF4E200684921 /* Loader.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF15EC175BF4E200684921 /* Loader.m */; };
@@ -200,6 +202,10 @@
 		BEDE69BE17C048DE00AC7054 /* ColorFadeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorFadeViewController.m; sourceTree = "<group>"; };
 		BEDE69C117C049D100AC7054 /* ColorFadeCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorFadeCommand.h; sourceTree = "<group>"; };
 		BEDE69C217C049D100AC7054 /* ColorFadeCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorFadeCommand.m; sourceTree = "<group>"; };
+		BEDE69C417C0509A00AC7054 /* RandomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomViewController.h; sourceTree = "<group>"; };
+		BEDE69C517C0509A00AC7054 /* RandomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomViewController.m; sourceTree = "<group>"; };
+		BEDE69C717C0520200AC7054 /* RandomCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomCommand.h; sourceTree = "<group>"; };
+		BEDE69C817C0520200AC7054 /* RandomCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomCommand.m; sourceTree = "<group>"; };
 		BEE47F8C179E073000D9C13F /* ColorSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSelector.h; sourceTree = "<group>"; };
 		BEE47F8D179E073000D9C13F /* ColorSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSelector.m; sourceTree = "<group>"; };
 		BEE47F8F179E08D800D9C13F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -384,6 +390,8 @@
 				BE7FFA4817BB30AA00F4131F /* Coordinate.m */,
 				BEDE69BD17C048DE00AC7054 /* ColorFadeViewController.h */,
 				BEDE69BE17C048DE00AC7054 /* ColorFadeViewController.m */,
+				BEDE69C417C0509A00AC7054 /* RandomViewController.h */,
+				BEDE69C517C0509A00AC7054 /* RandomViewController.m */,
 			);
 			path = "Burning Hands";
 			sourceTree = "<group>";
@@ -439,6 +447,8 @@
 				BEDE69BB17C03D6D00AC7054 /* LaserCommand.m */,
 				BEDE69C117C049D100AC7054 /* ColorFadeCommand.h */,
 				BEDE69C217C049D100AC7054 /* ColorFadeCommand.m */,
+				BEDE69C717C0520200AC7054 /* RandomCommand.h */,
+				BEDE69C817C0520200AC7054 /* RandomCommand.m */,
 			);
 			name = Commands;
 			sourceTree = "<group>";
@@ -627,6 +637,8 @@
 				BEDE69BC17C03D6D00AC7054 /* LaserCommand.m in Sources */,
 				BEDE69BF17C048DF00AC7054 /* ColorFadeViewController.m in Sources */,
 				BEDE69C317C049D100AC7054 /* ColorFadeCommand.m in Sources */,
+				BEDE69C617C0509A00AC7054 /* RandomViewController.m in Sources */,
+				BEDE69C917C0520200AC7054 /* RandomCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

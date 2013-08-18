@@ -1,5 +1,5 @@
 //
-//  ColorFadeViewController.h
+//  RandomViewController.h
 //  Burning Hands
 //
 //  Created by Daniel Valencia on 8/17/13.
@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ColorFadeViewController : UIViewController
+@interface RandomViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *handsButton;
+@property (strong, nonatomic) IBOutlet UIButton *updateButton;
 
 - (IBAction)updateMode:(id)sender;
-    
+
 @end
