@@ -40,7 +40,7 @@
 		BE1C34A817012C33005479B1 /* frame-9.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE1C348A17012C33005479B1 /* frame-9.gif */; };
 		BE21C93E17B4906900FC6876 /* HandsBLE.m in Sources */ = {isa = PBXBuildFile; fileRef = BE21C93D17B4906900FC6876 /* HandsBLE.m */; };
 		BE21C94117B4942100FC6876 /* Hand.m in Sources */ = {isa = PBXBuildFile; fileRef = BE21C94017B4942100FC6876 /* Hand.m */; };
-		BE4D4FF1177F9E1600CA5554 /* RainbowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */; };
+		BE4D4FF1177F9E1600CA5554 /* LaserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4D4FF0177F9E1600CA5554 /* LaserViewController.m */; };
 		BE521B1C17B7327100D395C2 /* HandsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE521B1B17B7327100D395C2 /* HandsModel.m */; };
 		BE590FDD17A20E8800E16DE4 /* ColorUpdateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BE590FDC17A20E8800E16DE4 /* ColorUpdateCommand.m */; };
 		BE6C3D9C1787A234007E9B8F /* HandsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6C3D9B1787A234007E9B8F /* HandsCell.m */; };
@@ -59,7 +59,7 @@
 		BE91767C1786457400C30ACB /* HandsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE91767A1786457400C30ACB /* HandsViewController.m */; };
 		BE91768017864B9D00C30ACB /* HandsGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = BE91767F17864B9D00C30ACB /* HandsGrid.m */; };
 		BEA28B34177923B000E467EB /* BLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28B33177923B000E467EB /* BLEManager.m */; };
-		BEA28B37177945EB00E467EB /* VerticalLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28B36177945EB00E467EB /* VerticalLoopViewController.m */; };
+		BEA28B37177945EB00E467EB /* LoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA28B36177945EB00E467EB /* LoopViewController.m */; };
 		BEA295F516DAB2D900066468 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F416DAB2D900066468 /* UIKit.framework */; };
 		BEA295F716DAB2D900066468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F616DAB2D900066468 /* Foundation.framework */; };
 		BEA295F916DAB2D900066468 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F816DAB2D900066468 /* CoreGraphics.framework */; };
@@ -76,7 +76,10 @@
 		BEA2961E16DAB2D900066468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA295F616DAB2D900066468 /* Foundation.framework */; };
 		BEA2962616DAB2D900066468 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BEA2962416DAB2D900066468 /* InfoPlist.strings */; };
 		BEA2962916DAB2D900066468 /* Burning_HandsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA2962816DAB2D900066468 /* Burning_HandsTests.m */; };
-		BEDE69B917BF450400AC7054 /* VerticalLoopCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDE69B817BF450400AC7054 /* VerticalLoopCommand.m */; };
+		BEDE69B917BF450400AC7054 /* LoopCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDE69B817BF450400AC7054 /* LoopCommand.m */; };
+		BEDE69BC17C03D6D00AC7054 /* LaserCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDE69BB17C03D6D00AC7054 /* LaserCommand.m */; };
+		BEDE69BF17C048DF00AC7054 /* ColorFadeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDE69BE17C048DE00AC7054 /* ColorFadeViewController.m */; };
+		BEDE69C317C049D100AC7054 /* ColorFadeCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDE69C217C049D100AC7054 /* ColorFadeCommand.m */; };
 		BEE47F8E179E073000D9C13F /* ColorSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE47F8D179E073000D9C13F /* ColorSelector.m */; };
 		BEE47F92179E11FC00D9C13F /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE47F91179E11FC00D9C13F /* ColorUtils.m */; };
 		BEEF15ED175BF4E200684921 /* Loader.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF15EC175BF4E200684921 /* Loader.m */; };
@@ -130,8 +133,8 @@
 		BE21C93D17B4906900FC6876 /* HandsBLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsBLE.m; sourceTree = "<group>"; };
 		BE21C93F17B4942100FC6876 /* Hand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hand.h; sourceTree = "<group>"; };
 		BE21C94017B4942100FC6876 /* Hand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hand.m; sourceTree = "<group>"; };
-		BE4D4FEF177F9E1600CA5554 /* RainbowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RainbowViewController.h; sourceTree = "<group>"; };
-		BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RainbowViewController.m; sourceTree = "<group>"; };
+		BE4D4FEF177F9E1600CA5554 /* LaserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserViewController.h; sourceTree = "<group>"; };
+		BE4D4FF0177F9E1600CA5554 /* LaserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaserViewController.m; sourceTree = "<group>"; };
 		BE521B1A17B7327100D395C2 /* HandsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandsModel.h; sourceTree = "<group>"; };
 		BE521B1B17B7327100D395C2 /* HandsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsModel.m; sourceTree = "<group>"; };
 		BE590FDA17A20E0C00E16DE4 /* BLECommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLECommand.h; sourceTree = "<group>"; };
@@ -165,8 +168,8 @@
 		BE91767F17864B9D00C30ACB /* HandsGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsGrid.m; sourceTree = "<group>"; };
 		BEA28B32177923B000E467EB /* BLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEManager.h; sourceTree = "<group>"; };
 		BEA28B33177923B000E467EB /* BLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEManager.m; sourceTree = "<group>"; };
-		BEA28B35177945EB00E467EB /* VerticalLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalLoopViewController.h; sourceTree = "<group>"; };
-		BEA28B36177945EB00E467EB /* VerticalLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalLoopViewController.m; sourceTree = "<group>"; };
+		BEA28B35177945EB00E467EB /* LoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopViewController.h; sourceTree = "<group>"; };
+		BEA28B36177945EB00E467EB /* LoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopViewController.m; sourceTree = "<group>"; };
 		BEA295F016DAB2D900066468 /* Burning Hands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Burning Hands.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA295F416DAB2D900066468 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BEA295F616DAB2D900066468 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -189,8 +192,14 @@
 		BEA2962516DAB2D900066468 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BEA2962716DAB2D900066468 /* Burning_HandsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Burning_HandsTests.h; sourceTree = "<group>"; };
 		BEA2962816DAB2D900066468 /* Burning_HandsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Burning_HandsTests.m; sourceTree = "<group>"; };
-		BEDE69B717BF450400AC7054 /* VerticalLoopCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalLoopCommand.h; sourceTree = "<group>"; };
-		BEDE69B817BF450400AC7054 /* VerticalLoopCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalLoopCommand.m; sourceTree = "<group>"; };
+		BEDE69B717BF450400AC7054 /* LoopCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopCommand.h; sourceTree = "<group>"; };
+		BEDE69B817BF450400AC7054 /* LoopCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopCommand.m; sourceTree = "<group>"; };
+		BEDE69BA17C03D6D00AC7054 /* LaserCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserCommand.h; sourceTree = "<group>"; };
+		BEDE69BB17C03D6D00AC7054 /* LaserCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaserCommand.m; sourceTree = "<group>"; };
+		BEDE69BD17C048DE00AC7054 /* ColorFadeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorFadeViewController.h; sourceTree = "<group>"; };
+		BEDE69BE17C048DE00AC7054 /* ColorFadeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorFadeViewController.m; sourceTree = "<group>"; };
+		BEDE69C117C049D100AC7054 /* ColorFadeCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorFadeCommand.h; sourceTree = "<group>"; };
+		BEDE69C217C049D100AC7054 /* ColorFadeCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorFadeCommand.m; sourceTree = "<group>"; };
 		BEE47F8C179E073000D9C13F /* ColorSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorSelector.h; sourceTree = "<group>"; };
 		BEE47F8D179E073000D9C13F /* ColorSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorSelector.m; sourceTree = "<group>"; };
 		BEE47F8F179E08D800D9C13F /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -286,9 +295,6 @@
 		BE75F77817A6D777007830EA /* BLE */ = {
 			isa = PBXGroup;
 			children = (
-				BE590FDA17A20E0C00E16DE4 /* BLECommand.h */,
-				BE590FDB17A20E8800E16DE4 /* ColorUpdateCommand.h */,
-				BE590FDC17A20E8800E16DE4 /* ColorUpdateCommand.m */,
 				BEA28B32177923B000E467EB /* BLEManager.h */,
 				BEA28B33177923B000E467EB /* BLEManager.m */,
 				BE21C93C17B4906900FC6876 /* HandsBLE.h */,
@@ -297,8 +303,6 @@
 				BE21C94017B4942100FC6876 /* Hand.m */,
 				BE521B1A17B7327100D395C2 /* HandsModel.h */,
 				BE521B1B17B7327100D395C2 /* HandsModel.m */,
-				BEDE69B717BF450400AC7054 /* VerticalLoopCommand.h */,
-				BEDE69B817BF450400AC7054 /* VerticalLoopCommand.m */,
 			);
 			name = BLE;
 			sourceTree = "<group>";
@@ -349,6 +353,7 @@
 		BEA295FA16DAB2D900066468 /* Burning Hands */ = {
 			isa = PBXGroup;
 			children = (
+				BEDE69C017C049B400AC7054 /* Commands */,
 				BEE47F8F179E08D800D9C13F /* Constants.h */,
 				BE75F77817A6D777007830EA /* BLE */,
 				BE6C3D9D17886E0B007E9B8F /* HandsGrid */,
@@ -371,12 +376,14 @@
 				BE8D9E6F1777CE990047BFBD /* ModeDetailViewController.m */,
 				BE8D9E731777E3750047BFBD /* HandsTabBarViewController.h */,
 				BE8D9E741777E3750047BFBD /* HandsTabBarViewController.m */,
-				BEA28B35177945EB00E467EB /* VerticalLoopViewController.h */,
-				BEA28B36177945EB00E467EB /* VerticalLoopViewController.m */,
-				BE4D4FEF177F9E1600CA5554 /* RainbowViewController.h */,
-				BE4D4FF0177F9E1600CA5554 /* RainbowViewController.m */,
+				BEA28B35177945EB00E467EB /* LoopViewController.h */,
+				BEA28B36177945EB00E467EB /* LoopViewController.m */,
+				BE4D4FEF177F9E1600CA5554 /* LaserViewController.h */,
+				BE4D4FF0177F9E1600CA5554 /* LaserViewController.m */,
 				BE7FFA4717BB30AA00F4131F /* Coordinate.h */,
 				BE7FFA4817BB30AA00F4131F /* Coordinate.m */,
+				BEDE69BD17C048DE00AC7054 /* ColorFadeViewController.h */,
+				BEDE69BE17C048DE00AC7054 /* ColorFadeViewController.m */,
 			);
 			path = "Burning Hands";
 			sourceTree = "<group>";
@@ -418,6 +425,22 @@
 				BEA2962416DAB2D900066468 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BEDE69C017C049B400AC7054 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				BE590FDA17A20E0C00E16DE4 /* BLECommand.h */,
+				BE590FDB17A20E8800E16DE4 /* ColorUpdateCommand.h */,
+				BE590FDC17A20E8800E16DE4 /* ColorUpdateCommand.m */,
+				BEDE69B717BF450400AC7054 /* LoopCommand.h */,
+				BEDE69B817BF450400AC7054 /* LoopCommand.m */,
+				BEDE69BA17C03D6D00AC7054 /* LaserCommand.h */,
+				BEDE69BB17C03D6D00AC7054 /* LaserCommand.m */,
+				BEDE69C117C049D100AC7054 /* ColorFadeCommand.h */,
+				BEDE69C217C049D100AC7054 /* ColorFadeCommand.m */,
+			);
+			name = Commands;
 			sourceTree = "<group>";
 		};
 		BEEF1604175C049900684921 /* BLE.framework */ = {
@@ -587,8 +610,8 @@
 				BE8D9E701777CE990047BFBD /* ModeDetailViewController.m in Sources */,
 				BE8D9E751777E3750047BFBD /* HandsTabBarViewController.m in Sources */,
 				BEA28B34177923B000E467EB /* BLEManager.m in Sources */,
-				BEA28B37177945EB00E467EB /* VerticalLoopViewController.m in Sources */,
-				BE4D4FF1177F9E1600CA5554 /* RainbowViewController.m in Sources */,
+				BEA28B37177945EB00E467EB /* LoopViewController.m in Sources */,
+				BE4D4FF1177F9E1600CA5554 /* LaserViewController.m in Sources */,
 				BE6C3D9C1787A234007E9B8F /* HandsCell.m in Sources */,
 				BE91767C1786457400C30ACB /* HandsViewController.m in Sources */,
 				BE91768017864B9D00C30ACB /* HandsGrid.m in Sources */,
@@ -600,7 +623,10 @@
 				BE21C94117B4942100FC6876 /* Hand.m in Sources */,
 				BE521B1C17B7327100D395C2 /* HandsModel.m in Sources */,
 				BE7FFA4917BB30AA00F4131F /* Coordinate.m in Sources */,
-				BEDE69B917BF450400AC7054 /* VerticalLoopCommand.m in Sources */,
+				BEDE69B917BF450400AC7054 /* LoopCommand.m in Sources */,
+				BEDE69BC17C03D6D00AC7054 /* LaserCommand.m in Sources */,
+				BEDE69BF17C048DF00AC7054 /* ColorFadeViewController.m in Sources */,
+				BEDE69C317C049D100AC7054 /* ColorFadeCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

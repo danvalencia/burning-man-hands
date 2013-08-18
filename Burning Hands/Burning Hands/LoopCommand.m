@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Daniel Valencia Co. All rights reserved.
 //
 
-#import "VerticalLoopCommand.h"
+#import "LoopCommand.h"
 #import "HandsModel.h"
 #import "ColorUtils.h"
 
-@interface VerticalLoopCommand(){
+@interface LoopCommand(){
     UInt8* colorArray;
     NSInteger* loopType;
 }
 
 @end
-@implementation VerticalLoopCommand
+@implementation LoopCommand
 
 -(id)initWithColor:(NSString *)theColor andType:(NSInteger *)theLoopType
 {

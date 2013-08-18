@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "BLECommand.h"
 
-@interface VerticalLoopCommand : NSObject<BLECommand>
+@interface LoopCommand : NSObject<BLECommand>
 
 -(id)initWithColor:(NSString *)color andType:(NSInteger *)loopType;
 

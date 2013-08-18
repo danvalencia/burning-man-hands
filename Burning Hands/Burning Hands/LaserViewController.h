@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RainbowViewController : UIViewController <UITextFieldDelegate>
+@interface LaserViewController : UIViewController <UITextFieldDelegate>
 
+@property (strong, nonatomic) IBOutlet UISegmentedControl *handsButton;
 @property (strong, nonatomic) IBOutlet UITextField *delayTextField;
-- (IBAction)setRainbowMode:(id)sender;
+
+- (IBAction)setMode:(id)sender;
 
 @end

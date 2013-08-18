@@ -113,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="206" y="1659"/>
         </scene>
-        <!--Vertical Loop View Controller - About-->
+        <!--Loop View Controller - About-->
         <scene sceneID="hbf-vi-D8i">
             <objects>
-                <viewController id="JUn-Vs-FMD" customClass="VerticalLoopViewController" sceneMemberID="viewController">
+                <viewController id="JUn-Vs-FMD" customClass="LoopViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GYr-7n-Pm6">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -162,16 +162,12 @@
                                     <action selector="handSelected:" destination="JUn-Vs-FMD" eventType="valueChanged" id="EOa-NT-Pfj"/>
                                 </connections>
                             </segmentedControl>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGd-f1-v87">
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.69999999999999973" height="0.69999999999999973"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="3sO-Rl-7IV"/>
-                                    <constraint firstAttribute="height" constant="216" id="m75-cg-tM7"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="JUn-Vs-FMD" id="Vc7-5P-fVT"/>
-                                </connections>
-                            </pickerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8bE-Kc-eiw">
+                                <segments>
+                                    <segment title="Vertical"/>
+                                    <segment title="Horizontal"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -180,9 +176,10 @@
                             <constraint firstAttribute="trailing" secondItem="0oc-wC-d5k" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Eyk-97-evT"/>
                             <constraint firstItem="Ezw-Jj-R1H" firstAttribute="leading" secondItem="GYr-7n-Pm6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="L4h-fw-xDE"/>
                             <constraint firstItem="u6D-CW-may" firstAttribute="top" secondItem="GYr-7n-Pm6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="OR7-lN-KlR"/>
+                            <constraint firstItem="BrY-dB-MQX" firstAttribute="top" secondItem="8bE-Kc-eiw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PL5-mt-T9x"/>
+                            <constraint firstAttribute="trailing" secondItem="8bE-Kc-eiw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="RtY-tj-L8X"/>
                             <constraint firstItem="Ezw-Jj-R1H" firstAttribute="top" secondItem="GYr-7n-Pm6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="blY-YI-c60"/>
-                            <constraint firstItem="iGd-f1-v87" firstAttribute="centerX" secondItem="BrY-dB-MQX" secondAttribute="centerX" type="default" id="gjy-Ld-qkY"/>
-                            <constraint firstItem="iGd-f1-v87" firstAttribute="top" secondItem="u6D-CW-may" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kJL-sY-uLH"/>
+                            <constraint firstItem="8bE-Kc-eiw" firstAttribute="leading" secondItem="GYr-7n-Pm6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hSs-Sq-9s5"/>
                             <constraint firstItem="BrY-dB-MQX" firstAttribute="leading" secondItem="GYr-7n-Pm6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oRQ-LZ-3oB"/>
                             <constraint firstAttribute="bottom" secondItem="0oc-wC-d5k" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tch-pL-JD6"/>
                             <constraint firstAttribute="trailing" secondItem="u6D-CW-may" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="w33-HA-YIy"/>
@@ -194,7 +191,7 @@
                     <connections>
                         <outlet property="colorTextField" destination="u6D-CW-may" id="EXf-Pj-GEe"/>
                         <outlet property="handButton" destination="BrY-dB-MQX" id="Mx3-KC-u4E"/>
-                        <outlet property="loopTypeSelection" destination="iGd-f1-v87" id="Tvi-pf-eA2"/>
+                        <outlet property="loopModeSelector" destination="8bE-Kc-eiw" id="kW4-Q3-pIu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEA-TW-Gjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -239,7 +236,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Rainbow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0RS-bh-ZTt">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Laser" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0RS-bh-ZTt">
                                                     <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -259,7 +256,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Rainbow Cycle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jfn-xT-Lu5">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Color Fade" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jfn-xT-Lu5">
                                                     <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -272,6 +269,22 @@
                                             <segue destination="Vej-Gn-hW0" kind="push" id="2x4-RD-dPy"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="kMf-13-4Sq" style="IBUITableViewCellStyleDefault" id="xLt-n7-IsE">
+                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Randomnesss" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMf-13-4Sq">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -282,10 +295,10 @@
             </objects>
             <point key="canvasLocation" x="708" y="978"/>
         </scene>
-        <!--Rainbow View Controller-->
+        <!--Laser View Controller-->
         <scene sceneID="eBC-ky-rrl">
             <objects>
-                <viewController id="rh3-JD-Mdd" customClass="RainbowViewController" sceneMemberID="viewController">
+                <viewController id="rh3-JD-Mdd" customClass="LaserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ieh-yf-hHd">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -300,7 +313,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="setRainbowMode:" destination="rh3-JD-Mdd" eventType="touchUpInside" id="yGW-vA-Do1"/>
+                                    <action selector="setMode:" destination="rh3-JD-Mdd" eventType="touchUpInside" id="tdj-W0-PTq"/>
                                     <action selector="updateColor:" destination="JUn-Vs-FMD" eventType="touchUpInside" id="XTR-A5-GIl"/>
                                 </connections>
                             </button>
@@ -323,6 +336,12 @@
                                     <outlet property="delegate" destination="rh3-JD-Mdd" id="FDJ-cf-Jc7"/>
                                 </connections>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZkD-t8-brG">
+                                <segments>
+                                    <segment title="Left Hand"/>
+                                    <segment title="Right Hand"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -330,14 +349,18 @@
                             <constraint firstAttribute="bottom" secondItem="jzJ-PN-2zX" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="E2z-kX-utZ"/>
                             <constraint firstItem="Pq4-Qf-euj" firstAttribute="top" secondItem="9Ki-6W-nVG" secondAttribute="top" type="default" id="QtN-1k-Zd4"/>
                             <constraint firstAttribute="trailing" secondItem="Pq4-Qf-euj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="VSr-Av-XWN"/>
+                            <constraint firstAttribute="trailing" secondItem="ZkD-t8-brG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="VbX-n1-w4q"/>
                             <constraint firstItem="jzJ-PN-2zX" firstAttribute="leading" secondItem="ieh-yf-hHd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="iIl-kV-Crw"/>
                             <constraint firstAttribute="trailing" secondItem="jzJ-PN-2zX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="oKC-D2-W11"/>
+                            <constraint firstItem="ZkD-t8-brG" firstAttribute="leading" secondItem="ieh-yf-hHd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="p6g-Vd-JJ3"/>
+                            <constraint firstItem="jzJ-PN-2zX" firstAttribute="top" secondItem="ZkD-t8-brG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pEN-np-Ldo"/>
                             <constraint firstItem="9Ki-6W-nVG" firstAttribute="leading" secondItem="ieh-yf-hHd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rxI-M1-e7x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ydG-b5-m8X"/>
                     <connections>
                         <outlet property="delayTextField" destination="Pq4-Qf-euj" id="MZx-C6-F2V"/>
+                        <outlet property="handsButton" destination="ZkD-t8-brG" id="KEk-5k-0as"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opz-VU-xDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -381,10 +404,10 @@
             </objects>
             <point key="canvasLocation" x="-333" y="297"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Fade View Controller-->
         <scene sceneID="WNX-up-qaM">
             <objects>
-                <viewController id="Vej-Gn-hW0" sceneMemberID="viewController">
+                <viewController id="Vej-Gn-hW0" customClass="ColorFadeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C3u-Jt-ayN">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -400,6 +423,7 @@
                                 </state>
                                 <connections>
                                     <action selector="updateColor:" destination="JUn-Vs-FMD" eventType="touchUpInside" id="fCX-UC-Be9"/>
+                                    <action selector="updateMode:" destination="Vej-Gn-hW0" eventType="touchUpInside" id="e7o-1b-nUn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Delay (in ms)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1d-nL-L2R">
@@ -421,19 +445,32 @@
                                     <outlet property="delegate" destination="JUn-Vs-FMD" id="iM6-na-XkR"/>
                                 </connections>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tdy-UL-eH6">
+                                <segments>
+                                    <segment title="Left Hand"/>
+                                    <segment title="Right Hand"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PHw-DX-AC5" firstAttribute="top" secondItem="Q1d-nL-L2R" secondAttribute="top" type="default" id="Lla-Zq-TKv"/>
                             <constraint firstAttribute="trailing" secondItem="mpA-4b-OMv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Rf0-Cs-xEe"/>
                             <constraint firstItem="mpA-4b-OMv" firstAttribute="leading" secondItem="C3u-Jt-ayN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="VIF-6P-8jW"/>
+                            <constraint firstAttribute="trailing" secondItem="Tdy-UL-eH6" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="YFf-q4-yII"/>
                             <constraint firstAttribute="trailing" secondItem="PHw-DX-AC5" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cc7-pB-qVW"/>
+                            <constraint firstItem="Tdy-UL-eH6" firstAttribute="leading" secondItem="C3u-Jt-ayN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="h7Y-dJ-W4g"/>
                             <constraint firstItem="Q1d-nL-L2R" firstAttribute="leading" secondItem="C3u-Jt-ayN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mi1-4w-jam"/>
                             <constraint firstAttribute="bottom" secondItem="mpA-4b-OMv" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="sZj-CB-lkc"/>
+                            <constraint firstItem="mpA-4b-OMv" firstAttribute="top" secondItem="Tdy-UL-eH6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xaw-Ia-eHD"/>
                             <constraint firstItem="Q1d-nL-L2R" firstAttribute="top" secondItem="C3u-Jt-ayN" secondAttribute="top" constant="19" id="zdQ-DL-YRd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bPe-Hb-UC5"/>
+                    <connections>
+                        <outlet property="handsButton" destination="Tdy-UL-eH6" id="fbj-Jy-epf"/>
+                        <outlet property="updateButton" destination="mpA-4b-OMv" id="kV6-ds-Rby"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5p-9H-Jd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -441,6 +478,14 @@
         </scene>
     </scenes>
     <classes>
+        <class className="ColorFadeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ColorFadeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="updateMode:"/>
+                <relationship kind="outlet" name="handsButton" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="updateButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
         <class className="ConnectionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ConnectionViewController.h"/>
             <relationships>
@@ -461,31 +506,32 @@
                 <relationship kind="outlet" name="coordinateUpdateLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="LaserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LaserViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="setMode:"/>
+                <relationship kind="outlet" name="delayTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="handsButton" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
         <class className="Loader" superclassName="UIImageView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/Loader.h"/>
+        </class>
+        <class className="LoopViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoopViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handSelected:"/>
+                <relationship kind="action" name="updateColor:"/>
+                <relationship kind="outlet" name="colorTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="handButton" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="loopModeSelector" candidateClass="UISegmentedControl"/>
+            </relationships>
         </class>
         <class className="ModeSelectionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ModeSelectionViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="RainbowViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RainbowViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="setRainbowMode:"/>
-                <relationship kind="outlet" name="delayTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="VerticalLoopViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VerticalLoopViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handSelected:"/>
-                <relationship kind="action" name="updateColor:"/>
-                <relationship kind="outlet" name="colorTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="handButton" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="loopTypeSelection" candidateClass="UIPickerView"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

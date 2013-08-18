@@ -6,15 +6,15 @@
 //  Copyright (c) 2013 Daniel Valencia Co. All rights reserved.
 //
 
-#import "VerticalLoopViewController.h"
+#import "LoopViewController.h"
 #import "BLEManager.h"
-#import "VerticalLoopCommand.h"
+#import "LoopCommand.h"
 #import "HandsModel.h"
 #import "ColorUtils.h"
 
 #define HEX_CHARS @"0123456789ABCDEFabcdef"
 
-@interface VerticalLoopViewController ()
+@interface LoopViewController ()
 {
     NSArray *loopTypes;
 }
@@ -23,17 +23,7 @@
 
 @end
 
-@implementation VerticalLoopViewController
-
--(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
-
--(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    return loopTypes.count;
-}
+@implementation LoopViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,13 +36,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.loopTypeSelection.delegate = self;
-    [self initPicker];
-}
-
--(void)initPicker
-{
-    loopTypes = [[NSArray alloc] initWithObjects:@"Vertical Loop", @"Horizontal Loop", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,8 +61,7 @@
 {
     HandsModel *handsModel = [HandsModel sharedInstance];
     
-    NSInteger row = [self.loopTypeSelection selectedRowInComponent:0];
-    VerticalLoopCommand* command = [[VerticalLoopCommand alloc]initWithColor:colors andType:row];
+    LoopCommand* command = [[LoopCommand alloc]initWithColor:colors andType:self.loopModeSelector.selectedSegmentIndex];
     if(self.handButton.selectedSegmentIndex == 0)
     {
         [[BLEManager sharedInstance] executeCommand:command onHand:handsModel.leftHand];
@@ -122,11 +104,6 @@
     }
     
     return YES;
-}
-
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return [loopTypes objectAtIndex:row];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

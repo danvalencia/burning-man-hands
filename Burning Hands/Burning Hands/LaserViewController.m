@@ -6,16 +6,18 @@
 //  Copyright (c) 2013 Daniel Valencia Co. All rights reserved.
 //
 
-#import "RainbowViewController.h"
+#import "LaserViewController.h"
 #import "BLEManager.h"
+#import "HandsModel.h"
+#import "LaserCommand.h"
 
-@interface RainbowViewController ()
+@interface LaserViewController ()
 
--(void) sendRainbowUpdate:(UInt8*)params;
+-(void) sendLaserUpdate:(UInt8*)params;
 
 @end
 
-@implementation RainbowViewController
+@implementation LaserViewController
 
 @synthesize delayTextField;
 
@@ -40,7 +42,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)setRainbowMode:(id)sender
+- (IBAction)setMode:(id)sender
 {
     [self.view endEditing:YES];
     
@@ -52,19 +54,23 @@
     UInt8 paramArray[1] = {};
     
     paramArray[0] = (UInt8) delayInteger;
-    [self sendRainbowUpdate:paramArray];
+    [self sendLaserUpdate:paramArray];
 }
 
--(void) sendRainbowUpdate:(UInt8*)params
+-(void) sendLaserUpdate:(UInt8*)params
 {
-    UInt8 command[2] = {};
-    command[0] = 0x02;
-    command[1] = params[0];
+    HandsModel *handsModel = [HandsModel sharedInstance];
     
-    NSLog(@"Sending command to update to rainbow mode: %d", command[0]);
+    LaserCommand* command = [[LaserCommand alloc]initWithDelay];
     
-    NSData *data = [[NSData alloc] initWithBytes:command length:2];
-    [[BLEManager sharedInstance] sendCommand:data];
+    if(self.handsButton.selectedSegmentIndex == 0)
+    {
+        [[BLEManager sharedInstance] executeCommand:command onHand:handsModel.leftHand];
+    }
+    else
+    {
+        [[BLEManager sharedInstance] executeCommand:command onHand:handsModel.rightHand];
+    }
 
 }
 

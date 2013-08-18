@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VerticalLoopViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@interface LoopViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *colorTextField;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *handButton;
-@property (strong, nonatomic) IBOutlet UIPickerView *loopTypeSelection;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *loopModeSelector;
 
 - (IBAction)updateColor:(id)sender;
 - (IBAction)handSelected:(id)sender;
